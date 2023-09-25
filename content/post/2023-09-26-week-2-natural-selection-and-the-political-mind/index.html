@@ -15,6 +15,10 @@ tags: []
 <div id="axelrod-and-the-prisoners-dilemma" class="section level3">
 <h3>Axelrod and the Prisoners’ Dilemma</h3>
 <p>In the Prisoners’ Dilemma, two players have the option to either cooperate or defect. The possible outcomes can be visualized in the grid below:</p>
+<div class="float">
+<img src="pd.png" alt="prisoners’ Dilemma" />
+<div class="figcaption">prisoners’ Dilemma</div>
+</div>
 <p>When both players cooperate, there is a win-win scenario. If player 1 cooperates and player 2 defects, player 1 wins big, and vice-verse. This type of framework can be applied to numerous social dilemmas, such as voting. If everyone votes, then each person has the opportunity for their beliefs to be represented. If a person does not vote, they have no representation, and other people’s vote can have more likelihood of influence. If no one votes, then representation is lacking for everyone.</p>
 <p>Cooperation leads a to favorable outcome for both, but defecting can be more appealing. Axelrod explores the different strategies humans take in prisoner’s dileama akin situations to get the most wins or favorable outcomes. He invited game theorists to create a computer program with a strategy that would win the most points. He then pitted each strategy with another in a tournament style of prisoner’s dilemma games to assess the “best” strategy.</p>
 <p>Axelrod found that being nice (cooperating) is often the best strategy in repeated games. This is because of the “shadow of the future” in which the idea of repeated interactions influence one’s decision to cooperate.</p>
@@ -26,8 +30,8 @@ tags: []
 <h2>Strategies</h2>
 <table>
 <colgroup>
-<col width="26%" />
-<col width="73%" />
+<col width="30%" />
+<col width="69%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -69,17 +73,499 @@ tags: []
 </div>
 <div id="game-results" class="section level2">
 <h2>Game Results</h2>
-<pre class="r"><code>heatmap_graph</code></pre>
+<p>The chart below displays the outcome of each game.</p>
+<p>Note: Reciprocals of the games are shown. Player order does not matter, so game results are shown twice.</p>
 <p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
-</div>
-<div id="win-counts" class="section level2">
-<h2>Win Counts</h2>
+<p>In the chart above, the middle section is primarily purple, indicating a <code>tie</code>. For all strategies except <code>backstabber</code> and <code>random</code>, 4/6 games ended in a tie. For <code>backstabber</code>, the strategy won 5/6 games.</p>
+<p>Another way to analyze this data is through the barplot below that illustrates the number of games that resulted in each type. Strategies not shown in the graph indicate that strategy did not win a game.</p>
 <p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
-<!-- ## Score Comparison: -->
-<!-- ```{r} -->
-<!-- stacked_plot <- ggplot(player_data_long, aes(x = opponent, y = score, fill = player)) + -->
-<!--   geom_bar(stat = "identity") + -->
-<!--   ggtitle("Each strategy against all others") -->
-<!-- stacked_plot -->
-<!-- ``` -->
+<p>From the heatmap and the barplot, we see that most games (11/21) resulted in a <code>tie</code>. Among the strategies, <code>backstabber</code> won the most games (5/21) and <code>forgiver</code> and <code>foolMeOnce</code> were the stratgies that won only 1 game. <code>Grumpy</code>, <code>handshaker</code>, and <code>cooperator</code> were the strategies that did not win any games.</p>
+</div>
+<div id="scores" class="section level2">
+<h2>Scores</h2>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>From these charts, it is obvious that all strategies score the most points when they play themselves. To assess which strategy received the most scores on average, I averaged the scores, not including the games the strategy played itself.</p>
+<div id="dgiqphcvvt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#dgiqphcvvt table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#dgiqphcvvt thead, #dgiqphcvvt tbody, #dgiqphcvvt tfoot, #dgiqphcvvt tr, #dgiqphcvvt td, #dgiqphcvvt th {
+  border-style: none;
+}
+
+#dgiqphcvvt p {
+  margin: 0;
+  padding: 0;
+}
+
+#dgiqphcvvt .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#dgiqphcvvt .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#dgiqphcvvt .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#dgiqphcvvt .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#dgiqphcvvt .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#dgiqphcvvt .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#dgiqphcvvt .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#dgiqphcvvt .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#dgiqphcvvt .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#dgiqphcvvt .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#dgiqphcvvt .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#dgiqphcvvt .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#dgiqphcvvt .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#dgiqphcvvt .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#dgiqphcvvt .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#dgiqphcvvt .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#dgiqphcvvt .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#dgiqphcvvt .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#dgiqphcvvt .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dgiqphcvvt .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#dgiqphcvvt .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#dgiqphcvvt .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#dgiqphcvvt .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dgiqphcvvt .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#dgiqphcvvt .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#dgiqphcvvt .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#dgiqphcvvt .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dgiqphcvvt .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#dgiqphcvvt .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#dgiqphcvvt .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#dgiqphcvvt .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#dgiqphcvvt .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#dgiqphcvvt .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dgiqphcvvt .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#dgiqphcvvt .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dgiqphcvvt .gt_left {
+  text-align: left;
+}
+
+#dgiqphcvvt .gt_center {
+  text-align: center;
+}
+
+#dgiqphcvvt .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#dgiqphcvvt .gt_font_normal {
+  font-weight: normal;
+}
+
+#dgiqphcvvt .gt_font_bold {
+  font-weight: bold;
+}
+
+#dgiqphcvvt .gt_font_italic {
+  font-style: italic;
+}
+
+#dgiqphcvvt .gt_super {
+  font-size: 65%;
+}
+
+#dgiqphcvvt .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#dgiqphcvvt .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#dgiqphcvvt .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#dgiqphcvvt .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#dgiqphcvvt .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#dgiqphcvvt .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#dgiqphcvvt .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    <tr class="gt_heading">
+      <td colspan="3" class="gt_heading gt_title gt_font_normal gt_bottom_border" style>Average Score For Each Strategy</td>
+    </tr>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Player">Player</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Average Score">Average Score</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Standard Deviation">Standard Deviation</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="player" class="gt_row gt_left">backstabber</td>
+<td headers="avg_score" class="gt_row gt_right">301.424</td>
+<td headers="sd_score" class="gt_row gt_right">5.760111</td></tr>
+    <tr><td headers="player" class="gt_row gt_left">cooperator</td>
+<td headers="avg_score" class="gt_row gt_right">268.908</td>
+<td headers="sd_score" class="gt_row gt_right">66.220709</td></tr>
+    <tr><td headers="player" class="gt_row gt_left">foolMeOnce</td>
+<td headers="avg_score" class="gt_row gt_right">297.872</td>
+<td headers="sd_score" class="gt_row gt_right">2.953290</td></tr>
+    <tr><td headers="player" class="gt_row gt_left">forgiver</td>
+<td headers="avg_score" class="gt_row gt_right">298.010</td>
+<td headers="sd_score" class="gt_row gt_right">2.819663</td></tr>
+    <tr><td headers="player" class="gt_row gt_left">grumpy</td>
+<td headers="avg_score" class="gt_row gt_right">282.624</td>
+<td headers="sd_score" class="gt_row gt_right">35.594759</td></tr>
+    <tr><td headers="player" class="gt_row gt_left">random</td>
+<td headers="avg_score" class="gt_row gt_right">165.638</td>
+<td headers="sd_score" class="gt_row gt_right">151.151877</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+<p>The chart demonstrates <code>backstabber</code> had the highest average score and <code>random</code> had the lowest. When looking at standard deviations, <code>foolMeOnce</code> had the lowest standard deviation and then <code>backstabber</code>. This scores show that <code>backstabber</code> had the highest score and a relatively low standard deviation, suggesting this analysis is not drawn from outliers.</p>
+</div>
+<div id="discussion" class="section level2">
+<h2>Discussion</h2>
+</div>
+<div id="references" class="section level2">
+<h2>References</h2>
 </div>

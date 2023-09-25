@@ -15,6 +15,8 @@ In this week's blog, I look at decision making and the way in which cooperation 
 
 In the Prisoners' Dilemma, two players have the option to either cooperate or defect. The possible outcomes can be visualized in the grid below:
 
+![prisoners' Dilemma](pd.png)
+
 When both players cooperate, there is a win-win scenario. If player 1 cooperates and player 2 defects, player 1 wins big, and vice-verse. This type of framework can be applied to numerous social dilemmas, such as voting. If everyone votes, then each person has the opportunity for their beliefs to be represented. If a person does not vote, they have no representation, and other people's vote can have more likelihood of influence. If no one votes, then representation is lacking for everyone.
 
 Cooperation leads a to favorable outcome for both, but defecting can be more appealing. Axelrod explores the different strategies humans take in prisoner's dileama akin situations to get the most wins or favorable outcomes. He invited game theorists to create a computer program with a strategy that would win the most points. He then pitted each strategy with another in a tournament style of prisoner's dilemma games to assess the "best" strategy.
@@ -28,7 +30,7 @@ The strategies are listed below:
 ## Strategies
 
 | Variable Name | Variable Description                                                                                                                                                                                                                                                                                                           |
-|-------------------|-----------------------------------------------------|
+|----------------------|--------------------------------------------------|
 | `backstabber` | 1\. Cooperates until the opponent defects 3 times. 2. Defects forever after that. 3. Always defects in the last 2 rounds                                                                                                                                                                                                       |
 | `cooperator`  | 1\. Cooperates systematically.                                                                                                                                                                                                                                                                                                 |
 | `forgiver`    | 1\. Cooperates the first time it plays a new opponent. 2. After that, defects if opponent has defected more than 10% of the time.                                                                                                                                                                                              |
@@ -51,6 +53,7 @@ library(tools) # needed for shiny app
 library(readr) # read_csv()
 library(dplyr) # dplyr()
 library(ggplot2) # ggplot()
+library(gt)
 
 
 ```
@@ -73,6 +76,10 @@ player_data_long <- bind_rows(player1_data, player2_data)
 ```
 
 ## Game Results
+
+The chart below displays the outcome of each game.
+
+Note: Reciprocals of the games are shown. Player order does not matter, so game results are shown twice.
 
 ```{r, include=FALSE}
 # df of just players and winners
@@ -98,18 +105,20 @@ heatmap_graph <- ggplot(heatmap_df, aes(x = player1, y = player2, fill = winner)
   labs(x = "Player 1", y = "Player 2", fill = "Color Legend", title = "Game Results for Each Strategy") 
 ```
 
-
-```{r}
+```{r, echo=FALSE}
 heatmap_graph
 ```
 
-## Win Counts
+In the chart above, the middle section is primarily purple, indicating a `tie`. For all strategies except `backstabber` and `random`, 4/6 games ended in a tie. For `backstabber`, the strategy won 5/6 games.
+
+Another way to analyze this data is through the barplot below that illustrates the number of games that resulted in each type. Strategies not shown in the graph indicate that strategy did not win a game.
 
 ```{r, include=FALSE}
 winner_counts <- pd_data %>% 
   count(winner) %>% 
   mutate(wins = n) %>% 
   select(winner, wins)
+
 
 win_count_plot <- ggplot(data=winner_counts, aes(x=winner, y=wins)) +
   geom_bar(stat="identity", fill="steelblue")+
@@ -125,11 +134,48 @@ abs_value <- pd_data %>%
 win_count_plot
 ```
 
+From the heatmap and the barplot, we see that most games (11/21) resulted in a `tie`. Among the strategies, `backstabber` won the most games (5/21) and `forgiver` and `foolMeOnce` were the stratgies that won only 1 game. `Grumpy`, `handshaker`, and `cooperator` were the strategies that did not win any games.
 
-<!-- ## Score Comparison: -->
-<!-- ```{r} -->
-<!-- stacked_plot <- ggplot(player_data_long, aes(x = opponent, y = score, fill = player)) + -->
-<!--   geom_bar(stat = "identity") + -->
-<!--   ggtitle("Each strategy against all others") -->
-<!-- stacked_plot -->
-<!-- ``` -->
+## Scores
+
+```{r, include=FALSE}
+facet_scores <- ggplot(player_data_long, aes(x=player, y=score)) +
+  geom_bar(stat = "identity", fill = "lightblue") +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
+  labs(x = "Player", y = "Score", title = "Player Score in Each Game") +
+  facet_wrap(~opponent)
+```
+
+```{r, echo=FALSE}
+facet_scores
+```
+
+From these charts, it is obvious that all strategies score the most points when they play themselves. To assess which strategy received the most scores on average, I averaged the scores, not including the games the strategy played itself.
+
+```{r, echo=FALSE}
+## no repeats
+player1_data_un <- pd_data_un |> select(player = player1, score = score1, opponent = player2)
+player2_data_un <- pd_data_un |> select(player = player2, score = score2, opponent = player1)
+player_data_long_un <- bind_rows(player1_data_un, player2_data_un)
+
+
+average_scores_un <- player_data_long_un |> 
+  group_by(player) |> 
+  summarise(avg_score = mean(score), sd_score = sd(score)) 
+
+gtTable <- gt(average_scores_un) %>%
+  tab_header(title = "Average Score For Each Strategy") %>% 
+  cols_label(player = "Player",
+             avg_score = "Average Score",
+             sd_score = "Standard Deviation")
+```
+
+```{r, echo=FALSE}
+gtTable
+```
+
+The chart demonstrates `backstabber` had the highest average score and `random` had the lowest. When looking at standard deviations, `foolMeOnce` had the lowest standard deviation and then `backstabber`. This scores show that `backstabber` had the highest score and a relatively low standard deviation, suggesting this analysis is not drawn from outliers.
+
+## Discussion
+
+## References
