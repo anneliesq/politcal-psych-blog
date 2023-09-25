@@ -1,0 +1,85 @@
+---
+title: 'Week 2: Natural Selection and the Political Mind'
+author: Annelies Quinton
+date: '2023-09-26'
+slug: []
+categories: []
+tags: []
+---
+
+
+
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>In this week’s blog, I look at decision making and the way in which cooperation occurs between two parties. The importance of cooperation can be traced through an evolutionary lens. According to Axelrod, “Many of the benefits sought by living things are disproportionately available to cooperating groups” (pg. 92). Axelrod is asserting that psychological traits favoring cooperation were favored through natural selection, indicating humans today should lean toward cooperation when possible. However, despite these traits, cooperation often fails to prevail in situations, often those resembling the “Prisoners’ Dilemma”.</p>
+<div id="axelrod-and-the-prisoners-dilemma" class="section level3">
+<h3>Axelrod and the Prisoners’ Dilemma</h3>
+<p>In the Prisoners’ Dilemma, two players have the option to either cooperate or defect. The possible outcomes can be visualized in the grid below:</p>
+<p>When both players cooperate, there is a win-win scenario. If player 1 cooperates and player 2 defects, player 1 wins big, and vice-verse. This type of framework can be applied to numerous social dilemmas, such as voting. If everyone votes, then each person has the opportunity for their beliefs to be represented. If a person does not vote, they have no representation, and other people’s vote can have more likelihood of influence. If no one votes, then representation is lacking for everyone.</p>
+<p>Cooperation leads a to favorable outcome for both, but defecting can be more appealing. Axelrod explores the different strategies humans take in prisoner’s dileama akin situations to get the most wins or favorable outcomes. He invited game theorists to create a computer program with a strategy that would win the most points. He then pitted each strategy with another in a tournament style of prisoner’s dilemma games to assess the “best” strategy.</p>
+<p>Axelrod found that being nice (cooperating) is often the best strategy in repeated games. This is because of the “shadow of the future” in which the idea of repeated interactions influence one’s decision to cooperate.</p>
+<p>In this blog, I consider 6 of the strategies used in the tournament and simulate games between each strategy.</p>
+<p>The strategies are listed below:</p>
+</div>
+</div>
+<div id="strategies" class="section level2">
+<h2>Strategies</h2>
+<table>
+<colgroup>
+<col width="26%" />
+<col width="73%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable Name</th>
+<th>Variable Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>backstabber</code></td>
+<td>1. Cooperates until the opponent defects 3 times. 2. Defects forever after that. 3. Always defects in the last 2 rounds</td>
+</tr>
+<tr class="even">
+<td><code>cooperator</code></td>
+<td>1. Cooperates systematically.</td>
+</tr>
+<tr class="odd">
+<td><code>forgiver</code></td>
+<td>1. Cooperates the first time it plays a new opponent. 2. After that, defects if opponent has defected more than 10% of the time.</td>
+</tr>
+<tr class="even">
+<td><code>grumpy</code></td>
+<td>1. Cooperates at first. 2. Each time the opponent defects, increases its level of grumpiness. 3. Each time the opponent cooperates, decreases its level of grumpiness. 4. If grumpiness level is above a threshold A, defects systematically. 5. If grumpiness level returns below a threshold B, cooperates again. 6. A &gt; B</td>
+</tr>
+<tr class="odd">
+<td><code>handshaker</code></td>
+<td>1. Cooperates the first time it plays a new opponent. 2. Defects the second time it plays the same opponent. 3. If opponent matches its first 2 moves, cooperates forever. If not, defects forever.</td>
+</tr>
+<tr class="even">
+<td><code>random</code></td>
+<td>1. Cooperates or defects at random</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="data" class="section level2">
+<h2>Data</h2>
+<p>The data used in the blog is the outcome of the games. For each game, the strategies playing one another are listed (<code>player1</code> and <code>player2</code>), the scores for each player (<code>score1</code>, <code>score2</code>), and the outcome of the game (<code>winner</code>). There was a total of 21 games. Each strategy played the other strategies (15 games) and itself (6 games). The scores are the sum of 100 rounds with 100 simulations for each round. The maximum score for both players is 6 points for each round, 600 total points.</p>
+</div>
+<div id="game-results" class="section level2">
+<h2>Game Results</h2>
+<pre class="r"><code>heatmap_graph</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+</div>
+<div id="win-counts" class="section level2">
+<h2>Win Counts</h2>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<!-- ## Score Comparison: -->
+<!-- ```{r} -->
+<!-- stacked_plot <- ggplot(player_data_long, aes(x = opponent, y = score, fill = player)) + -->
+<!--   geom_bar(stat = "identity") + -->
+<!--   ggtitle("Each strategy against all others") -->
+<!-- stacked_plot -->
+<!-- ``` -->
+</div>

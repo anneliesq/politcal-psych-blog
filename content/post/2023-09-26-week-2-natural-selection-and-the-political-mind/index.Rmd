@@ -1,0 +1,135 @@
+---
+title: 'Week 2: Natural Selection and the Political Mind'
+author: Annelies Quinton
+date: '2023-09-26'
+slug: []
+categories: []
+tags: []
+---
+
+## Introduction
+
+In this week's blog, I look at decision making and the way in which cooperation occurs between two parties. The importance of cooperation can be traced through an evolutionary lens. According to Axelrod, "Many of the benefits sought by living things are disproportionately available to cooperating groups" (pg. 92). Axelrod is asserting that psychological traits favoring cooperation were favored through natural selection, indicating humans today should lean toward cooperation when possible. However, despite these traits, cooperation often fails to prevail in situations, often those resembling the "Prisoners' Dilemma".
+
+### Axelrod and the Prisoners' Dilemma
+
+In the Prisoners' Dilemma, two players have the option to either cooperate or defect. The possible outcomes can be visualized in the grid below:
+
+When both players cooperate, there is a win-win scenario. If player 1 cooperates and player 2 defects, player 1 wins big, and vice-verse. This type of framework can be applied to numerous social dilemmas, such as voting. If everyone votes, then each person has the opportunity for their beliefs to be represented. If a person does not vote, they have no representation, and other people's vote can have more likelihood of influence. If no one votes, then representation is lacking for everyone.
+
+Cooperation leads a to favorable outcome for both, but defecting can be more appealing. Axelrod explores the different strategies humans take in prisoner's dileama akin situations to get the most wins or favorable outcomes. He invited game theorists to create a computer program with a strategy that would win the most points. He then pitted each strategy with another in a tournament style of prisoner's dilemma games to assess the "best" strategy.
+
+Axelrod found that being nice (cooperating) is often the best strategy in repeated games. This is because of the "shadow of the future" in which the idea of repeated interactions influence one's decision to cooperate.
+
+In this blog, I consider 6 of the strategies used in the tournament and simulate games between each strategy.
+
+The strategies are listed below:
+
+## Strategies
+
+| Variable Name | Variable Description                                                                                                                                                                                                                                                                                                           |
+|-------------------|-----------------------------------------------------|
+| `backstabber` | 1\. Cooperates until the opponent defects 3 times. 2. Defects forever after that. 3. Always defects in the last 2 rounds                                                                                                                                                                                                       |
+| `cooperator`  | 1\. Cooperates systematically.                                                                                                                                                                                                                                                                                                 |
+| `forgiver`    | 1\. Cooperates the first time it plays a new opponent. 2. After that, defects if opponent has defected more than 10% of the time.                                                                                                                                                                                              |
+| `grumpy`      | 1\. Cooperates at first. 2. Each time the opponent defects, increases its level of grumpiness. 3. Each time the opponent cooperates, decreases its level of grumpiness. 4. If grumpiness level is above a threshold A, defects systematically. 5. If grumpiness level returns below a threshold B, cooperates again. 6. A \> B |
+| `handshaker`  | 1\. Cooperates the first time it plays a new opponent. 2. Defects the second time it plays the same opponent. 3. If opponent matches its first 2 moves, cooperates forever. If not, defects forever.                                                                                                                           |
+| `random`      | 1\. Cooperates or defects at random                                                                                                                                                                                                                                                                                            |
+
+## Data
+
+The data used in the blog is the outcome of the games. For each game, the strategies playing one another are listed (`player1` and `player2`), the scores for each player (`score1`, `score2`), and the outcome of the game (`winner`). There was a total of 21 games. Each strategy played the other strategies (15 games) and itself (6 games). The scores are the sum of 100 rounds with 100 simulations for each round. The maximum score for both players is 6 points for each round, 600 total points.
+
+```{r, include=FALSE}
+# check for required packages and install if not already
+list.of.packages <- c("tools", "roxygen2", "shiny", "dplyr", "ggvis", "progress")
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[, "Package"])]
+if (length(new.packages)) install.packages(new.packages)
+
+# load libraries
+library(tools) # needed for shiny app
+library(readr) # read_csv()
+library(dplyr) # dplyr()
+library(ggplot2) # ggplot()
+
+
+```
+
+```{r, include=FALSE}
+pd_data <- read_csv("Copy of prisoners_dilemma_data.xlsx - Sheet1.csv") |> 
+  mutate(winner = case_when( # if you are interested, case_when() is a very useful
+    score1 > score2 ~ player1, # function to create new variables. check out how it
+    score1 < score2 ~ player2, # works by googling.
+    score1 == score2 ~ "tie"
+  ))
+
+pd_data_un <- pd_data %>% 
+  mutate("same" = ifelse(player1 == player2, 1, 0)) %>%
+  filter(same != 1) 
+
+player1_data <- pd_data |> select(player = player1, score = score1, opponent = player2)
+player2_data <- pd_data |> select(player = player2, score = score2, opponent = player1)
+player_data_long <- bind_rows(player1_data, player2_data)
+```
+
+## Game Results
+
+```{r, include=FALSE}
+# df of just players and winners
+simplified_df <- pd_data %>% 
+  select(player1, player2, winner)
+
+# get inverse of df to have no white spots in heat map
+df2 <- data.frame()
+for (i in (1:nrow(pd_data))){
+  player1 <- pd_data$player2[i]
+  player2 <- pd_data$player1[i]
+  winner <- pd_data$winner[i]
+  
+  df2 <- rbind(df2, data.frame(player1,player2,winner))
+}
+
+# combine dfs
+heatmap_df <- rbind(simplified_df, df2)
+  
+# graph heatmap
+heatmap_graph <- ggplot(heatmap_df, aes(x = player1, y = player2, fill = winner)) +
+  geom_tile() +
+  labs(x = "Player 1", y = "Player 2", fill = "Color Legend", title = "Game Results for Each Strategy") 
+```
+
+
+```{r}
+heatmap_graph
+```
+
+## Win Counts
+
+```{r, include=FALSE}
+winner_counts <- pd_data %>% 
+  count(winner) %>% 
+  mutate(wins = n) %>% 
+  select(winner, wins)
+
+win_count_plot <- ggplot(data=winner_counts, aes(x=winner, y=wins)) +
+  geom_bar(stat="identity", fill="steelblue")+
+  theme_minimal() +
+  labs(x="Winner", y="No. of Games", title="Number of Games for Each End Result (Win/Tie)")
+
+abs_value <- pd_data %>% 
+  mutate(difference = abs((score1 - score2)))
+
+```
+
+```{r, echo=FALSE}
+win_count_plot
+```
+
+
+<!-- ## Score Comparison: -->
+<!-- ```{r} -->
+<!-- stacked_plot <- ggplot(player_data_long, aes(x = opponent, y = score, fill = player)) + -->
+<!--   geom_bar(stat = "identity") + -->
+<!--   ggtitle("Each strategy against all others") -->
+<!-- stacked_plot -->
+<!-- ``` -->

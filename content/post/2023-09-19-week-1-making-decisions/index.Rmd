@@ -1,0 +1,182 @@
+---
+title: 'Week 1: Making Decisions'
+author: Annelies Quinton
+date: '2023-09-19'
+slug: []
+categories: []
+tags: []
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+library(dplyr)
+library(readr)
+library(ggplot2)
+if (!require(estimatr)) install.packages("estimatr"); library(estimatr)
+library(gt)
+library(tidyr)
+
+# load in data
+senate <- read.csv("senate_data.csv")
+```
+
+## Introduction
+
+For this week's post, I am looking at the relationship of perceived candidate competence and electoral success. The subjectivity of measuring competence illustrates how other variables may persist in an individual's decision making process to ultimately determine competence. This idea can be defined as attribute substitution, in which a difficult question (such as defining competence) is substituted for an easier one. A method of substitution is evaluating a candidate's competence based on their facial quality.
+
+Through a psychological lens, this thought process is supported through the idea of different decision making systems in the brain. System 1 is described as our intuition and it is fast, automatic, and effortless. Conversely, system 2 is reasoning, and requires effort, time, and logic (Kahneman, D. 2003, 698). When connecting this idea to voting, one hypothesis is that for voters with less partisan loyalty or knowledge of the election, system 1 may be triggered and attribute substitution can occur, causing variables such as face ratings to determine one's vote. 
+
+Although this rationale may appear disconnected, in the paper *Candidate Faces and Election Outcomes: Is the Face--Vote Correlation Caused by Candidate Selection?*, the scholars find "higher quality challenger faces are selected into more competitive districts" (Atkinson et al. 2009, 230). They ultimately assert that "...incumbents from the most competitive districts would have higher facial quality than incumbents from the most safe incumbent districts due to the selection process of better faces to competitive districts, inducing a negative relationship between incumbent face and incumbent vote" (Atkinson et al. 2009, 236).
+
+The data presented in this blog will address the question of whether seat safety is negatively correlated with incumbent facial quality?
+
+## Data
+
+The data used in this blog is a condensed and adapted version of the replication data for Atkinson et al. (2009). The variables of interest are `face_rating`,`incumbent`, `tossup`, and `face_rating`.
+
+| Variable Name | Variable Description                                                                               |
+|--------------------------|----------------------------------------------|
+| `cook`        | The assessment of the Senate race from the Cook Political Report in the year prior to the election |
+| `year`        | The year of the election                                                                           |
+| `state`       | The state in which the candidate was running                                                       |
+| `face_rating` | The normalized rating of the candidate's perceived competence based on an image of the face        |
+| `incumbent`   | An indicator variable for whether the candidate was an incumbent                                   |
+| `candidate`   | The candidate's name                                                                               |
+| `party`       | The candidate's political party                                                                    |
+| `tossup`      | An indicator variable for whether the race was one of two "tossup" categories according to Cook    |
+| `jpg`         | A unique identifier for the photo of the candidate                                                 |
+
+The data used in this blog is a condensed and adapted version of the [replication data](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/RSI8NR) for Atkinson et al. (2009).  The variables of interest are `face_rating`, `incumbent`, `tossup`, and `party`.
+
+## Face Rating by Party
+
+Before looking at seat safety and facial quality, it is important to evaluate trends in the data that could influence conclusions drawn. The graph below illustrates the distribution of face ratings based on the candidate's party. From the graph, it is evident that there is little to no difference between the parties. This is significant in order for comparisons to be made between parties.
+
+```{r, echo=F}
+# density plot of perceived competence by party
+ggplot(data = senate, aes(x = face_rating, color = party)) + 
+  geom_density()                                              
+```
+
+## Face Rating: Incumbency and Toss-Up
+
+To understand the relationship between incumbent seat safety and face rating, I looked at the spread of face ratings for four different groups:
+
+### Incumbents:
+
+`TT`: Incumbent in a toss-up race
+
+`TF`: Incumbent not in a toss-up race
+
+### Challengers:
+
+`CT`: Challenger in a toss-up race
+
+`CF`: Challenger not in a toss-up race
+
+```{r, include=FALSE}
+## seat safety: tossup and incumbent status
+senate_safety <- senate %>% 
+  mutate(seat_safety = case_when(incumbent == 'TRUE' & tossup == 'TRUE' ~ "TT",
+                                 incumbent == 'FALSE' & tossup == 'TRUE' ~ "CT",
+                                 incumbent == 'TRUE' & tossup =='FALSE' ~ "TF",
+                                 incumbent == 'FALSE' & tossup == 'FALSE' ~ "CF"))
+
+## get means for each group
+senate_noparty <- senate_safety %>% 
+  group_by(seat_safety) %>% 
+  summarise(mean_face = mean(face_rating),
+            candidates = n())
+
+## create a nice table
+gtTable = gt(senate_noparty) %>%
+  tab_header(title = "Facial Rating Based on Incumbency and Toss-up") %>% 
+  cols_label(mean_face = "Avg. Face Rating",
+             seat_safety = "Incumbent/Toss-up Status",
+             candidates = "No. Candidates") %>% 
+  tab_row_group(
+    group = "2. Challengers (C_)",
+    rows = 1:2
+  ) %>% 
+  tab_row_group(
+    group = "1. Incumbents (T_)",
+    rows = 3:4
+  ) 
+```
+
+The table below displays the means for the four groups:
+
+```{r, echo=F}
+## display table
+gtTable
+```
+
+Rows 1 and 2 show face ratings for incumbents in either a toss-up or safe seat. The data shows incumbents in toss-ups have a higher facial rating compared to incumbents in safe seats. In fact, they have the highest overall average rating across the four groups. This can be further broken down through the boxplots below:
+
+```{r, include=FALSE}
+p_safety <- ggplot(senate_safety, aes(x=seat_safety, y=face_rating, fill = seat_safety)) + 
+  geom_boxplot(color = "black", fill = "purple", alpha = 0.2) +
+  labs(x = "Incumbent/Toss-up Status", y = "Face Rating", title = "Distrubition of Face Rating By Incumbent/Toss-Up Status")
+
+```
+
+```{r, echo=F}
+p_safety
+```
+
+These results can be further broken down by party:
+
+```{r, include=FALSE}
+# Analysis based on party
+senate_party <- senate_safety %>%
+  unite("seat_party", party,seat_safety, remove = FALSE) 
+
+senate_grouped <- senate_party %>% 
+  group_by(seat_party) %>% 
+  summarise(mean_face = mean(face_rating))
+
+gtTable_party <- gt(senate_grouped) %>%
+  tab_header(title = "Facial Rating Based on Incumbency and Toss-up") %>% 
+  cols_label(mean_face = "Avg. Face Rating",
+             seat_party = "Incumbent/Toss-up Status") %>% 
+  tab_row_group(
+    group = "4. Democrat Challenger (C_)",
+    rows = 1:2
+  ) %>% 
+  tab_row_group(
+    group = "3. Democrat Incumbent (T_)",
+    rows = 3:4
+  ) %>% 
+  tab_row_group(
+      group = "2. Republican Challenger (C_)",
+      rows = 5:6
+  ) %>% 
+  tab_row_group(
+      group = "1. Republican Incumbent (T_)",
+      rows = 7:8
+  ) 
+
+p <- ggplot(senate_party, aes(x=seat_party, y=face_rating)) + 
+  geom_boxplot(color = "black", fill = "purple", alpha = 0.2) 
+
+```
+
+```{r, echo=F}
+gtTable_party
+p
+```
+
+
+The table and boxplots show that, broken down by party, incumbents in toss-up races had the highest facial rating. Democratic incumbents in toss-up races had the overall highest average rating.
+
+## Discussion
+
+The results demonstrate that toss-up incumbents had the highest facial rating, indicating that candidates with higher facial quality have an advantage in . These findings agree with what Atkinson et al. (2009) suggest, that seat safety is negatively correlated with incumbent facial quality. Atkinson et al. (2009) suggest these trends are because candidates with a better facial rating are deemed more competent, and will select into races in which they have a higher chance of winning. Therefore, lower quality candidates will select into less competitive races. This creates a correlation between facial quality and seat competitiveness (Atkinson et al. 2009, 231).
+
+## References
+
+Kahneman, D. (2003). A Perspective on Judgement and Choice: Mapping Bounded Rationality. *American Psychologist,* 58(9):697--720.
+
+Atkinson, M. A., Enos, R. D., and Hill., S. J. (2009). Candidate faces and election outcomes: Is the face-vote correlation caused by candidate selection? *Quarterly Journal of Political Science*, 4:229--249.
+
