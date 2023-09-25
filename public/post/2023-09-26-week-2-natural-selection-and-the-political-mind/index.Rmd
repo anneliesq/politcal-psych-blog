@@ -6,7 +6,19 @@ slug: []
 categories: []
 tags: []
 ---
+```{r, include=FALSE}
+# check for required packages and install if not already
+list.of.packages <- c("tools", "roxygen2", "shiny", "dplyr", "ggvis", "progress")
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[, "Package"])]
+if (length(new.packages)) install.packages(new.packages)
+# load libraries
+library(tools) # needed for shiny app
+library(readr) # read_csv()
+library(dplyr) # dplyr()
+library(ggplot2) # ggplot()
+library(gt)
 
+```
 ## Introduction
 
 In this week's blog, I look at decision making and the way in which cooperation occurs between two parties. The importance of cooperation can be traced through an evolutionary lens. According to Axelrod, "Many of the benefits sought by living things are disproportionately available to cooperating groups" (pg. 92). Axelrod is asserting that psychological traits favoring cooperation were favored through natural selection, indicating humans today should lean toward cooperation when possible. However, despite these traits, cooperation often fails to prevail in situations, often those resembling the "Prisoners' Dilemma".
@@ -15,7 +27,10 @@ In this week's blog, I look at decision making and the way in which cooperation 
 
 In the Prisoner's Dilemma, two players have the option to either cooperate or defect. The possible outcomes can be visualized in the grid below:
 
-![prisoner's Dilemma](pd.png)
+
+![](pd.png){
+width=65% }
+
 
 When both players cooperate, there is a win-win scenario. If player 1 cooperates and player 2 defects, player 1 wins big, and vice-verse. This type of framework can be applied to numerous social dilemmas, such as voting. If everyone votes, then each person has the opportunity for their beliefs to be represented. If a person does not vote, they have no representation, and other people's vote can have more likelihood of influence. If no one votes, then representation is lacking for everyone.
 
@@ -42,21 +57,7 @@ The strategies are listed below:
 
 The data used in the blog is the outcome of the games. For each game, the strategies playing one another are listed (`player1` and `player2`), the scores for each player (`score1`, `score2`), and the outcome of the game (`winner`). There was a total of 21 games. Each strategy played the other strategies (15 games) and itself (6 games). The scores are the sum of 100 rounds with 100 simulations for each round. The maximum score for both players is 6 points for each round, 600 total points.
 
-```{r, include=FALSE}
-# check for required packages and install if not already
-list.of.packages <- c("tools", "roxygen2", "shiny", "dplyr", "ggvis", "progress")
-new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[, "Package"])]
-if (length(new.packages)) install.packages(new.packages)
 
-# load libraries
-library(tools) # needed for shiny app
-library(readr) # read_csv()
-library(dplyr) # dplyr()
-library(ggplot2) # ggplot()
-library(gt)
-
-
-```
 
 ```{r, include=FALSE}
 # load data
@@ -186,9 +187,8 @@ In Axelrod's study he has each strategy play each study, it's own, and `random`.
 
 ## Implications
 
-Although Prisoner's Dilemma scenarios arise often in the political space, Alexrod's theory has some limitations to the real world. For example, in these simulations, each player is operating on an algorithm/formula, which is not the case with humans. Although these formulas may appear rational or logical, that does not always mean humans will act that way. Further, each game was simulated in a closed environment, whereas in the real-world, players may be playing simultaneous games with different opponents. This means that results from one game may spillover into the player's decisions in another games. Finally, in politics, representatives and officials may be influenced by pressures such as constiuent support when making decisions. Cooperation may be the right decision, but a politician may choose to defect if they feel this defection will save their political image. 
+Although Prisoner's Dilemma scenarios arise often in the political space, Alexrod's theory has some limitations to the real world. For example, in these simulations, each player is operating on an algorithm/formula, which is not the case with humans. Although these formulas may appear rational or logical, that does not always mean humans will act that way. Further, each game was simulated in a closed environment, whereas in the real-world, players may be playing simultaneous games with different opponents. This means that results from one game may spillover into the player's decisions in another games. Finally, in politics, representatives and officials may be influenced by pressures such as constituent support when making decisions. Cooperation may be the right decision, but a politician may choose to defect if they feel this defection will save their political image. 
 
 
 ## References
-
 Axelrod, R. M. (2006). The Evolution of Cooperation. Basic Books, New York. (Chapters 1--5)
