@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+		
+		
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>Week 3: Groups and Identities &middot; Political Psychology Blog</title>
+
+		
+		<link rel="stylesheet" href="/css/style.css">
+		<link rel="stylesheet" href="/css/fonts.css">
+		
+		<link rel="icon" href="/favicon.ico"/>
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+		
+		<link href="" rel="alternate" type="application/rss+xml" title="Political Psychology Blog" />
+
+		<script src="/js/darkmode.js"></script>
+	</head>
+
+    <body>
+        		<nav class="nav">
+			<div class="nav-container">
+				<a href="/">
+					
+						<h2 class="nav-title">Political Psychology Blog</h2>
+					
+				</a>
+				<ul>
+    
+    
+</ul>
+			</div>
+		</nav>
+
+        <div id="darkModeToggle" onclick="toggleDarkMode()">
+  &#9680; 
+</div>
+
+        
+
+<main>
+	
+
+
+        <div class="post">
+		<div class="post-info">
+    <span>Written by</span>
+        Annelies Quinton
+        <br>
+        <span>on&nbsp;</span><time datetime="2023-10-02 00:00:00 &#43;0000 UTC">October 2, 2023</time>
+</div>
+
+		<h1 class="post-title">Week 3: Groups and Identities</h1>
+<div class="post-line"></div>
+
+		
+
+		<h2 id="introduction">Introduction:</h2>
+<p>This week’s blog post considers the role of groups and identities in politics, specifically around party affiliation and the impacts of polarization.</p>
+<ul>
+<li>just looking at marry republican because of the ideological distribution of the class</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#75715e"># comparison of NA and Non</span>
+</span></span><span style="display:flex;"><span>marriage_data_no_na <span style="color:#f92672">&lt;-</span> marriage_data <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">filter</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">is.na</span>(party)) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">count</span>(treatment) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">mutate</span>(prop <span style="color:#f92672">=</span> <span style="color:#a6e22e">prop.table</span>(n))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>marriage_data_all <span style="color:#f92672">&lt;-</span> marriage_data <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">count</span>(treatment) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">mutate</span>(prop <span style="color:#f92672">=</span> <span style="color:#a6e22e">prop.table</span>(n))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ggplot</span>() <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_bar</span>(data <span style="color:#f92672">=</span> marriage_data_all, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> treatment, y <span style="color:#f92672">=</span> prop, fill <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;All Data&#34;</span>), stat <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;identity&#34;</span>, position <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;identity&#34;</span>, color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;black&#34;</span>, alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_bar</span>(data <span style="color:#f92672">=</span> marriage_data_no_na, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> treatment, y <span style="color:#f92672">=</span> prop, fill <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;No NAs&#34;</span>), stat <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;identity&#34;</span>, position <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;identity&#34;</span>, color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;black&#34;</span>, alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">labs</span>(title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Comparison of Individuals in Each Treatment Group&#34;</span>, subtitle <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Grouped by All Data and No NA&#39;s&#34;</span>, x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Treatment Group&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Proportion&#34;</span>, fill <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Data Type&#34;</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">theme_minimal</span>()
+</span></span></code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>prop_strong <span style="color:#f92672">&lt;-</span> marriage_data <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">count</span>(treatment, marryRepublican, strongPARTISAN) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">mutate</span>(prop <span style="color:#f92672">=</span> <span style="color:#a6e22e">prop.table</span>(n)) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">arrange</span>(<span style="color:#a6e22e">desc</span>(prop))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># graph shows reaction for strong/not strong partisans for c, f, r and</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ggplot</span>(prop_strong, <span style="color:#a6e22e">aes</span>(y <span style="color:#f92672">=</span> marryRepublican, x <span style="color:#f92672">=</span> n, fill<span style="color:#f92672">=</span>strongPARTISAN)) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_bar</span>(position <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;dodge&#34;</span>, stat <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;identity&#34;</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">facet_wrap</span>(<span style="color:#f92672">~</span>treatment) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">labs</span>(fill <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Strong Partisan&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Reaction&#34;</span>, x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Count of Students&#34;</span>, title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Display of Students&#39; Reactions to &#39;Marry Republican&#39;&#34;</span>, 
+</span></span><span style="display:flex;"><span>  subtitle <span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Grouped by Experiment Setting and Strong Partisan Ties&#34;</span>)
+</span></span></code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#75715e"># create categorical variable</span>
+</span></span><span style="display:flex;"><span>marriage_data_reaction <span style="color:#f92672">&lt;-</span> marriage_data <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">mutate</span>(reaction_value <span style="color:#f92672">=</span> <span style="color:#a6e22e">case_when</span>(marryRepublican <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Very unhappy&#34;</span> <span style="color:#f92672">~</span> <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>                                    marryRepublican <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Somewhat unhappy&#34;</span> <span style="color:#f92672">~</span> <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>                                    marryRepublican <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Neither happy nor unhappy&#34;</span> <span style="color:#f92672">~</span> <span style="color:#ae81ff">2</span>,
+</span></span><span style="display:flex;"><span>                                    marryRepublican <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Somewhat happy&#34;</span> <span style="color:#f92672">~</span> <span style="color:#ae81ff">3</span>,
+</span></span><span style="display:flex;"><span>                                    marryRepublican <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Very happy&#34;</span> <span style="color:#f92672">~</span> <span style="color:#ae81ff">4</span>))
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#75715e">## hard coded</span>
+</span></span><span style="display:flex;"><span>marriage_data_reaction <span style="color:#f92672">|&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">group_by</span>(treatment, strongPARTISAN) <span style="color:#f92672">|&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">summarize</span>(mean <span style="color:#f92672">=</span> <span style="color:#a6e22e">mean</span>(reaction_value),
+</span></span><span style="display:flex;"><span>            lower_ci <span style="color:#f92672">=</span> <span style="color:#a6e22e">t.test</span>(reaction_value)<span style="color:#f92672">$</span>conf.int[1],
+</span></span><span style="display:flex;"><span>            upper_ci <span style="color:#f92672">=</span> <span style="color:#a6e22e">t.test</span>(reaction_value)<span style="color:#f92672">$</span>conf.int[2],
+</span></span><span style="display:flex;"><span>            p_value <span style="color:#f92672">=</span> <span style="color:#a6e22e">t.test</span>(reaction_value)<span style="color:#f92672">$</span>p_v) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ggplot</span>(mapping <span style="color:#f92672">=</span> <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> strongPARTISAN, y <span style="color:#f92672">=</span> mean, ymin <span style="color:#f92672">=</span> lower_ci, ymax <span style="color:#f92672">=</span> upper_ci)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">geom_pointrange</span>() <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">facet_wrap</span>(<span style="color:#f92672">~</span>treatment) <span style="color:#f92672">+</span> <span style="color:#a6e22e">ylab</span>(<span style="color:#e6db74">&#34;Proportion Polarized by Treatment&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">xlab</span>(<span style="color:#e6db74">&#34;Strong Partisan&#34;</span>)
+</span></span></code></pre></div><pre><code>## `summarise()` has grouped output by 'treatment'. You can override using the
+## `.groups` argument.
+</code></pre>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>control <span style="color:#f92672">&lt;-</span> marriage_data_reaction <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">filter</span>(treatment <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Control&#34;</span>) 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Rarely <span style="color:#f92672">&lt;-</span> marriage_data_reaction <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">filter</span>(treatment <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Rarely&#34;</span>) 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Frequently <span style="color:#f92672">&lt;-</span> marriage_data_reaction <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">filter</span>(treatment <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Frequently&#34;</span>) 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>control_p <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">t.test</span>(reaction_value <span style="color:#f92672">~</span> strongPARTISAN, control)<span style="color:#f92672">$</span>p.value
+</span></span><span style="display:flex;"><span>rarely_p <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">t.test</span>(reaction_value <span style="color:#f92672">~</span> strongPARTISAN, Rarely)<span style="color:#f92672">$</span>p.value
+</span></span><span style="display:flex;"><span>frquently_p <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">t.test</span>(reaction_value <span style="color:#f92672">~</span> strongPARTISAN, Frequently)<span style="color:#f92672">$</span>p.value
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>t_score_table <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">gt</span>(<span style="color:#a6e22e">data.frame</span>(
+</span></span><span style="display:flex;"><span>  treatment <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;Control&#34;</span>, <span style="color:#e6db74">&#34;Rarely&#34;</span>, <span style="color:#e6db74">&#34;Frequently&#34;</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;p-value&#39;</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(control_p, rarely_p, frquently_p)))
+</span></span><span style="display:flex;"><span>t_score_table
+</span></span></code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>marriage_data <span style="color:#f92672">|&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">is.na</span>(polarized)<span style="color:#f92672">==</span><span style="color:#66d9ef">FALSE</span>) <span style="color:#f92672">|&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">group_by</span>(treatment, strongPARTISAN) <span style="color:#f92672">|&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">summarize</span>(mean_polar <span style="color:#f92672">=</span> <span style="color:#a6e22e">mean</span>(polarized), n <span style="color:#f92672">=</span> <span style="color:#a6e22e">n</span>(),
+</span></span><span style="display:flex;"><span>            normal <span style="color:#f92672">=</span> (<span style="color:#a6e22e">mean</span>(polarized)<span style="color:#f92672">*</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">-</span><span style="color:#a6e22e">mean</span>(polarized)))) <span style="color:#f92672">|&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">mutate</span>(lower_bound <span style="color:#f92672">=</span> mean_polar <span style="color:#f92672">-</span> <span style="color:#ae81ff">1.96</span><span style="color:#f92672">*</span>(<span style="color:#a6e22e">sqrt</span>(normal<span style="color:#f92672">/</span>n))) <span style="color:#f92672">|&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">mutate</span>(upper_bound <span style="color:#f92672">=</span> mean_polar <span style="color:#f92672">+</span> <span style="color:#ae81ff">1.96</span><span style="color:#f92672">*</span>(<span style="color:#a6e22e">sqrt</span>(normal<span style="color:#f92672">/</span>n))) <span style="color:#f92672">|&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ggplot</span>(mapping <span style="color:#f92672">=</span> <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> strongPARTISAN, y <span style="color:#f92672">=</span> mean_polar, ymin <span style="color:#f92672">=</span> lower_bound, ymax <span style="color:#f92672">=</span> upper_bound)) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_pointrange</span>() <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">facet_wrap</span>(<span style="color:#f92672">~</span>treatment) <span style="color:#f92672">+</span> <span style="color:#a6e22e">ylab</span>(<span style="color:#e6db74">&#34;Proportion Polarized by Treatment&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">xlab</span>(<span style="color:#e6db74">&#34;Strong Partisan&#34;</span>)
+</span></span></code></pre></div><pre><code>## `summarise()` has grouped output by 'treatment'. You can override using the
+## `.groups` argument.
+</code></pre>
+<!-- raw HTML omitted -->
+
+
+		
+	</div>
+
+	<div class="pagination">
+		<a href="/post/2023-09-26-week-2-natural-selection-and-the-political-mind/" class="left arrow">&#8592;</a>
+
+		<a href="#" class="top">Top</a>
+	</div>
+</main>
+
+
+        		<footer>
+			
+			<span>
+			&copy; <time datetime="2023-10-03 12:44:10.316133 -0400 EDT m=&#43;0.123412584">2023</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			</span>
+		</footer>
+
+    </body>
+</html>

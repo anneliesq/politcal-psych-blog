@@ -1,0 +1,122 @@
+---
+title: 'Week 3: Groups and Identities'
+author: Annelies Quinton
+date: '2023-10-02'
+slug: []
+categories: []
+tags: []
+---
+
+## Introduction:
+
+This week's blog post considers the role of groups and identities in politics, specifically around party affiliation and the impacts of polarization.
+
+-   just looking at marry republican because of the ideological distribution of the class
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(readr)
+library(ggplot2)
+library(tidyr)
+library(gt)
+```
+
+```{r include=FALSE}
+# remember to use the correct file name
+marriage_data <- read_csv('Sep25ClassData_clean.csv')
+data_messy <- read_csv('Sep25ClassData_messy.csv')
+```
+
+```{r, echo=FALSE}
+# comparison of NA and Non
+marriage_data_no_na <- marriage_data %>% 
+  filter(!is.na(party)) %>% 
+  count(treatment) %>% 
+  mutate(prop = prop.table(n))
+
+marriage_data_all <- marriage_data %>% 
+  count(treatment) %>% 
+  mutate(prop = prop.table(n))
+
+ggplot() +
+  geom_bar(data = marriage_data_all, aes(x = treatment, y = prop, fill = "All Data"), stat = "identity", position = "identity", color = "black", alpha = 0.5) +
+  geom_bar(data = marriage_data_no_na, aes(x = treatment, y = prop, fill = "No NAs"), stat = "identity", position = "identity", color = "black", alpha = 0.5) +
+  labs(title = "Comparison of Individuals in Each Treatment Group", subtitle = "Grouped by All Data and No NA's", x = "Treatment Group", y = "Proportion", fill = "Data Type") +
+  theme_minimal()
+```
+
+```{r, echo=FALSE}
+prop_strong <- marriage_data %>% 
+  count(treatment, marryRepublican, strongPARTISAN) %>% 
+  mutate(prop = prop.table(n)) %>% 
+  arrange(desc(prop))
+
+# graph shows reaction for strong/not strong partisans for c, f, r and
+ggplot(prop_strong, aes(y = marryRepublican, x = n, fill=strongPARTISAN)) +
+  geom_bar(position = "dodge", stat = "identity") +
+  facet_wrap(~treatment) +
+  labs(fill = "Strong Partisan", y = "Reaction", x = "Count of Students", title = "Display of Students' Reactions to 'Marry Republican'", 
+  subtitle ="Grouped by Experiment Setting and Strong Partisan Ties")
+
+```
+
+```{r, echo=FALSE}
+# create categorical variable
+marriage_data_reaction <- marriage_data %>% 
+  mutate(reaction_value = case_when(marryRepublican == "Very unhappy" ~ 0,
+                                    marryRepublican == "Somewhat unhappy" ~ 1,
+                                    marryRepublican == "Neither happy nor unhappy" ~ 2,
+                                    marryRepublican == "Somewhat happy" ~ 3,
+                                    marryRepublican == "Very happy" ~ 4))
+
+```
+
+```{r, echo=FALSE}
+## hard coded
+marriage_data_reaction |>
+  group_by(treatment, strongPARTISAN) |>
+  summarize(mean = mean(reaction_value),
+            lower_ci = t.test(reaction_value)$conf.int[1],
+            upper_ci = t.test(reaction_value)$conf.int[2],
+            p_value = t.test(reaction_value)$p_v) %>% 
+  ggplot(mapping = aes(x = strongPARTISAN, y = mean, ymin = lower_ci, ymax = upper_ci)) + geom_pointrange() +
+facet_wrap(~treatment) + ylab("Proportion Polarized by Treatment") + xlab("Strong Partisan")
+
+```
+
+```{r, echo=FALSE}
+
+control <- marriage_data_reaction %>% 
+  filter(treatment == "Control") 
+
+Rarely <- marriage_data_reaction %>% 
+  filter(treatment == "Rarely") 
+
+Frequently <- marriage_data_reaction %>% 
+  filter(treatment == "Frequently") 
+
+control_p <- t.test(reaction_value ~ strongPARTISAN, control)$p.value
+rarely_p <- t.test(reaction_value ~ strongPARTISAN, Rarely)$p.value
+frquently_p <- t.test(reaction_value ~ strongPARTISAN, Frequently)$p.value
+
+t_score_table <- gt(data.frame(
+  treatment = c("Control", "Rarely", "Frequently"),
+  'p-value' = c(control_p, rarely_p, frquently_p)))
+t_score_table
+```
+
+
+```{r, echo=FALSE}
+marriage_data |>
+  filter(is.na(polarized)==FALSE) |>
+  group_by(treatment, strongPARTISAN) |>
+  summarize(mean_polar = mean(polarized), n = n(),
+            normal = (mean(polarized)*(1-mean(polarized)))) |>
+  mutate(lower_bound = mean_polar - 1.96*(sqrt(normal/n))) |>
+  mutate(upper_bound = mean_polar + 1.96*(sqrt(normal/n))) |>
+  ggplot(mapping = aes(x = strongPARTISAN, y = mean_polar, ymin = lower_bound, ymax = upper_bound)) +
+  geom_pointrange() +
+  facet_wrap(~treatment) + ylab("Proportion Polarized by Treatment") + xlab("Strong Partisan")
+```
+
