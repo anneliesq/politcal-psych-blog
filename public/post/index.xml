@@ -14,7 +14,7 @@
       
       <guid>http://example.org/post/2023-10-02-week-3-groups-and-identities/</guid>
       <description>Introduction: This week’s blog post considers the role of groups and identities in politics, specifically around party affiliation and the impacts of polarization.
-just looking at marry republican because of the ideological distribution of the class # comparison of NA and Non marriage_data_no_na &amp;lt;- marriage_data %&amp;gt;% filter(!is.na(party)) %&amp;gt;% count(treatment) %&amp;gt;% mutate(prop = prop.table(n)) marriage_data_all &amp;lt;- marriage_data %&amp;gt;% count(treatment) %&amp;gt;% mutate(prop = prop.table(n)) ggplot() + geom_bar(data = marriage_data_all, aes(x = treatment, y = prop, fill = &amp;#34;All Data&amp;#34;), stat = &amp;#34;identity&amp;#34;, position = &amp;#34;identity&amp;#34;, color = &amp;#34;black&amp;#34;, alpha = 0.</description>
+just looking at marry republican because of the ideological distribution of the class ## `summarise()` has grouped output by &#39;treatment&#39;. You can override using the ## `.groups` argument. ## `summarise()` has grouped output by &#39;treatment&#39;. You can override using the ## `.groups` argument. </description>
     </item>
     
     <item>

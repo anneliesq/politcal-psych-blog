@@ -1,10 +1,11 @@
 ---
 title: 'Week 3: Groups and Identities'
-author: Annelies Quinton
-date: '2023-10-02'
-slug: []
+author: "Annelies Quinton"
+date: "2023-10-02"
+output: pdf_document
 categories: []
 tags: []
+slug: []
 ---
 
 ## Introduction:
@@ -14,7 +15,9 @@ This week's blog post considers the role of groups and identities in politics, s
 -   just looking at marry republican because of the ideological distribution of the class
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+list.of.packages <- c("dplyr", "readr", "ggplot2", "tidyr", "gt")
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[, "Package"])]
+if (length(new.packages)) install.packages(new.packages)
 library(dplyr)
 library(readr)
 library(ggplot2)
@@ -22,13 +25,13 @@ library(tidyr)
 library(gt)
 ```
 
-```{r faces, include=FALSE}
+```{r include=FALSE}
 # remember to use the correct file name
 marriage_data <- read_csv('Sep25ClassData_clean.csv')
 data_messy <- read_csv('Sep25ClassData_messy.csv')
 ```
 
-```{r}
+```{r, include=FALSE}
 # comparison of NA and Non
 marriage_data_no_na <- marriage_data %>% 
   filter(!is.na(party)) %>% 
@@ -38,7 +41,10 @@ marriage_data_no_na <- marriage_data %>%
 marriage_data_all <- marriage_data %>% 
   count(treatment) %>% 
   mutate(prop = prop.table(n))
+```
 
+
+```{r, echo=F}
 ggplot() +
   geom_bar(data = marriage_data_all, aes(x = treatment, y = prop, fill = "All Data"), stat = "identity", position = "identity", color = "black", alpha = 0.5) +
   geom_bar(data = marriage_data_no_na, aes(x = treatment, y = prop, fill = "No NAs"), stat = "identity", position = "identity", color = "black", alpha = 0.5) +
@@ -46,12 +52,16 @@ ggplot() +
   theme_minimal()
 ```
 
-```{r}
+
+```{r, include=F}
 prop_strong <- marriage_data %>% 
   count(treatment, marryRepublican, strongPARTISAN) %>% 
   mutate(prop = prop.table(n)) %>% 
   arrange(desc(prop))
+```
 
+
+```{r, echo=F}
 # graph shows reaction for strong/not strong partisans for c, f, r and
 ggplot(prop_strong, aes(y = marryRepublican, x = n, fill=strongPARTISAN)) +
   geom_bar(position = "dodge", stat = "identity") +
@@ -61,7 +71,7 @@ ggplot(prop_strong, aes(y = marryRepublican, x = n, fill=strongPARTISAN)) +
 
 ```
 
-```{r}
+```{r, include=FALSE}
 # create categorical variable
 marriage_data_reaction <- marriage_data %>% 
   mutate(reaction_value = case_when(marryRepublican == "Very unhappy" ~ 0,
@@ -72,7 +82,7 @@ marriage_data_reaction <- marriage_data %>%
 
 ```
 
-```{r}
+```{r, echo=FALSE}
 ## hard coded
 marriage_data_reaction |>
   group_by(treatment, strongPARTISAN) |>
@@ -85,8 +95,7 @@ facet_wrap(~treatment) + ylab("Proportion Polarized by Treatment") + xlab("Stron
 
 ```
 
-```{r}
-
+```{r, include=FALSE}
 control <- marriage_data_reaction %>% 
   filter(treatment == "Control") 
 
@@ -103,11 +112,15 @@ frquently_p <- t.test(reaction_value ~ strongPARTISAN, Frequently)$p.value
 t_score_table <- gt(data.frame(
   treatment = c("Control", "Rarely", "Frequently"),
   'p-value' = c(control_p, rarely_p, frquently_p)))
+```
+
+
+```{r, echo=FALSE}
 t_score_table
 ```
 
 
-```{r}
+```{r, echo=FALSE}
 marriage_data |>
   filter(is.na(polarized)==FALSE) |>
   group_by(treatment, strongPARTISAN) |>

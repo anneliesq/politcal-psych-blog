@@ -1,10 +1,11 @@
 ---
 title: 'Week 2: Natural Selection and the Political Mind'
-author: Annelies Quinton
-date: '2023-09-24'
-slug: []
+author: "Annelies Quinton"
+date: "2023-09-24"
+output: pdf_document
 categories: []
 tags: []
+slug: []
 ---
 ```{r, include=FALSE}
 # check for required packages and install if not already
