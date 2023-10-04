@@ -2,3 +2,7 @@ theme: tale-hugo
 baseURL: http://example.org/
 languageCode: en-us
 title: Political Psychology Blog
+markup:
+  goldmark:
+    renderer:
+      unsafe: true

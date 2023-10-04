@@ -45,7 +45,7 @@ marriage_data_all <- marriage_data %>%
 ```
 
 
-```{r, echo=F}
+```{r}
 ggplot() +
   geom_bar(data = marriage_data_all, aes(x = treatment, y = prop, fill = "All Data"), stat = "identity", position = "identity", color = "black", alpha = 0.5) +
   geom_bar(data = marriage_data_no_na, aes(x = treatment, y = prop, fill = "No NAs"), stat = "identity", position = "identity", color = "black", alpha = 0.5) +
@@ -83,9 +83,9 @@ marriage_data_reaction <- marriage_data %>%
 
 ```
 
-```{r, include=FALSE}
+```{r, echo=FALSE}
 ## hard coded
-plot_reaction <- marriage_data_reaction |>
+marriage_data_reaction |>
   group_by(treatment, strongPARTISAN) |>
   summarize(mean = mean(reaction_value),
             lower_ci = t.test(reaction_value)$conf.int[1],
@@ -93,12 +93,8 @@ plot_reaction <- marriage_data_reaction |>
             p_value = t.test(reaction_value)$p_v) %>% 
   ggplot(mapping = aes(x = strongPARTISAN, y = mean, ymin = lower_ci, ymax = upper_ci)) + geom_pointrange() +
 facet_wrap(~treatment) + ylab("Proportion Polarized by Treatment") + xlab("Strong Partisan")
-```
-```{r, echo=FALSE}
-plot_reaction
-```
 
-
+```
 
 ```{r, include=FALSE}
 control <- marriage_data_reaction %>% 
@@ -114,13 +110,9 @@ control_p <- t.test(reaction_value ~ strongPARTISAN, control)$p.value
 rarely_p <- t.test(reaction_value ~ strongPARTISAN, Rarely)$p.value
 frquently_p <- t.test(reaction_value ~ strongPARTISAN, Frequently)$p.value
 
-t_score_table <- data.frame(
-  Treatment = c("Control", "Rarely", "Frequently"),
-  'P-Value' = c(control_p, rarely_p, frquently_p)) %>% 
-  gt() %>% 
-  tab_header(
-    title = md("P-Values for Each Treatment Group")
-  )
+t_score_table <- gt(data.frame(
+  treatment = c("Control", "Rarely", "Frequently"),
+  'p-value' = c(control_p, rarely_p, frquently_p)))
 ```
 
 
@@ -129,8 +121,8 @@ t_score_table
 ```
 
 
-```{r, include=FALSE}
-plot_polarized <- marriage_data |>
+```{r, echo=FALSE}
+marriage_data |>
   filter(is.na(polarized)==FALSE) |>
   group_by(treatment, strongPARTISAN) |>
   summarize(mean_polar = mean(polarized), n = n(),
@@ -141,9 +133,4 @@ plot_polarized <- marriage_data |>
   geom_pointrange() +
   facet_wrap(~treatment) + ylab("Proportion Polarized by Treatment") + xlab("Strong Partisan")
 ```
-
-```{r, echo=FALSE}
-plot_polarized
-```
-
 

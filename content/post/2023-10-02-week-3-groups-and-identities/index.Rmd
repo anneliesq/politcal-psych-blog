@@ -10,11 +10,34 @@ slug: []
 
 ## Introduction:
 
-This week's blog post considers the role of groups and identities in politics, specifically around party affiliation and the impacts of polarization.
+This week's blog post considers the role of groups and identities in politics, specifically around party affiliation and the impacts of polarization. The study outlined in the blog serves as a replication of Iyengar, Sood, and Lelkes (2012) study. They seek to find the "proportion upset, displeased, or unhappy, if progeny married someone from another party." To replicate this study, our class took a survey asking their happiness level (very unhappy to very happy) if their child married a Republican and, similarly, if they married a democrat. One caveat to the survey was that a portion the class received a survey in which they were told the spouse spoke "frequently about their political beliefs", another survey said "rarely spoke about their political beliefs", and the third served as the control, not including a statement about speaking habits.
 
--   just looking at marry republican because of the ideological distribution of the class
+For each individual, their political affiliation was also recorded from past survey results. The driving question for this blog is whether reactions (happiness levels) looked different for weak vs. strong partisans? Strong partisans are those who "identifies as a strong member of either major party."
+
+## Data:
+
+The data collected in this survey includes 60 entries (individuals) and includes 12 variables. The variables used in this analysis are listed below:
+
+| Variable Name     | Variable Description                                                                                                    |
+|------------------|------------------------------------------------------|
+| `treatment`       | Which treatment condition the respondent was randomly assigned to                                                       |
+| `marryDemocrat`   | The respondent's answer to how happy they would be if their child married a Democrat                                    |
+| `marryRepublican` | The respondent's answer to how happy they would be if their child married a Republican                                  |
+| `inPartyHappy`    | Indicator variable for whether the respondent would be happy if their child married a member of their own party         |
+| `outPartyUnhappy` | Indicator variable for whether the respondent would be unhappy if their child married a member of the other major party |
+| `polarized`       | Indicator variable for whether the respondent was effectively polarized                                                 |
+| `strongPARTISAN`  | Indicator variable for whether the respondent identifies as a strong member of either major party                       |
+
+In addition to these variables, I created an additional categorical variable, `reaction_value` , which quantifies the happiness levels on a scale of 0-4, where 0 is "Very unhappy" and 4 is "Very happy". The purpose of converting this scale to numbers is that it allows for numerical analysis (such as averages), that are comparable among groups.
+
+Additionally, it is important to note how `polarized` is defined.`Polarized` is an indicator variable that takes the value "TRUE" if the respondent responded "TRUE" to both `outPartyUnhappy` and `inPartyHappy`, and "FALSE" otherwise.
+
+### Missing Data:
+
+Another important element to the analysis of the data, is understanding where missing data is present. From the graph below, we see that missing data is significantly in the "rarely" treatment group. This means that the proportions of "rarely" are being inflated by missing data. However, when I calculate the proportions of entries in each treatment group, with and without NA's, there is no discrepancy. The following analyses include all data.
 
 ```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.path = "static")
 list.of.packages <- c("dplyr", "readr", "ggplot2", "tidyr", "gt")
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[, "Package"])]
 if (length(new.packages)) install.packages(new.packages)
@@ -43,7 +66,6 @@ marriage_data_all <- marriage_data %>%
   mutate(prop = prop.table(n))
 ```
 
-
 ```{r, echo=F}
 ggplot() +
   geom_bar(data = marriage_data_all, aes(x = treatment, y = prop, fill = "All Data"), stat = "identity", position = "identity", color = "black", alpha = 0.5) +
@@ -52,14 +74,16 @@ ggplot() +
   theme_minimal()
 ```
 
+## Marry Republican Reactions: 
+First, I considered the different reactions to "marry republican" for strong/weak partisans. The reason for looking at just "marry republican" not "marry democrat" is that no student self-reported being republican, and only 4 lean toward the republican party. Although, I do filter the data to only consider Democrats. 
 
 ```{r, include=F}
 prop_strong <- marriage_data %>% 
+  filter(party != "Republican") %>% 
   count(treatment, marryRepublican, strongPARTISAN) %>% 
   mutate(prop = prop.table(n)) %>% 
   arrange(desc(prop))
 ```
-
 
 ```{r, echo=F}
 # graph shows reaction for strong/not strong partisans for c, f, r and
@@ -82,9 +106,9 @@ marriage_data_reaction <- marriage_data %>%
 
 ```
 
-```{r, echo=FALSE}
+```{r, include=FALSE}
 ## hard coded
-marriage_data_reaction |>
+plot_reaction <- marriage_data_reaction |>
   group_by(treatment, strongPARTISAN) |>
   summarize(mean = mean(reaction_value),
             lower_ci = t.test(reaction_value)$conf.int[1],
@@ -92,7 +116,10 @@ marriage_data_reaction |>
             p_value = t.test(reaction_value)$p_v) %>% 
   ggplot(mapping = aes(x = strongPARTISAN, y = mean, ymin = lower_ci, ymax = upper_ci)) + geom_pointrange() +
 facet_wrap(~treatment) + ylab("Proportion Polarized by Treatment") + xlab("Strong Partisan")
+```
 
+```{r, echo=FALSE}
+plot_reaction
 ```
 
 ```{r, include=FALSE}
@@ -109,19 +136,21 @@ control_p <- t.test(reaction_value ~ strongPARTISAN, control)$p.value
 rarely_p <- t.test(reaction_value ~ strongPARTISAN, Rarely)$p.value
 frquently_p <- t.test(reaction_value ~ strongPARTISAN, Frequently)$p.value
 
-t_score_table <- gt(data.frame(
-  treatment = c("Control", "Rarely", "Frequently"),
-  'p-value' = c(control_p, rarely_p, frquently_p)))
+t_score_table <- data.frame(
+  Treatment = c("Control", "Rarely", "Frequently"),
+  'P-Value' = c(control_p, rarely_p, frquently_p)) %>% 
+  gt() %>% 
+  tab_header(
+    title = md("P-Values for Each Treatment Group")
+  )
 ```
-
 
 ```{r, echo=FALSE}
 t_score_table
 ```
 
-
-```{r, echo=FALSE}
-marriage_data |>
+```{r, include=FALSE}
+plot_polarized <- marriage_data |>
   filter(is.na(polarized)==FALSE) |>
   group_by(treatment, strongPARTISAN) |>
   summarize(mean_polar = mean(polarized), n = n(),
@@ -133,3 +162,6 @@ marriage_data |>
   facet_wrap(~treatment) + ylab("Proportion Polarized by Treatment") + xlab("Strong Partisan")
 ```
 
+```{r, echo=FALSE}
+plot_polarized
+```
