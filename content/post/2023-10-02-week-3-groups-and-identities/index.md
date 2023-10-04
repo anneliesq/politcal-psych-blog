@@ -42,24 +42,34 @@ Another important element to the analysis of the data, is understanding where mi
 
 First, I considered the different reactions to “marry republican” for strong/weak partisans. The reason for looking at just “marry republican” not “marry democrat” is that no student self-reported being republican, and only 4 lean toward the republican party. Although, I do filter the data to only consider Democrats.
 
+From the graph below, we see that for strong partisans, the number of students who reported unhappy sentiments was larger than for weak partisans across almost all treatments (rarely appears to be equal). Conversely, for weak partisans, there does not appear to be that large of different across treatment groups and between reaction types. Although, the neutral reaction received the highest response, by a lot, for weak partisans. Somewhat unhappy was the most common response for strong partisans.
+
+This results allude to that fact that partisan identities appear to be much stronger among strong partisans than weak partisans.
+
 <img src="staticunnamed-chunk-5-1.png" width="672" />
+
+## Average Reaction by Treatment:
+
+This graph uses the numerical categorical variable, `reaction_value` to asses the mean reaction for each group. Lower means indicate unhappy feelings. From the graph, we see that for all treatment groups, strong partisans were more “polarized” than weak partisans because the average reactions were lower. However, looking at the confidence intervals, the overlapping regions for each treatment group, especially “frequently” and “rarely”, indicates that none of these differences appear to be statistically significant. The table below shows the p-values.
 
 <img src="staticunnamed-chunk-8-1.png" width="672" />
 
-<div id="ygnhavuita" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ygnhavuita table {
+The table below shows the p-values. A p-value of `\(p\leq 0.05\)` would mean the results are statistically significant. Only the control appears to have a statistically significant result.
+
+<div id="iowuvhafhq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#iowuvhafhq table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-&#10;#ygnhavuita thead, #ygnhavuita tbody, #ygnhavuita tfoot, #ygnhavuita tr, #ygnhavuita td, #ygnhavuita th {
+&#10;#iowuvhafhq thead, #iowuvhafhq tbody, #iowuvhafhq tfoot, #iowuvhafhq tr, #iowuvhafhq td, #iowuvhafhq th {
   border-style: none;
 }
-&#10;#ygnhavuita p {
+&#10;#iowuvhafhq p {
   margin: 0;
   padding: 0;
 }
-&#10;#ygnhavuita .gt_table {
+&#10;#iowuvhafhq .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -84,11 +94,11 @@ First, I considered the different reactions to “marry republican” for strong
   border-left-width: 2px;
   border-left-color: #D3D3D3;
 }
-&#10;#ygnhavuita .gt_caption {
+&#10;#iowuvhafhq .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
-&#10;#ygnhavuita .gt_title {
+&#10;#iowuvhafhq .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -99,7 +109,7 @@ First, I considered the different reactions to “marry republican” for strong
   border-bottom-color: #FFFFFF;
   border-bottom-width: 0;
 }
-&#10;#ygnhavuita .gt_subtitle {
+&#10;#iowuvhafhq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -110,7 +120,7 @@ First, I considered the different reactions to “marry republican” for strong
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
-&#10;#ygnhavuita .gt_heading {
+&#10;#iowuvhafhq .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -121,12 +131,12 @@ First, I considered the different reactions to “marry republican” for strong
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-&#10;#ygnhavuita .gt_bottom_border {
+&#10;#iowuvhafhq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#ygnhavuita .gt_col_headings {
+&#10;#iowuvhafhq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -140,7 +150,7 @@ First, I considered the different reactions to “marry republican” for strong
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-&#10;#ygnhavuita .gt_col_heading {
+&#10;#iowuvhafhq .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -159,7 +169,7 @@ First, I considered the different reactions to “marry republican” for strong
   padding-right: 5px;
   overflow-x: hidden;
 }
-&#10;#ygnhavuita .gt_column_spanner_outer {
+&#10;#iowuvhafhq .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -170,13 +180,13 @@ First, I considered the different reactions to “marry republican” for strong
   padding-left: 4px;
   padding-right: 4px;
 }
-&#10;#ygnhavuita .gt_column_spanner_outer:first-child {
+&#10;#iowuvhafhq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
-&#10;#ygnhavuita .gt_column_spanner_outer:last-child {
+&#10;#iowuvhafhq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
-&#10;#ygnhavuita .gt_column_spanner {
+&#10;#iowuvhafhq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -187,10 +197,10 @@ First, I considered the different reactions to “marry republican” for strong
   display: inline-block;
   width: 100%;
 }
-&#10;#ygnhavuita .gt_spanner_row {
+&#10;#iowuvhafhq .gt_spanner_row {
   border-bottom-style: hidden;
 }
-&#10;#ygnhavuita .gt_group_heading {
+&#10;#iowuvhafhq .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -215,7 +225,7 @@ First, I considered the different reactions to “marry republican” for strong
   vertical-align: middle;
   text-align: left;
 }
-&#10;#ygnhavuita .gt_empty_group_heading {
+&#10;#iowuvhafhq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -229,13 +239,13 @@ First, I considered the different reactions to “marry republican” for strong
   border-bottom-color: #D3D3D3;
   vertical-align: middle;
 }
-&#10;#ygnhavuita .gt_from_md > :first-child {
+&#10;#iowuvhafhq .gt_from_md > :first-child {
   margin-top: 0;
 }
-&#10;#ygnhavuita .gt_from_md > :last-child {
+&#10;#iowuvhafhq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
-&#10;#ygnhavuita .gt_row {
+&#10;#iowuvhafhq .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -253,7 +263,7 @@ First, I considered the different reactions to “marry republican” for strong
   vertical-align: middle;
   overflow-x: hidden;
 }
-&#10;#ygnhavuita .gt_stub {
+&#10;#iowuvhafhq .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -265,7 +275,7 @@ First, I considered the different reactions to “marry republican” for strong
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#ygnhavuita .gt_stub_row_group {
+&#10;#iowuvhafhq .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -278,13 +288,13 @@ First, I considered the different reactions to “marry republican” for strong
   padding-right: 5px;
   vertical-align: top;
 }
-&#10;#ygnhavuita .gt_row_group_first td {
+&#10;#iowuvhafhq .gt_row_group_first td {
   border-top-width: 2px;
 }
-&#10;#ygnhavuita .gt_row_group_first th {
+&#10;#iowuvhafhq .gt_row_group_first th {
   border-top-width: 2px;
 }
-&#10;#ygnhavuita .gt_summary_row {
+&#10;#iowuvhafhq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -293,14 +303,14 @@ First, I considered the different reactions to “marry republican” for strong
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#ygnhavuita .gt_first_summary_row {
+&#10;#iowuvhafhq .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
-&#10;#ygnhavuita .gt_first_summary_row.thick {
+&#10;#iowuvhafhq .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
-&#10;#ygnhavuita .gt_last_summary_row {
+&#10;#iowuvhafhq .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -309,7 +319,7 @@ First, I considered the different reactions to “marry republican” for strong
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#ygnhavuita .gt_grand_summary_row {
+&#10;#iowuvhafhq .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -318,7 +328,7 @@ First, I considered the different reactions to “marry republican” for strong
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#ygnhavuita .gt_first_grand_summary_row {
+&#10;#iowuvhafhq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -327,7 +337,7 @@ First, I considered the different reactions to “marry republican” for strong
   border-top-width: 6px;
   border-top-color: #D3D3D3;
 }
-&#10;#ygnhavuita .gt_last_grand_summary_row_top {
+&#10;#iowuvhafhq .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -336,10 +346,10 @@ First, I considered the different reactions to “marry republican” for strong
   border-bottom-width: 6px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#ygnhavuita .gt_striped {
+&#10;#iowuvhafhq .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
-&#10;#ygnhavuita .gt_table_body {
+&#10;#iowuvhafhq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -347,7 +357,7 @@ First, I considered the different reactions to “marry republican” for strong
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#ygnhavuita .gt_footnotes {
+&#10;#iowuvhafhq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -360,7 +370,7 @@ First, I considered the different reactions to “marry republican” for strong
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-&#10;#ygnhavuita .gt_footnote {
+&#10;#iowuvhafhq .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -368,7 +378,7 @@ First, I considered the different reactions to “marry republican” for strong
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#ygnhavuita .gt_sourcenotes {
+&#10;#iowuvhafhq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -381,57 +391,57 @@ First, I considered the different reactions to “marry republican” for strong
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-&#10;#ygnhavuita .gt_sourcenote {
+&#10;#iowuvhafhq .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#ygnhavuita .gt_left {
+&#10;#iowuvhafhq .gt_left {
   text-align: left;
 }
-&#10;#ygnhavuita .gt_center {
+&#10;#iowuvhafhq .gt_center {
   text-align: center;
 }
-&#10;#ygnhavuita .gt_right {
+&#10;#iowuvhafhq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
-&#10;#ygnhavuita .gt_font_normal {
+&#10;#iowuvhafhq .gt_font_normal {
   font-weight: normal;
 }
-&#10;#ygnhavuita .gt_font_bold {
+&#10;#iowuvhafhq .gt_font_bold {
   font-weight: bold;
 }
-&#10;#ygnhavuita .gt_font_italic {
+&#10;#iowuvhafhq .gt_font_italic {
   font-style: italic;
 }
-&#10;#ygnhavuita .gt_super {
+&#10;#iowuvhafhq .gt_super {
   font-size: 65%;
 }
-&#10;#ygnhavuita .gt_footnote_marks {
+&#10;#iowuvhafhq .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
-&#10;#ygnhavuita .gt_asterisk {
+&#10;#iowuvhafhq .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
-&#10;#ygnhavuita .gt_indent_1 {
+&#10;#iowuvhafhq .gt_indent_1 {
   text-indent: 5px;
 }
-&#10;#ygnhavuita .gt_indent_2 {
+&#10;#iowuvhafhq .gt_indent_2 {
   text-indent: 10px;
 }
-&#10;#ygnhavuita .gt_indent_3 {
+&#10;#iowuvhafhq .gt_indent_3 {
   text-indent: 15px;
 }
-&#10;#ygnhavuita .gt_indent_4 {
+&#10;#iowuvhafhq .gt_indent_4 {
   text-indent: 20px;
 }
-&#10;#ygnhavuita .gt_indent_5 {
+&#10;#iowuvhafhq .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -457,4 +467,26 @@ First, I considered the different reactions to “marry republican” for strong
 </table>
 </div>
 
+## Proportion Polarized by Treatment:
+
+This next section evaluates the variable `polarized` and considers the proportion of individuals effectively “polarized”, grouped by strong partisanship and treatment group. Similar to the chart above, this graph shows the proportion `polarized` by treatment. We see that strong partisans are significantly more polarized than weak partisans for the control and frequently groups. However, the error bars overlap for rarely, indicating likely lack of statistical significance.
+
 <img src="staticunnamed-chunk-12-1.png" width="672" />
+
+## Discussion:
+
+The results above all appear to come to the conclusion that for strong partisans, political identities are more significant than for weak partisans. We see this through higher polarization scores and lower (more unhappy) reaction scores. Of significance, we see that for the difference of reactions was strongest for the control group. This asserts that the mere idea of one’s child marrying someone from the opposite party is unsettling, even without considering their speaking habits.
+
+The results found in this study correspond to those reported by Iyengar, Sood, and Lelkes (2012) and what is discussed in Iyengar and Westwood (2015). Iyengar, Sood, and Lelkes (2012) find “startling increases in the United States, but not in Britain” for “parents’ displeasure over the prospects of their offspring marrying into a family with a different party affiliation” (Iyengar and Westwood, pg. 691). In their study, the “strong partisans” can be represented by the Americans, whereas, “weak partisans” are analogous to the Brits, who have a lesser degree of party loyalty.
+
+Iyengar and Westwood go on to further prove that partisanship holds a stronger divide in society for in-group and out-group preference than race (pg. 703). They claim that one of the reasons for this is that party’s directly oppose one another, whereas there is not a stark divide/opposition present among races (pg. 704). These conclusions demonstrate how partisanship and affective polarization, creation of in-group and out-group labels, has created an inability for bipartisanship at all levels of society.
+
+At an institutional level, we see the impacts of partisanship more prominently with regard to Congress. Recently, Congress nearly shutdown over a spending bill that lacked [Democratic support](https://www.nytimes.com/2023/09/30/us/politics/government-shutdown-house-republicans.html). With both parties voting as blocks, legislation often passes with only a slight majority, with little space for compromise. On a smaller level, in our class we hypothesized reasons for why the rates of republicans were so small in the class. One idea was out of fear of being marked down by the professor and outed to peers. This view indicates that hostility toward a minority party is common and can seep into many different aspects of society. Although hypothetical, this exercise demonstrated that consciously or not, people’s manner can perpetrate affective polarization and group identity presence.
+
+## References:
+
+<https://www.nytimes.com/2023/09/30/us/politics/government-shutdown-house-republicans.html>
+
+Iyengar, Shanto, Gaurav Sood, and Yphtach Lelkes. 2012. "Affect, Not Ideology: A Social Identity Perspective on Polarization." Public Opinion Quarterly 76(3): 405–31.
+
+Iyengar, S. and Westwood, S. J. (2015). Fear and Loathing Across Party Lines: New Evidence on Group Polarization.
