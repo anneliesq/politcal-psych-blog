@@ -19,7 +19,7 @@ For each individual, their political affiliation was also recorded from past sur
 The data collected in this survey includes 60 entries (individuals) and includes 12 variables. The variables used in this analysis are listed below:
 
 | Variable Name     | Variable Description                                                                                                    |
-|----------------------|--------------------------------------------------|
+|-------------------|-------------------------------------------------------------------------------------------------------------------------|
 | `treatment`       | Which treatment condition the respondent was randomly assigned to                                                       |
 | `marryDemocrat`   | The respondent's answer to how happy they would be if their child married a Democrat                                    |
 | `marryRepublican` | The respondent's answer to how happy they would be if their child married a Republican                                  |
@@ -195,6 +195,6 @@ At an institutional level, we see the impacts of partisanship more prominently w
 
 <https://www.nytimes.com/2023/09/30/us/politics/government-shutdown-house-republicans.html>
 
-Iyengar, Shanto, Gaurav Sood, and Yphtach Lelkes. 2012. \"Affect, Not Ideology: A Social Identity Perspective on Polarization.\" Public Opinion Quarterly 76(3): 405--31.
+Iyengar, Shanto, Gaurav Sood, and Yphtach Lelkes. 2012. "Affect, Not Ideology: A Social Identity Perspective on Polarization." Public Opinion Quarterly 76(3): 405--31.
 
 Iyengar, S. and Westwood, S. J. (2015). Fear and Loathing Across Party Lines: New Evidence on Group Polarization.

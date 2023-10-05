@@ -62,27 +62,76 @@
 		
 
 		<h2 id="introduction">Introduction:</h2>
-<p>This week’s blog post considers the role of groups and identities in politics, specifically around party affiliation and the impacts of polarization.</p>
-<ul>
-<li>just looking at marry republican because of the ideological distribution of the class</li>
-</ul>
+<p>This week’s blog post considers the role of groups and identities in politics, specifically around party affiliation and the impacts of polarization. The study outlined in the blog serves as a replication of Iyengar, Sood, and Lelkes (2012) study. They seek to find the “proportion upset, displeased, or unhappy, if progeny married someone from another party.” To replicate this study, our class took a survey asking their happiness level (very unhappy to very happy) if their child married a Republican and, similarly, if they married a democrat. One caveat to the survey was that a portion the class received a survey in which they were told the spouse spoke “frequently about their political beliefs”, another survey said “rarely spoke about their political beliefs”, and the third served as the control, not including a statement about speaking habits.</p>
+<p>For each individual, their political affiliation was also recorded from past survey results. The driving question for this blog is whether reactions (happiness levels) looked different for weak vs. strong partisans? Strong partisans are those who “identifies as a strong member of either major party.”</p>
+<h2 id="data">Data:</h2>
+<p>The data collected in this survey includes 60 entries (individuals) and includes 12 variables. The variables used in this analysis are listed below:</p>
+<table>
+<thead>
+<tr>
+<th>Variable Name</th>
+<th>Variable Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>treatment</code></td>
+<td>Which treatment condition the respondent was randomly assigned to</td>
+</tr>
+<tr>
+<td><code>marryDemocrat</code></td>
+<td>The respondent’s answer to how happy they would be if their child married a Democrat</td>
+</tr>
+<tr>
+<td><code>marryRepublican</code></td>
+<td>The respondent’s answer to how happy they would be if their child married a Republican</td>
+</tr>
+<tr>
+<td><code>inPartyHappy</code></td>
+<td>Indicator variable for whether the respondent would be happy if their child married a member of their own party</td>
+</tr>
+<tr>
+<td><code>outPartyUnhappy</code></td>
+<td>Indicator variable for whether the respondent would be unhappy if their child married a member of the other major party</td>
+</tr>
+<tr>
+<td><code>polarized</code></td>
+<td>Indicator variable for whether the respondent was effectively polarized</td>
+</tr>
+<tr>
+<td><code>strongPARTISAN</code></td>
+<td>Indicator variable for whether the respondent identifies as a strong member of either major party</td>
+</tr>
+</tbody>
+</table>
+<p>In addition to these variables, I created an additional categorical variable, <code>reaction_value</code> , which quantifies the happiness levels on a scale of 0-4, where 0 is “Very unhappy” and 4 is “Very happy”. The purpose of converting this scale to numbers is that it allows for numerical analysis (such as averages), that are comparable among groups.</p>
+<p>Additionally, it is important to note how <code>polarized</code> is defined.<code>Polarized</code> is an indicator variable that takes the value “TRUE” if the respondent responded “TRUE” to both <code>outPartyUnhappy</code> and <code>inPartyHappy</code>, and “FALSE” otherwise.</p>
+<h3 id="missing-data">Missing Data:</h3>
+<p>Another important element to the analysis of the data, is understanding where missing data is present. From the graph below, we see that missing data is significantly in the “rarely” treatment group. This means that the proportions of “rarely” are being inflated by missing data. However, when I calculate the proportions of entries in each treatment group, with and without NA’s, there is no discrepancy. The following analyses include all data.</p>
 <img src="staticunnamed-chunk-3-1.png" width="672" />
+<h2 id="marry-republican-reactions">Marry Republican Reactions:</h2>
+<p>First, I considered the different reactions to “marry republican” for strong/weak partisans. The reason for looking at just “marry republican” not “marry democrat” is that no student self-reported being republican, and only 4 lean toward the republican party. Although, I do filter the data to only consider Democrats.</p>
+<p>From the graph below, we see that for strong partisans, the number of students who reported unhappy sentiments was larger than for weak partisans across almost all treatments (rarely appears to be equal). Conversely, for weak partisans, there does not appear to be that large of different across treatment groups and between reaction types. Although, the neutral reaction received the highest response, by a lot, for weak partisans. Somewhat unhappy was the most common response for strong partisans.</p>
+<p>This results allude to that fact that partisan identities appear to be much stronger among strong partisans than weak partisans.</p>
 <img src="staticunnamed-chunk-5-1.png" width="672" />
+<h2 id="average-reaction-by-treatment">Average Reaction by Treatment:</h2>
+<p>This graph uses the numerical categorical variable, <code>reaction_value</code> to asses the mean reaction for each group. Lower means indicate unhappy feelings. From the graph, we see that for all treatment groups, strong partisans were more “polarized” than weak partisans because the average reactions were lower. However, looking at the confidence intervals, the overlapping regions for each treatment group, especially “frequently” and “rarely”, indicates that none of these differences appear to be statistically significant. The table below shows the p-values.</p>
 <img src="staticunnamed-chunk-8-1.png" width="672" />
-<div id="gqqhbznzyu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#gqqhbznzyu table {
+<p>The table below shows the p-values. A p-value of <code>\(p\leq 0.05\)</code> would mean the results are statistically significant. Only the control appears to have a statistically significant result.</p>
+<div id="vedglhfjgr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#vedglhfjgr table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-&#10;#gqqhbznzyu thead, #gqqhbznzyu tbody, #gqqhbznzyu tfoot, #gqqhbznzyu tr, #gqqhbznzyu td, #gqqhbznzyu th {
+&#10;#vedglhfjgr thead, #vedglhfjgr tbody, #vedglhfjgr tfoot, #vedglhfjgr tr, #vedglhfjgr td, #vedglhfjgr th {
   border-style: none;
 }
-&#10;#gqqhbznzyu p {
+&#10;#vedglhfjgr p {
   margin: 0;
   padding: 0;
 }
-&#10;#gqqhbznzyu .gt_table {
+&#10;#vedglhfjgr .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -107,11 +156,11 @@
   border-left-width: 2px;
   border-left-color: #D3D3D3;
 }
-&#10;#gqqhbznzyu .gt_caption {
+&#10;#vedglhfjgr .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
-&#10;#gqqhbznzyu .gt_title {
+&#10;#vedglhfjgr .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -122,7 +171,7 @@
   border-bottom-color: #FFFFFF;
   border-bottom-width: 0;
 }
-&#10;#gqqhbznzyu .gt_subtitle {
+&#10;#vedglhfjgr .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -133,7 +182,7 @@
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
-&#10;#gqqhbznzyu .gt_heading {
+&#10;#vedglhfjgr .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -144,12 +193,12 @@
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-&#10;#gqqhbznzyu .gt_bottom_border {
+&#10;#vedglhfjgr .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#gqqhbznzyu .gt_col_headings {
+&#10;#vedglhfjgr .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -163,7 +212,7 @@
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-&#10;#gqqhbznzyu .gt_col_heading {
+&#10;#vedglhfjgr .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -182,7 +231,7 @@
   padding-right: 5px;
   overflow-x: hidden;
 }
-&#10;#gqqhbznzyu .gt_column_spanner_outer {
+&#10;#vedglhfjgr .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -193,13 +242,13 @@
   padding-left: 4px;
   padding-right: 4px;
 }
-&#10;#gqqhbznzyu .gt_column_spanner_outer:first-child {
+&#10;#vedglhfjgr .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
-&#10;#gqqhbznzyu .gt_column_spanner_outer:last-child {
+&#10;#vedglhfjgr .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
-&#10;#gqqhbznzyu .gt_column_spanner {
+&#10;#vedglhfjgr .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -210,10 +259,10 @@
   display: inline-block;
   width: 100%;
 }
-&#10;#gqqhbznzyu .gt_spanner_row {
+&#10;#vedglhfjgr .gt_spanner_row {
   border-bottom-style: hidden;
 }
-&#10;#gqqhbznzyu .gt_group_heading {
+&#10;#vedglhfjgr .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -238,7 +287,7 @@
   vertical-align: middle;
   text-align: left;
 }
-&#10;#gqqhbznzyu .gt_empty_group_heading {
+&#10;#vedglhfjgr .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -252,13 +301,13 @@
   border-bottom-color: #D3D3D3;
   vertical-align: middle;
 }
-&#10;#gqqhbznzyu .gt_from_md > :first-child {
+&#10;#vedglhfjgr .gt_from_md > :first-child {
   margin-top: 0;
 }
-&#10;#gqqhbznzyu .gt_from_md > :last-child {
+&#10;#vedglhfjgr .gt_from_md > :last-child {
   margin-bottom: 0;
 }
-&#10;#gqqhbznzyu .gt_row {
+&#10;#vedglhfjgr .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -276,7 +325,7 @@
   vertical-align: middle;
   overflow-x: hidden;
 }
-&#10;#gqqhbznzyu .gt_stub {
+&#10;#vedglhfjgr .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -288,7 +337,7 @@
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#gqqhbznzyu .gt_stub_row_group {
+&#10;#vedglhfjgr .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -301,13 +350,13 @@
   padding-right: 5px;
   vertical-align: top;
 }
-&#10;#gqqhbznzyu .gt_row_group_first td {
+&#10;#vedglhfjgr .gt_row_group_first td {
   border-top-width: 2px;
 }
-&#10;#gqqhbznzyu .gt_row_group_first th {
+&#10;#vedglhfjgr .gt_row_group_first th {
   border-top-width: 2px;
 }
-&#10;#gqqhbznzyu .gt_summary_row {
+&#10;#vedglhfjgr .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -316,14 +365,14 @@
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#gqqhbznzyu .gt_first_summary_row {
+&#10;#vedglhfjgr .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
-&#10;#gqqhbznzyu .gt_first_summary_row.thick {
+&#10;#vedglhfjgr .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
-&#10;#gqqhbznzyu .gt_last_summary_row {
+&#10;#vedglhfjgr .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -332,7 +381,7 @@
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#gqqhbznzyu .gt_grand_summary_row {
+&#10;#vedglhfjgr .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -341,7 +390,7 @@
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#gqqhbznzyu .gt_first_grand_summary_row {
+&#10;#vedglhfjgr .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -350,7 +399,7 @@
   border-top-width: 6px;
   border-top-color: #D3D3D3;
 }
-&#10;#gqqhbznzyu .gt_last_grand_summary_row_top {
+&#10;#vedglhfjgr .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -359,10 +408,10 @@
   border-bottom-width: 6px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#gqqhbznzyu .gt_striped {
+&#10;#vedglhfjgr .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
-&#10;#gqqhbznzyu .gt_table_body {
+&#10;#vedglhfjgr .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -370,7 +419,7 @@
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#gqqhbznzyu .gt_footnotes {
+&#10;#vedglhfjgr .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -383,7 +432,7 @@
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-&#10;#gqqhbznzyu .gt_footnote {
+&#10;#vedglhfjgr .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -391,7 +440,7 @@
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#gqqhbznzyu .gt_sourcenotes {
+&#10;#vedglhfjgr .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -404,57 +453,57 @@
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-&#10;#gqqhbznzyu .gt_sourcenote {
+&#10;#vedglhfjgr .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#gqqhbznzyu .gt_left {
+&#10;#vedglhfjgr .gt_left {
   text-align: left;
 }
-&#10;#gqqhbznzyu .gt_center {
+&#10;#vedglhfjgr .gt_center {
   text-align: center;
 }
-&#10;#gqqhbznzyu .gt_right {
+&#10;#vedglhfjgr .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
-&#10;#gqqhbznzyu .gt_font_normal {
+&#10;#vedglhfjgr .gt_font_normal {
   font-weight: normal;
 }
-&#10;#gqqhbznzyu .gt_font_bold {
+&#10;#vedglhfjgr .gt_font_bold {
   font-weight: bold;
 }
-&#10;#gqqhbznzyu .gt_font_italic {
+&#10;#vedglhfjgr .gt_font_italic {
   font-style: italic;
 }
-&#10;#gqqhbznzyu .gt_super {
+&#10;#vedglhfjgr .gt_super {
   font-size: 65%;
 }
-&#10;#gqqhbznzyu .gt_footnote_marks {
+&#10;#vedglhfjgr .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
-&#10;#gqqhbznzyu .gt_asterisk {
+&#10;#vedglhfjgr .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
-&#10;#gqqhbznzyu .gt_indent_1 {
+&#10;#vedglhfjgr .gt_indent_1 {
   text-indent: 5px;
 }
-&#10;#gqqhbznzyu .gt_indent_2 {
+&#10;#vedglhfjgr .gt_indent_2 {
   text-indent: 10px;
 }
-&#10;#gqqhbznzyu .gt_indent_3 {
+&#10;#vedglhfjgr .gt_indent_3 {
   text-indent: 15px;
 }
-&#10;#gqqhbznzyu .gt_indent_4 {
+&#10;#vedglhfjgr .gt_indent_4 {
   text-indent: 20px;
 }
-&#10;#gqqhbznzyu .gt_indent_5 {
+&#10;#vedglhfjgr .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -479,7 +528,18 @@
   &#10;  
 </table>
 </div>
+<h2 id="proportion-polarized-by-treatment">Proportion Polarized by Treatment:</h2>
+<p>This next section evaluates the variable <code>polarized</code> and considers the proportion of individuals effectively “polarized”, grouped by strong partisanship and treatment group. Similar to the chart above, this graph shows the proportion <code>polarized</code> by treatment. We see that strong partisans are significantly more polarized than weak partisans for the control and frequently groups. However, the error bars overlap for rarely, indicating likely lack of statistical significance.</p>
 <img src="staticunnamed-chunk-12-1.png" width="672" />
+<h2 id="discussion">Discussion:</h2>
+<p>The results above all appear to come to the conclusion that for strong partisans, political identities are more significant than for weak partisans. We see this through higher polarization scores and lower (more unhappy) reaction scores. Of significance, we see that for the difference of reactions was strongest for the control group. This asserts that the mere idea of one’s child marrying someone from the opposite party is unsettling, even without considering their speaking habits.</p>
+<p>The results found in this study correspond to those reported by Iyengar, Sood, and Lelkes (2012) and what is discussed in Iyengar and Westwood (2015). Iyengar, Sood, and Lelkes (2012) find “startling increases in the United States, but not in Britain” for “parents’ displeasure over the prospects of their offspring marrying into a family with a different party affiliation” (Iyengar and Westwood, pg. 691). In their study, the “strong partisans” can be represented by the Americans, whereas, “weak partisans” are analogous to the Brits, who have a lesser degree of party loyalty.</p>
+<p>Iyengar and Westwood go on to further prove that partisanship holds a stronger divide in society for in-group and out-group preference than race (pg. 703). They claim that one of the reasons for this is that party’s directly oppose one another, whereas there is not a stark divide/opposition present among races (pg. 704). These conclusions demonstrate how partisanship and affective polarization, creation of in-group and out-group labels, has created an inability for bipartisanship at all levels of society.</p>
+<p>At an institutional level, we see the impacts of partisanship more prominently with regard to Congress. Recently, Congress nearly shutdown over a spending bill that lacked <a href="https://www.nytimes.com/2023/09/30/us/politics/government-shutdown-house-republicans.html">Democratic support</a>. With both parties voting as blocks, legislation often passes with only a slight majority, with little space for compromise. On a smaller level, in our class we hypothesized reasons for why the rates of republicans were so small in the class. One idea was out of fear of being marked down by the professor and outed to peers. This view indicates that hostility toward a minority party is common and can seep into many different aspects of society. Although hypothetical, this exercise demonstrated that consciously or not, people’s manner can perpetrate affective polarization and group identity presence.</p>
+<h2 id="references">References:</h2>
+<p><a href="https://www.nytimes.com/2023/09/30/us/politics/government-shutdown-house-republicans.html">https://www.nytimes.com/2023/09/30/us/politics/government-shutdown-house-republicans.html</a></p>
+<p>Iyengar, Shanto, Gaurav Sood, and Yphtach Lelkes. 2012. “Affect, Not Ideology: A Social Identity Perspective on Polarization.” Public Opinion Quarterly 76(3): 405–31.</p>
+<p>Iyengar, S. and Westwood, S. J. (2015). Fear and Loathing Across Party Lines: New Evidence on Group Polarization.</p>
 
 
 		
@@ -487,6 +547,7 @@
 
 	<div class="pagination">
 		<a href="/post/2023-09-26-week-2-natural-selection-and-the-political-mind/" class="left arrow">&#8592;</a>
+		<a href="/post/2023-10-05-week-4-hierarchies/" class="right arrow">&#8594;</a>
 
 		<a href="#" class="top">Top</a>
 	</div>
@@ -496,7 +557,7 @@
         		<footer>
 			
 			<span>
-			&copy; <time datetime="2023-10-03 23:56:43.953144 -0400 EDT m=&#43;0.072654959">2023</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			&copy; <time datetime="2023-10-05 16:10:25.104126 -0400 EDT m=&#43;0.051459084">2023</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
 			</span>
 		</footer>
 
