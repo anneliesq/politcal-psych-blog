@@ -199,6 +199,30 @@
 <h2 id="modeling-demographics-and-trump-indictment">Modeling: Demographics and Trump Indictment</h2>
 <p>To evaluate the relationship between opinions toward the Trump Indictment and demographics, I have fitted four models with demographics as the predictors and <code>politically_motivated</code> as the outcome variable.</p>
 <p>The regression table below shows the variables in each model and the outcome statistics.</p>
+<h1 id="regression-results">Regression Results</h1>
+<pre><code>                       Dependent variable:          
+              --------------------------------------
+                      Politically Motivated         
+                (1)       (2)       (3)       (4)   
+</code></pre>
+<hr>
+<p>Party [PID]       0.738*** 0.724***  0.727***        <br>
+(0.019)   (0.023)   (0.023)</p>
+<p>Education [educ5]          -0.040*** -0.040*** -0.075***
+(0.010)   (0.009)   (0.010)</p>
+<p>Age [age4]                 -0.018**  -0.018**        <br>
+(0.009)   (0.009)</p>
+<p>Income [inc7]               -0.002              -0.004<br>
+(0.007)             (0.006)</p>
+<p>Gender                       0.022                   <br>
+(0.022)</p>
+<p>Constant          0.155*** 0.337***  0.337***  0.890***
+(0.016)   (0.051)   (0.043)   (0.036)</p>
+<hr>
+<h1 id="adjusted-r2--------0518-----0532-----0532-----0034">Observations       1,337      937       937      2,178<br>
+R2                 0.519     0.534     0.534     0.035<br>
+Adjusted R2        0.518     0.532     0.532     0.034</h1>
+<p>Note:                        *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</p>
 <table style="text-align:center"><caption><strong>Regression Results</strong></caption>
 <tr><td colspan="5" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"></td><td colspan="4"><em>Dependent variable:</em></td></tr>
 <tr><td></td><td colspan="4" style="border-bottom: 1px solid black"></td></tr>
@@ -242,7 +266,7 @@
 <p>The implications of these findings are relevant when considering the findings from <a href="https://anneliesq.github.io/politcal-psych-blog/post/2023-10-02-week-3-groups-and-identities/">Week 3: Groups and Identities</a>. In this blog, I found that for &ldquo;strong partisans, political identities are more significant than for weak partisans&rdquo; and this corresponding to what Iyengar, Sood, and Lelkes (2012) find when surveying reactions of parents to the idea of their child marrying a person of the opposite party. I think there is a connection between strong partisans and those are who politically constrained. High constraintment indicates and individual does not vary across their opinions, similar to someone with high partisanship. Therfore, people with higher levels of education and income are more likely to be strong partisans and likely politically engaged. This connection is significant because it demonstrates that those with money and education are the most politically engaged, and therefore more likely to have their beliefs represented in government.</p>
 <p>Overall, political constraint among individuals is a desired outcome. We see that time and money are the main drivers of those who have higher levels of constraint. To increase political engagement, barriers at all levels of civic engagement is one way to reduce this divide. Considering just voting, increasing voting accessibility through mail-in ballots, national voting day, and increased polls and hours, are some ways to reduce the burden of voting, likely causing those without time and money to feel like voting is accessible and important.</p>
 <h2 id="references">References:</h2>
-<p>Iyengar, Shanto, Gaurav Sood, and Yphtach Lelkes. 2012. &quot;Affect, Not Ideology: A Social Identity Perspective on Polarization.&quot; Public Opinion Quarterly 76(3): 405&ndash;31.</p>
+<p>Iyengar, Shanto, Gaurav Sood, and Yphtach Lelkes. 2012. &ldquo;Affect, Not Ideology: A Social Identity Perspective on Polarization.&rdquo; Public Opinion Quarterly 76(3): 405&ndash;31.</p>
 <p>Verba, Schlozman, and Brady 1995</p>
 
 
@@ -251,6 +275,7 @@
 
 	<div class="pagination">
 		<a href="/post/2023-10-05-week-4-hierarchies/" class="left arrow">&#8592;</a>
+		<a href="/post/2023-10-19-week-6-world-view/" class="right arrow">&#8594;</a>
 
 		<a href="#" class="top">Top</a>
 	</div>
@@ -260,7 +285,7 @@
         		<footer>
 			
 			<span>
-			&copy; <time datetime="2023-10-18 00:50:42.783279 -0400 EDT m=&#43;0.121418918">2023</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			&copy; <time datetime="2023-10-24 12:15:18.332796 -0400 EDT m=&#43;0.127954876">2023</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
 			</span>
 		</footer>
 

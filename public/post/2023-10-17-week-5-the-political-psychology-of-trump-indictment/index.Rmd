@@ -292,12 +292,23 @@ fit4 <- lm(politically_motivated_numeric ~ as.numeric(inc7) + as.numeric(educ5),
 ```{r, results = 'asis'}
 library(stargazer)
 
+stargazer(fit1, fit2, fit3, fit4, title="Regression Results", type='text',
+          dep.var.labels = "Politically Motivated",
+          covariate.labels=c("Party [PID]", "Education [educ5]", "Age [age4]", "Income [inc7]", "Gender"),
+          omit.stat = c("f", "ser"),
+          out="output.tex")
+
+
+
 stargazer(fit1, fit2, fit3, fit4, title="Regression Results", type='html',
           dep.var.labels = "Politically Motivated",
           covariate.labels=c("Party [PID]", "Education [educ5]", "Age [age4]", "Income [inc7]", "Gender"),
           omit.stat = c("f", "ser"),
           out="output.tex")
+
 ```
+
+
 
 ### Model 1: Party
 
@@ -329,6 +340,6 @@ Overall, political constraint among individuals is a desired outcome. We see tha
 
 ## References:
 
-Iyengar, Shanto, Gaurav Sood, and Yphtach Lelkes. 2012. \"Affect, Not Ideology: A Social Identity Perspective on Polarization.\" Public Opinion Quarterly 76(3): 405--31.
+Iyengar, Shanto, Gaurav Sood, and Yphtach Lelkes. 2012. "Affect, Not Ideology: A Social Identity Perspective on Polarization." Public Opinion Quarterly 76(3): 405--31.
 
 Verba, Schlozman, and Brady 1995

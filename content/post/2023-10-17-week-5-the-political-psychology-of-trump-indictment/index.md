@@ -129,6 +129,38 @@ The regression table below shows the variables in each model and the outcome sta
 
 
 
+Regression Results
+========================================================
+                           Dependent variable:          
+                  --------------------------------------
+                          Politically Motivated         
+                    (1)       (2)       (3)       (4)   
+--------------------------------------------------------
+Party [PID]       0.738*** 0.724***  0.727***           
+                  (0.019)   (0.023)   (0.023)           
+                                                        
+Education [educ5]          -0.040*** -0.040*** -0.075***
+                            (0.010)   (0.009)   (0.010) 
+                                                        
+Age [age4]                 -0.018**  -0.018**           
+                            (0.009)   (0.009)           
+                                                        
+Income [inc7]               -0.002              -0.004  
+                            (0.007)             (0.006) 
+                                                        
+Gender                       0.022                      
+                            (0.022)                     
+                                                        
+Constant          0.155*** 0.337***  0.337***  0.890*** 
+                  (0.016)   (0.051)   (0.043)   (0.036) 
+                                                        
+--------------------------------------------------------
+Observations       1,337      937       937      2,178  
+R2                 0.519     0.534     0.534     0.035  
+Adjusted R2        0.518     0.532     0.532     0.034  
+========================================================
+Note:                        *p<0.1; **p<0.05; ***p<0.01
+
 <table style="text-align:center"><caption><strong>Regression Results</strong></caption>
 <tr><td colspan="5" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"></td><td colspan="4"><em>Dependent variable:</em></td></tr>
 <tr><td></td><td colspan="4" style="border-bottom: 1px solid black"></td></tr>
@@ -157,6 +189,8 @@ The regression table below shows the variables in each model and the outcome sta
 <tr><td style="text-align:left">Adjusted R<sup>2</sup></td><td>0.518</td><td>0.532</td><td>0.532</td><td>0.034</td></tr>
 <tr><td colspan="5" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"><em>Note:</em></td><td colspan="4" style="text-align:right"><sup>*</sup>p<0.1; <sup>**</sup>p<0.05; <sup>***</sup>p<0.01</td></tr>
 </table>
+
+
 
 ### Model 1: Party
 
@@ -188,6 +222,6 @@ Overall, political constraint among individuals is a desired outcome. We see tha
 
 ## References:
 
-Iyengar, Shanto, Gaurav Sood, and Yphtach Lelkes. 2012. \"Affect, Not Ideology: A Social Identity Perspective on Polarization.\" Public Opinion Quarterly 76(3): 405--31.
+Iyengar, Shanto, Gaurav Sood, and Yphtach Lelkes. 2012. "Affect, Not Ideology: A Social Identity Perspective on Polarization." Public Opinion Quarterly 76(3): 405--31.
 
 Verba, Schlozman, and Brady 1995
