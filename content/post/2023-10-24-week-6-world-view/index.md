@@ -1,0 +1,123 @@
+---
+title: 'Week 6: World View'
+author: Annelies Quinton
+date: "2023-10-24"
+output: pdf_document
+categories: []
+tags: []
+slug: []
+---
+
+
+
+
+
+## Introduction:
+
+This week's blog looks into the idea if liberals and conservatives lead different live and consider different world viewss: "a person's whole cognitive orientation toward the socialworld". In past blogs, I have demonstrated how political polarization and partisanship is deeply entrenched in today's society. For example, in [week 4](https://anneliesq.github.io/politcal-psych-blog/post/2023-10-05-week-4-hierarchies/), I showed that conservatives tend to have higher SDO scores, indicating their preferences for hierarchy. I am interested in analyzing how these beliefs go beyond the political sphere. Can certain behavior traits predict whether someone is liberal or conservative?
+
+## The Secret Lives of Liberals and Conservatives:
+
+#### Carney et al. (2009)
+
+This blog looks to replicate the study used in Carney et al. (2009). In this study, the authors utilize two different sources of data.
+
+The first data they consider is personality tests of liberals and conservatives through self-reported answers to the Big Five Model. The "Big Five Model" is a method for evaluating personality through "an organizing framework for classifying and measuring distinct, relatively non-overlapping personality dimensions" (Carney et al., 2009, p.815). The primary personality traits identified from this survey were Openness to New Experiences and Conscientiousness. They found that liberals tend to score significantly higher in Openness and Conservatives scored slightly higher in Conscientiousness (Carney et al., 2009, p.825).
+
+The second set of data considered personal living spaces of college students at the University of California-Berkeley. Using a code, the Personal Living Space Cue Inventory (PLSCI) from [Gosling et al. 2005](http://gosling.psy.utexas.edu/wp-content/uploads/2014/09/EnvandBehav05GoslingetalPLSCI.pdf), the researchers evaluated items in the dorm rooms to assess personality. Similar to the personality traits, they found conservatives bedrooms were "contained more conventional decorations ... somewhat neater ... more likely to contain household cleaning [items]." Conversely, liberals "significantly greater number and variety of books, including books about travel, ethnic issues, feminism, and music, as well as a greater number and variety of music CDs" (Carney et al., 2009, p.832). The authors attributed the cleanliness in conservatives' rooms to higher levels of Conscientiousness and the variety in liberals' rooms to Openness, agreeing with the first study's findings.
+
+The findings from (Carney et al., 2009, p.832) are further supported by past studies looking at the personality traits of liberals versus conservatives. The table below demonstrates a comprehensive list, aggregated from multiple studies, of personality traits associated with different parties. Traits related to Openness tend to be on the left, whereas Conscientiousness is on the right.
+
+![](images/Screen%20Shot%202023-10-24%20at%2012.23.59%20PM.png){width="422"}
+
+## Data:
+
+For the personality data, the data comes from a survey conducted on the class. It includes the BFI-10, a short version of the Big Five Inventory [Rammstedt and John 2007](https://psycnet.apa.org/record/2007-02371-015) and the Ten-Item Personality Inventory (TIPI) [Gosling et al. 2003](http://gosling.psy.utexas.edu/wp-content/uploads/2014/09/JRP-03-tipi.pdf).
+
+For the personal living space data, each student uploaded a picture of either their living space (dorm room) or an image found online of a dorm that resembles their space.
+
+The data includes 57 entries and 48 photos.
+
+A list of variables is shown below:
+
+| Variable Name            | Variable Description                                                                                                                                                         |
+|-------------------|-----------------------------------------------------|
+| `Overall`                | Self-reported overall ideology on a 1-5 scale with 1 being extremely liberal and 5 being extremely conservative                                                              |
+| `Social`                 | Self-reported social ideology on a 1-5 scale with 1 being extremely liberal and 5 being extremely conservative                                                               |
+| `Economic`               | Self-reported economic ideology on a 1-5 scale with 1 being extremely liberal and 5 being extremely conservative                                                             |
+| `Random ID`              | A randomly generated respondent identifier                                                                                                                                   |
+| `BFI_extraversion`       | The average of the two items on the BFI-10 associated with extraversion                                                                                                      |
+| `BFI_agreeableness`      | The average of the two items on the BFI-10 associated with agreeableness                                                                                                     |
+| `BFI_conscientiousness`  | The average of the two items on the BFI-10 associated with conscientiousness                                                                                                 |
+| `BFI_emot_stability`     | The average of the two items on the BFI-10 associated with emotional stability (also known as neuroticism, although low emotional stability is the same as high neuroticism) |
+| `BFI_openness`           | The average of the two items on the BFI-10 associated with openness                                                                                                          |
+| `TIPI_extraversion`      | The average of the two items on the TIPI-10 associated with extraversion                                                                                                     |
+| `TIPI_agreeableness`     | The average of the two items on the TIPI-10 associated with agreeableness                                                                                                    |
+| `TIPI_conscientiousness` | The average of the two items on the TIPI-10 associated with conscientiousness                                                                                                |
+| `TIPI_emot_stability`    | The average of the two items on the TIPI-10 associated with emotional stability(also known as neuroticism)                                                                   |
+| `TIPI_openness`          | The average of the two items on the TIPI-10 associated with openness                                                                                                         |
+
+## Rating Peer's Rooms:
+
+For this exercise, I looked at three of my peers' rooms and rated them on Openness and Conscientiousness, using the PLSCI, and ultimately predicted their political leaning. I then compared my results with two other students who looked at the same photos and to the person's personality ratings.
+
+### Predictions:
+
+|                                               | Room 1                                                                                                                                                             | Room 2                                                                                                                 | Room 3                                                                                                                                                                         |
+|------------------|------------------|------------------|-------------------|
+| **Conscientiousness**                         | 3.5                                                                                                                                                                | 3                                                                                                                      | 3                                                                                                                                                                              |
+| **Openness**                                  | 2                                                                                                                                                                  | 3.5                                                                                                                    | 2                                                                                                                                                                              |
+| **Political: Liberal (1) - Conservative (5)** | 2                                                                                                                                                                  | 3                                                                                                                      | 2                                                                                                                                                                              |
+| **Description**                               | This room had a many CDs and a variety of colors and unique decorations. The decorations were cohesive and there was gentle lighting that made the space inviting. | This room was very dark with little decorations. The mattress was on the floor and there was little signs of cleaning. | This room had little decorations and the blinds were closed. The room was not particularly clean nor messy. The bed was made and there were some stationary items on the desk. |
+
+### Actual:
+
+|                                               | Room 1                                                                                                                                                                                                                                           | Room 2                                                                                                                                                                | Room 3                                                                                                                                                                                                      |
+|------------------|------------------|------------------|-------------------|
+| **Conscientiousness**                         | 5                                                                                                                                                                                                                                                | 1                                                                                                                                                                     | 3                                                                                                                                                                                                           |
+| **Openness**                                  | 3.5                                                                                                                                                                                                                                              | 1                                                                                                                                                                     | 3                                                                                                                                                                                                           |
+| **Political: Liberal (1) - Conservative (5)** | 3                                                                                                                                                                                                                                                | 1                                                                                                                                                                     | 3                                                                                                                                                                                                           |
+| **Comparison**                                | I predicted this person to be more liberal than they report. This could be due to the fact that the image is likely a stock image (there was a person in the room) and, therefore, the room may not be that representative of their personality. | I guessed this person was much more conservative than the rated themself. Their room did not have a lot of items on the PLSCI scale, so it was hard to rate the room. | For this person, I was closer to their actual score, but still predicted them more liberal. I think this room was neutral for a lot of categories, which was reflected in the neutral self reported scores. |
+
+### Talking to Peers:
+
+I also compared my scores to peers who similarly rated each of the rooms. We found that it was difficult to score the rooms because the PLSCI was outdated. Most students do not have CDs and or many books due to technological replacements. Further, many of the questions required people to be in-person to properly evaluate the room. For example, how the room smells or aspects of the room not captured by camera. Finally, due to the these spaces being in various dorms, it was hard to tell what was representative of a person's personality versus what was the result of the space. For example, the PLSCI asks about natural light. All dorms have windows, however, not every dorm window can be opened because some look directly into other dorms or are on street level. Overall, my peers and I were fairly consistent with our ratings, but we were not confident in the ratings.
+
+## The Big Five (or Four?):
+
+In this portion of the blog, I am looking at the dimensionalality of the BFI-10 and the TIPI. I conduct a factor analysis to see if the data can be reduced in dimension. Essentially, factor analysis seeks to maintain variance through the least possible number of variables.
+
+Interpreting the plot:
+
+-   Want the point at which the blue and red lines intercept. This is the point at which additional factors no longer explain additional variation (eigenvalues) out of the total variance.
+-   Eigenvalues on the y-axis show variance explained by a particular factor out of the total variance. To be considered an explanatory factory, the eigenvalue should be \>= 0.7. (Week 6 Section Slides, 35)
+
+### BFI-10 (short version of the Big Five Inventory)
+
+From the graph below, we see that the lines intersect at 5. This means that 5 factors are necessary for determining BFI levels. This analysis is specific to our class, so if replicated with different data or new sampling, the factor analysis may differ. In. order to determine factors, we must compare the actual results to simulated data, so running the analysis again would be different if the sampling varied.
+
+![](images/Screen%20Shot%202023-10-24%20at%207.27.49%20PM.png){width="434"}
+
+
+
+### TIPI (Ten-Item Personality Inventory):
+
+Looking at TIPI, we see that the the lines intersect at 4. We can interpret this to be that only 3 of the 10 factors are essential for identifying TIPI scores. Again, this is only specific to our class data and may vary depending on different sampling.
+
+![](images/Screen%20Shot%202023-10-24%20at%207.39.23%20PM.png){width="434"}
+
+
+
+## Discussion:
+
+Throughout this blog, I evaluated ways in which liberals and conservatives may differ outside of the political realm and considered the methodology of determining behavior traits. Overall, I found the usage of the personal space pictures to be unnecessary. The way of evaluating the rooms felt biased and subjective because it was assuming personalities and hobbies are similar across people. For example, my room would have been labeled as very neat and undercorated, traits for high levels of conscientiousness and low levels of openness, however, I lean very liberal. With respect to the Carney et al. (2009), I think the addition of the dorm photos is superfluous and their findings would be legitimate based solely on the personality survey.
+
+One possible way to keep the personal space analysis in the study could be to gather two sets of photos of rooms. The first set would depict traditionally liberal rooms (high variety) and the other would be of traditionally conservative rooms (neat and common decorations) and have participants choose between rounds of two rooms and draw an analysis from the results. This may allow for more control in the images because the items in each room would be chosen and pre-categorized, removing possible bias.
+
+Overall, I am cautious to draw conclusions from these personal space results because I feel it creates stereotypes and could lean to higher degree of group affiliation and lack of bipartisan. If we associate certain, specific actions with a group, and have that imply good or bad, it leads to narrow thinking and assumptions. For example, Hetherington and Weiler (2018) identify that coffee decisions between Starbucks and Dunkin' Donuts is an indicator of partisanship. A seemingly apolitical decision is now a sign of political affiliation. Due to the stark differences between parties, these identities can spiral and cement within a party, as individuals may not want to appear associated with another party. Although I do not disagree that correlations may exist, I am believe they are harmful to the political sphere.
+
+## References:
+
+Carney, D. R., Jost, J. T., Gosling, S. D., and Potter, J. (2009). The secret lives of liberals and conservatives: Personality profiles, interaction styles, and the things they leave behind. Political Psychology, 29:807--840.
+
+Hetherington, M. and Weiler, J. (2018). Prius or pickup?: How the answers to four simple questions explain America's great divide. Houghton Mifflin.

@@ -190,8 +190,6 @@ Note:                        *p<0.1; **p<0.05; ***p<0.01
 <tr><td colspan="5" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"><em>Note:</em></td><td colspan="4" style="text-align:right"><sup>*</sup>p<0.1; <sup>**</sup>p<0.05; <sup>***</sup>p<0.01</td></tr>
 </table>
 
-
-
 ### Model 1: Party
 
 Model 1 utilizes only one predictor, party. The predictor is statistically significant and the adusted R\^2 is 0.518, barely above 0.5

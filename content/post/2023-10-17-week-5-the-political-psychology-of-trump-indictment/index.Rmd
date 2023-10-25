@@ -308,8 +308,6 @@ stargazer(fit1, fit2, fit3, fit4, title="Regression Results", type='html',
 
 ```
 
-
-
 ### Model 1: Party
 
 Model 1 utilizes only one predictor, party. The predictor is statistically significant and the adusted R\^2 is 0.518, barely above 0.5
