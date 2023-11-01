@@ -1,7 +1,7 @@
 ---
 title: 'Week 8: Symbolic Politics'
 author: Annelies Quinton
-date: '2023-10-30'
+date: '2023-11-6'
 slug: []
 categories: []
 tags: []
