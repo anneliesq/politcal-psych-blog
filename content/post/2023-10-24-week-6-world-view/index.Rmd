@@ -51,7 +51,7 @@ The data includes 57 entries and 48 photos.
 A list of variables is shown below:
 
 | Variable Name            | Variable Description                                                                                                                                                         |
-|-------------------|-----------------------------------------------------|
+|--------------------|----------------------------------------------------|
 | `Overall`                | Self-reported overall ideology on a 1-5 scale with 1 being extremely liberal and 5 being extremely conservative                                                              |
 | `Social`                 | Self-reported social ideology on a 1-5 scale with 1 being extremely liberal and 5 being extremely conservative                                                               |
 | `Economic`               | Self-reported economic ideology on a 1-5 scale with 1 being extremely liberal and 5 being extremely conservative                                                             |

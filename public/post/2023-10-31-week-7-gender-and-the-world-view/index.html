@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+		
+		
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>Week 7: Gender and the World View &middot; Political Psychology Blog</title>
+
+		
+		<link rel="stylesheet" href="/css/style.css">
+		<link rel="stylesheet" href="/css/fonts.css">
+		
+		<link rel="icon" href="/favicon.ico"/>
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+		
+		<link href="" rel="alternate" type="application/rss+xml" title="Political Psychology Blog" />
+
+		<script src="/js/darkmode.js"></script>
+	</head>
+
+    <body>
+        		<nav class="nav">
+			<div class="nav-container">
+				<a href="/">
+					
+						<h2 class="nav-title">Political Psychology Blog</h2>
+					
+				</a>
+				<ul>
+    
+    
+</ul>
+			</div>
+		</nav>
+
+        <div id="darkModeToggle" onclick="toggleDarkMode()">
+  &#9680; 
+</div>
+
+        
+
+<main>
+	
+
+
+        <div class="post">
+		<div class="post-info">
+    <span>Written by</span>
+        Annelies Quinton
+        <br>
+        <span>on&nbsp;</span><time datetime="2023-10-31 00:00:00 &#43;0000 UTC">October 31, 2023</time>
+</div>
+
+		<h1 class="post-title">Week 7: Gender and the World View</h1>
+<div class="post-line"></div>
+
+		
+
+		<h2 id="introduction">Introduction:</h2>
+<p>This week&rsquo;s blog evaluates the impact of gender on political outcomes, specifically surrounding conflict and war. Through past weeks, I have introduced the idea of SDO (Social Dominance Theory) and evolutionary principles that carry to today&rsquo;s decisions. These ideas are significant with regard to gender. We see that women are typically more liberal than men (lower SDO scores). Further, due to different reproductive strategies, men have an evolved trait that males power, in this case through political careers, for desirable than compared to women. These discrepancies are evident across political representation: 26 out of197 world leaders are women and only 6% of countries have more than 50% women in their legislative body (partially due to gender quotas).</p>
+<p>This blog is driven by Trager and Barnhart (2023)&rsquo;s study. They consider whether gender contributes to a country&rsquo;s likelihood of initiating war with another country. I consider the likelihood of war over since the 1900s, the difference between woman&rsquo;s suffrage and woman&rsquo;s civil liberties as a predictor variable for polity score, and the geographic trends for woman&rsquo;s suffrage.</p>
+<h2 id="class-notes">Class Notes:</h2>
+<ul>
+<li>
+<p>Why are women typically more liberal than men?</p>
+<ul>
+<li>
+<p>Different reproductive strategies, men have more of a taste of hierarchy, and have an evolved trait that makes men more likely to seek power and political careers</p>
+</li>
+<li>
+<p>boys and girls are socialized differently: competitive sports</p>
+</li>
+<li>
+<p>influence of siblings:</p>
+</li>
+</ul>
+</li>
+<li>
+<p>systematic differences in political behavior:</p>
+<ul>
+<li>
+<p>men are far more likely to hold political office than women</p>
+</li>
+<li>
+<p>men are on average more conservative</p>
+</li>
+</ul>
+</li>
+<li>
+<p>only 26/197 world leaders are women</p>
+<ul>
+<li>only 6 countries with more than 50% women (but could be due to quotas)</li>
+</ul>
+</li>
+<li>
+<p>sexual selection leads to different selected pressures that demonstrates how and why women and men behave differently</p>
+<ul>
+<li>males have a taste for power</li>
+</ul>
+</li>
+<li>
+<p>sources of deferentially socialized political behavior across genders:</p>
+<ul>
+<li>
+<p>Household: parents and siblings</p>
+</li>
+<li>
+<p>sports: socialization reinforcing biology</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Trager and Barnhart (2023): how women shape the politics of war</p>
+<ul>
+<li>
+<p>women are more likely to engage in democratic peaceship</p>
+</li>
+<li>
+<p>&ldquo;increasing levels of women suffrage = reduction conflict&rdquo;</p>
+</li>
+<li>
+<p>&ldquo;increasing democratic features without women has no impact on conflict likelihood&rdquo;</p>
+</li>
+<li>
+<p>place with higher levels of political empowerment for women, gender gap is larger</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="section-notes">Section Notes:</h2>
+<ul>
+<li>interaction terms:</li>
+<li>for question 6:
+<ul>
+<li>init~suffrage + polity + polity*suffrage
+<ul>
+<li>identify effect on polity for different suffrage</li>
+<li>compare between suffrage and civilliberties</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="introduction-1">Introduction:</h2>
+<h2 id="data">Data:</h2>
+<p>The data utilized in this blog is country-level data, organized by county and year, from Trager and Barnhart (2023). There are a total of 9,865 entries, across 157 countries and spanning from 1990 to 2007. The primary variables of interest are <code>polity</code>, <code>suffrage</code>, <code>wcivillibs.</code></p>
+<table>
+<thead>
+<tr>
+<th>Variable Name</th>
+<th>Variable Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ccode1</code></td>
+<td>Unique country code</td>
+</tr>
+<tr>
+<td><code>country_name</code></td>
+<td>Country name</td>
+</tr>
+<tr>
+<td><code>year</code></td>
+<td>Year</td>
+</tr>
+<tr>
+<td><code>init</code></td>
+<td>The number of overall conflicts initiated by the country specified by <code>ccode1</code> during the year specified by <code>year</code></td>
+</tr>
+<tr>
+<td><code>init_autoc</code></td>
+<td>The number of overall conflicts initiated by the country specified by <code>ccode1</code> <strong>with autocracies</strong> during the year specified by <code>year</code></td>
+</tr>
+<tr>
+<td><code>init_democ</code></td>
+<td>The number of overall conflicts initiated by the country specified by <code>ccode1</code> <strong>with democracies</strong> during the year specified by <code>year</code></td>
+</tr>
+<tr>
+<td><code>democracynosuff</code></td>
+<td>Indicator variable for a democracy without women&rsquo;s suffrage. 1 if the country is a democracy without women&rsquo;s suffrage, 0 otherwise.</td>
+</tr>
+<tr>
+<td><code>polity</code></td>
+<td>Polity democracy score for the country specified by <code>ccode1</code> during the year specified by <code>year</code></td>
+</tr>
+<tr>
+<td><code>suffrage</code></td>
+<td>Indicator variable for a country with women&rsquo;s suffrage (Women have the right to vote AND Polity &gt; 1)</td>
+</tr>
+<tr>
+<td><code>autocracy</code></td>
+<td>Indicator variable for a country with an autocratic government (Polity &lt; 5)</td>
+</tr>
+<tr>
+<td><code>nuclear</code></td>
+<td>Indicator variable for whether the country is a nuclear power</td>
+</tr>
+<tr>
+<td><code>wcivillibs</code></td>
+<td>Measure of the degree of civil liberty women enjoy, ranging from 0-1, where higher values mean women have more civil liberties</td>
+</tr>
+</tbody>
+</table>
+<h2 id="is-war-common">Is War Common?</h2>
+<p>I first consider the aggregated number of wars initiated by each country each year. The histogram below shows the number of country&rsquo;s that initiated a certain number of wars. Each year is evaluated separately, indicating why the y value of count is nearly 8,000 for the 0 bar. It is evident that 0 is the highest frequency and 1 and 2 are the next highest peaks. From this graph, it is apparent that wars are relatively uncommon. However, this graph fails to show the total wars for a given country or the time-based trends that could be occurring.</p>
+<img src="http://example.org/post/2023-10-31-week-7-gender-and-the-world-view/index_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+## When Does War Happen?
+The histogram below shows the average number of wars per year. There are obvious spikes around the first and second world wars, significantly with World War II. However, after WW2, there does not appear to be an upward or downward trend, indicating war could be relatively stable and more peaceful. However, this does not consider the increasing number of countries over the years. 
+<img src="http://example.org/post/2023-10-31-week-7-gender-and-the-world-view/index_files/figure-html/unnamed-chunk-4-1.png" width="672" />
+## More Countries, More Wars?
+The histogram below depicts the number of wars for a given year. There is an obvious upward trend in this count. This could be attributed to numerous factors including more countries and decolonization. Further, there is not an indicator for the intensity of conflict, meaning these results have some ambiguity as World War's are rated at the same degree as a less prominent conflict. 
+<img src="http://example.org/post/2023-10-31-week-7-gender-and-the-world-view/index_files/figure-html/unnamed-chunk-5-1.png" width="672" />
+<pre tabindex="0"><code>## 
+## ====================================================================
+##                                   Dependent variable:               
+##                     ------------------------------------------------
+##                                           init                      
+##                               (1)                     (2)           
+## --------------------------------------------------------------------
+## polity                      -0.002                   -0.004         
+##                             (0.002)                 (0.003)         
+##                                                                     
+## suffrage                    0.064*                                  
+##                             (0.038)                                 
+##                                                                     
+## polity:suffrage            -0.011**                                 
+##                             (0.005)                                 
+##                                                                     
+## wcivillibs                                         -0.182***        
+##                                                     (0.035)         
+##                                                                     
+## polity:wcivillibs                                    0.008*         
+##                                                     (0.004)         
+##                                                                     
+## Constant                   0.193***                 0.279***        
+##                             (0.013)                 (0.021)         
+##                                                                     
+## --------------------------------------------------------------------
+## Observations                 9,865                   9,223          
+## R2                           0.002                   0.006          
+## Adjusted R2                  0.002                   0.005          
+## Residual Std. Error    0.659 (df = 9861)       0.673 (df = 9219)    
+## F Statistic         8.132*** (df = 3; 9861) 17.075*** (df = 3; 9219)
+## ====================================================================
+## Note:                                    *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01
+</code></pre><img src="http://example.org/post/2023-10-31-week-7-gender-and-the-world-view/index_files/figure-html/unnamed-chunk-7-1.png" width="672" />
+
+
+		
+	</div>
+
+	<div class="pagination">
+		<a href="/post/2023-10-30-week-8-symbolic-politics/" class="left arrow">&#8592;</a>
+
+		<a href="#" class="top">Top</a>
+	</div>
+</main>
+
+
+        		<footer>
+			
+			<span>
+			&copy; <time datetime="2023-10-31 23:54:14.227955 -0400 EDT m=&#43;0.098824376">2023</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			</span>
+		</footer>
+
+    </body>
+</html>
