@@ -1,7 +1,7 @@
 ---
 title: 'Week 8: Symbolic Politics'
 author: Annelies Quinton
-date: '2023-11-6'
+date: '2023-11-5'
 slug: []
 categories: []
 tags: []
@@ -62,7 +62,7 @@ t_test_police <- t.test(x=protest_df_bydate$group_favorability_the_police[protes
 ## after killing, police became less favorable
 ```
 
-![](images/Screen Shot 2023-11-05 at 5.31.13 PM.png)
+![](images/Screen%20Shot%202023-11-05%20at%205.31.13%20PM.png)
 
 ### Perception of Discrimination Faced By Black Americans
 
@@ -97,7 +97,7 @@ average_date <- race_df %>%
 
 ```
 
-![](images/Screen Shot 2023-11-05 at 5.32.46 PM.png)
+![](images/Screen%20Shot%202023-11-05%20at%205.32.46%20PM.png)
 
 ```{r, fig.width = 8, fig.height=6, include = FALSE}
 before_data <- average_date %>% 
@@ -155,7 +155,7 @@ select <- dplyr::select
 fit2 <- polr(data = protest_df_bydate |> filter(before==0), formula = as.factor(group_favorability_the_police) ~ pid7 + day_running, method = "probit")
 ```
 
-![](images/Screen Shot 2023-11-05 at 5.33.17 PM.png)
+![](images/Screen%20Shot%202023-11-05%20at%205.33.17%20PM.png)
 
 ## Class Notes:
 

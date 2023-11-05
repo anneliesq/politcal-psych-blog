@@ -1,7 +1,7 @@
 ---
 title: 'Week 8: Symbolic Politics'
 author: Annelies Quinton
-date: '2023-11-6'
+date: '2023-11-5'
 slug: []
 categories: []
 tags: []
@@ -41,7 +41,7 @@ The results below show the difference in average favorability toward police befo
 
 
 
-![](images/Screen Shot 2023-11-05 at 5.31.13 PM.png)
+![](images/Screen%20Shot%202023-11-05%20at%205.31.13%20PM.png)
 
 ### Perception of Discrimination Faced By Black Americans
 
@@ -53,7 +53,7 @@ Similar to police favorability, we can assess the average perception of discrimi
 
 
 
-![](images/Screen Shot 2023-11-05 at 5.32.46 PM.png)
+![](images/Screen%20Shot%202023-11-05%20at%205.32.46%20PM.png)
 
 
 
@@ -83,7 +83,7 @@ Similar to police favorability, we can assess the average perception of discrimi
 
 
 
-![](images/Screen Shot 2023-11-05 at 5.33.17 PM.png)
+![](images/Screen%20Shot%202023-11-05%20at%205.33.17%20PM.png)
 
 ## Class Notes:
 
