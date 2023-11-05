@@ -59,7 +59,197 @@
 
 		
 
-		<h2 id="class-notes">Class Notes:</h2>
+		<h2 id="introduction">Introduction:</h2>
+<h2 id="data">Data:</h2>
+<p>The data utilized in this blog is from Reny and Newman (2021). They &ldquo;exploit&rdquo; a survey already &ldquo;in the field&rdquo;, including when the murder of George Floyd occurred. The survey was a weekly survey assessing individuals ideologies and beliefs toward certain topics, including police favorability and one&rsquo;s perception of the level of discrimination in U.S faced by Black Amercians. The data spans 419 days, from July 18th, 2019 to September 9th, 2020. The data includes 377,507 entries.</p>
+<p>A list of key variables utilized in this blog can be found below:</p>
+<table>
+<thead>
+<tr>
+<th>Variable Name</th>
+<th>Variable Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>race_ethnicity</code></td>
+<td>Race or ethnicity. Levels labelled in data: 1-White, 2-Black or AfAm, 3-American Indian or Alaskan Native, 4 through 14- Asian or Pacific Islander (details in labels), and 15-Some other race</td>
+</tr>
+<tr>
+<td><code>hispanic</code></td>
+<td>Of Hispanic, Latino, or Spanish origin. Levels labelled in data: 1-Not Hispanic, 2-15 Hispanic of various origins</td>
+</tr>
+<tr>
+<td><code>day_running</code></td>
+<td>Day relative to onset of George Floyd protests (day 0)</td>
+</tr>
+<tr>
+<td><code>age</code></td>
+<td>Respondent&rsquo;s age</td>
+</tr>
+<tr>
+<td><code>female</code></td>
+<td>Binary indicator variable: 1 if respondent female, 0 otherwise</td>
+</tr>
+<tr>
+<td><code>college</code></td>
+<td>Binary indicator variable: 1 if respondent attended college, 0 otherwise</td>
+</tr>
+<tr>
+<td><code>household_income</code></td>
+<td>Household pre-tax income ranging from 1 (less than $15,000) to 24 (more than $250,000). Details for other levels in labels.</td>
+</tr>
+<tr>
+<td><code>pid7</code></td>
+<td>Party identification on a seven point scale with strong, weak, lean: 1-Strong Democrat to 7-Strong Republican with 4-Independent.</td>
+</tr>
+<tr>
+<td><code>ideo5</code></td>
+<td>Ideological self placement: 1-Very liberal, 2-Liberal, 3-Moderate, 4-Conservative, 5-Very Conservative</td>
+</tr>
+<tr>
+<td><code>vote_clinton</code></td>
+<td>Indicator variable for whether the respondent said they voted for Clinton in the 2016 presidential election</td>
+</tr>
+<tr>
+<td><code>group_favorability_the_police</code></td>
+<td>Favorability towards the police: 1-Very favorable, 2-Somewhat favorable, 3-Somewhat unfavorable, 4-Very unfavorable</td>
+</tr>
+<tr>
+<td><code>discrimination_blacks</code></td>
+<td>Perceptions of the level of discrimination in US faced by Blacks: 1-None at all, 2-A little, 3-A moderate amount, 4-A lot, 5-A great deal</td>
+</tr>
+<tr>
+<td><code>day</code></td>
+<td>The date the respondent took the survey</td>
+</tr>
+<tr>
+<td><code>group_fav_white_black</code></td>
+<td>The difference in respondents favorability towards Blacks subtracted from their favorability towards whites (each on four point scale). Ranges from -3 to 3.</td>
+</tr>
+<tr>
+<td><code>racial_attitudes_generations</code></td>
+<td>Agreement with the statement that generations of slavery and discrimination have made it difficult for Blacks to work their way out of the lower class: 1-Strongly Agree to 5-Strongly Disagree</td>
+</tr>
+<tr>
+<td><code>interest</code></td>
+<td>Degree to which respondent claims to follow politics: 1-Most of the time, 2-Some of the time, 3-Only now and then, 4-Hardly at all</td>
+</tr>
+<tr>
+<td><code>group_favorability_jews</code></td>
+<td>Favorability towards Jews: 1-Very favorable, 2-Somewhat favorable, 3-Somewhat unfavorable, 4-Very unfavorable</td>
+</tr>
+<tr>
+<td><code>group_favorability_whites</code></td>
+<td>Favorability towards whites: 1-Very favorable, 2-Somewhat favorable, 3-Somewhat unfavorable, 4-Very unfavorable</td>
+</tr>
+<tr>
+<td><code>group_favorability_evangelicals</code></td>
+<td>Favorability towards evangelicals: 1-Very favorable, 2-Somewhat favorable, 3-Somewhat unfavorable, 4-Very unfavorable</td>
+</tr>
+<tr>
+<td><code>group_favorability_socialists</code></td>
+<td>Favorability towards socialists: 1-Very favorable, 2-Somewhat favorable, 3-Somewhat unfavorable, 4-Very unfavorable</td>
+</tr>
+<tr>
+<td><code>protest</code></td>
+<td>Indicator variable if survey respondent lived in area that would at any point have a BLM protest in the wake of the killing of George Floyd</td>
+</tr>
+<tr>
+<td><code>protests</code></td>
+<td>Number of eventual BLM protests in area where resident lived</td>
+</tr>
+</tbody>
+</table>
+<h2 id="comparison-in-averages">Comparison in Averages:</h2>
+<h3 id="police">Police:</h3>
+<p>The results below show the difference in average favorability toward police before the killing of George Floyd and after. From these results we see there is a significant decline in favorability after the killing. This is due to the small p-value and the confidence interval not including zero, allowing us to reject the null hypothesis that there was no relationship between the murder and change in favorability. Looking directly at the means, the mean of x (before the killing) is smaller than the mean of y (after the killing). Favorability of police is coded on a 1-4 scale in which 1 is very favorable and 4 is very unfavorable. Therefore, a postive difference in ~0.15 means that on average, police favoriability decreased by ~0.15.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">load</span>(<span style="color:#e6db74">&#39;RN_2001_data.RData&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Change the object to be the date of the protest spread, remember to put it in quotes if you copy/paste!</span>
+</span></span><span style="display:flex;"><span>day_0 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">unique</span>(protest_df<span style="color:#f92672">$</span>day[protest_df<span style="color:#f92672">$</span>day_running <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>protest_df_bydate <span style="color:#f92672">&lt;-</span> protest_df <span style="color:#f92672">|&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">mutate</span>(before <span style="color:#f92672">=</span> <span style="color:#a6e22e">ifelse</span>(day<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">as.Date</span>(day_0), <span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>))
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">t.test</span>(x<span style="color:#f92672">=</span>protest_df_bydate<span style="color:#f92672">$</span>group_favorability_the_police[protest_df_bydate<span style="color:#f92672">$</span>before <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>], <span style="color:#75715e">## before</span>
+</span></span><span style="display:flex;"><span>       y<span style="color:#f92672">=</span>protest_df_bydate<span style="color:#f92672">$</span>group_favorability_the_police[protest_df_bydate<span style="color:#f92672">$</span>before <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>]) <span style="color:#75715e">## after</span>
+</span></span></code></pre></div><pre tabindex="0"><code>## 
+## 	Welch Two Sample t-test
+## 
+## data:  protest_df_bydate$group_favorability_the_police[protest_df_bydate$before == 1] and protest_df_bydate$group_favorability_the_police[protest_df_bydate$before == 0]
+## t = -37.397, df = 140455, p-value &lt; 2.2e-16
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -0.1628445 -0.1466252
+## sample estimates:
+## mean of x mean of y 
+##  2.003079  2.157814
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#75715e">## after killing, police became less favorable</span>
+</span></span></code></pre></div><h3 id="perception-of-discrimination-faced-by-black-americans">Perception of Discrimination Faced By Black Americans</h3>
+<p>Similar to police favorability, we can assess the average perception of discrimination faced by Black Americans. The results show there was a significant increase in perception of discrimination due to the confidence interval not including zero and a small p-value (reject null hypothesis). The means show that, on average, perception of discrimination increased by ~0.14 before and after the killing of George Floyd. This is because discriminatio is coded on a 1-5 scale, in which higher numbers are associated with higher levels of discrimination.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">t.test</span>(x<span style="color:#f92672">=</span>protest_df_bydate<span style="color:#f92672">$</span>discrimination_blacks[protest_df_bydate<span style="color:#f92672">$</span>before <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>], <span style="color:#75715e">## before</span>
+</span></span><span style="display:flex;"><span>       y<span style="color:#f92672">=</span>protest_df_bydate<span style="color:#f92672">$</span>discrimination_blacks[protest_df_bydate<span style="color:#f92672">$</span>before <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>]) <span style="color:#75715e">## after</span>
+</span></span></code></pre></div><pre tabindex="0"><code>## 
+## 	Welch Two Sample t-test
+## 
+## data:  protest_df_bydate$discrimination_blacks[protest_df_bydate$before == 1] and protest_df_bydate$discrimination_blacks[protest_df_bydate$before == 0]
+## t = -29.851, df = 158037, p-value &lt; 2.2e-16
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -0.1459431 -0.1279587
+## sample estimates:
+## mean of x mean of y 
+##  3.645243  3.782194
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#75715e">## average perception of discrimination faced by Black people increased</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## t-values are big and p-values are very small, unlikely to happen by chance</span>
+</span></span></code></pre></div><h2 id="replication-of-reny-and-newman-2021">Replication of Reny and Newman (2021):</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>race_df <span style="color:#f92672">&lt;-</span> protest_df_bydate <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">mutate</span>(race <span style="color:#f92672">=</span> <span style="color:#a6e22e">case_when</span>(hispanic <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">|</span> race_ethnicity <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">~</span> <span style="color:#e6db74">&#34;Non-Hispanic White&#34;</span>,
+</span></span><span style="display:flex;"><span>                          race_ethnicity <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">~</span> <span style="color:#e6db74">&#34;Black&#34;</span>,
+</span></span><span style="display:flex;"><span>                          hispanic <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">~</span> <span style="color:#e6db74">&#34;Latino&#34;</span>,
+</span></span><span style="display:flex;"><span>                          race_ethnicity <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">&amp;</span> race_ethnicity <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">14</span> <span style="color:#f92672">~</span> <span style="color:#e6db74">&#34;Asian American&#34;</span>,
+</span></span><span style="display:flex;"><span>                          race_ethnicity <span style="color:#f92672">==</span> <span style="color:#ae81ff">15</span> <span style="color:#f92672">~</span> <span style="color:#e6db74">&#34;Other Race&#34;</span>
+</span></span><span style="display:flex;"><span>                          ),
+</span></span><span style="display:flex;"><span>         day_diff <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.integer</span>(day <span style="color:#f92672">-</span> day_0))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>average_date <span style="color:#f92672">&lt;-</span> race_df <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">select</span>(day_diff, group_favorability_the_police, discrimination_blacks, before, race) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">drop_na</span>() <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">group_by</span>(day_diff, before, race) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">summarize</span>(avg_police <span style="color:#f92672">=</span> <span style="color:#a6e22e">mean</span>(group_favorability_the_police),
+</span></span><span style="display:flex;"><span>            avg_discrimination <span style="color:#f92672">=</span> <span style="color:#a6e22e">mean</span>(discrimination_blacks))
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>before_data <span style="color:#f92672">&lt;-</span> average_date <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">filter</span>(before <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>after_data <span style="color:#f92672">&lt;-</span> average_date <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">filter</span>(before <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>discrimination_plot <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplot</span>() <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_smooth</span>(data<span style="color:#f92672">=</span>before_data, <span style="color:#a6e22e">aes</span>(x<span style="color:#f92672">=</span>day_diff, y<span style="color:#f92672">=</span>avg_discrimination), method <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;lm&#34;</span>, se <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_smooth</span>(data<span style="color:#f92672">=</span>after_data, <span style="color:#a6e22e">aes</span>(x<span style="color:#f92672">=</span>day_diff, y<span style="color:#f92672">=</span>avg_discrimination),method <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;lm&#34;</span>, se <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_vline</span>(xintercept <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, linetype<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dotted&#34;</span>, 
+</span></span><span style="display:flex;"><span>                color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;red&#34;</span>, size<span style="color:#f92672">=</span><span style="color:#ae81ff">1.5</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">xlab</span>(<span style="color:#e6db74">&#34;&#34;</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ylab</span>(<span style="color:#e6db74">&#34;&#34;</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ggtitle</span>(<span style="color:#e6db74">&#34;&#34;</span>)<span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">facet_wrap</span>(<span style="color:#f92672">~</span>race, nrow<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>police_plot <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplot</span>() <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_smooth</span>(data<span style="color:#f92672">=</span>before_data, <span style="color:#a6e22e">aes</span>(x<span style="color:#f92672">=</span>day_diff, y<span style="color:#f92672">=</span>avg_police), method <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;lm&#34;</span>, se <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_smooth</span>(data<span style="color:#f92672">=</span>after_data, <span style="color:#a6e22e">aes</span>(x<span style="color:#f92672">=</span>day_diff, y<span style="color:#f92672">=</span>avg_police),method <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;lm&#34;</span>, se <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_vline</span>(xintercept <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, linetype<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dotted&#34;</span>, 
+</span></span><span style="display:flex;"><span>                color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;red&#34;</span>, size<span style="color:#f92672">=</span><span style="color:#ae81ff">1.5</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">xlab</span>(<span style="color:#e6db74">&#34;&#34;</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ylab</span>(<span style="color:#e6db74">&#34;&#34;</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ggtitle</span>(<span style="color:#e6db74">&#34;&#34;</span>)<span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">facet_wrap</span>(<span style="color:#f92672">~</span>race, nrow<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">grid.arrange</span>(discrimination_plot, police_plot, ncol <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>, 
+</span></span><span style="display:flex;"><span>             left <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Average Perception of Discrimination&#34;</span>, 
+</span></span><span style="display:flex;"><span>             bottom <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Days&#34;</span>, 
+</span></span><span style="display:flex;"><span>             right <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Average Police Favorability&#34;</span>, 
+</span></span><span style="display:flex;"><span>             top <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Average Perception of Discrimination for Black Americans and Average Favorability Toward Police&#34;</span>)
+</span></span></code></pre></div><img src="http://example.org/post/2023-10-30-week-8-symbolic-politics/index_files/figure-html/unnamed-chunk-4-1.png" width="768" />
+<h2 id="class-notes">Class Notes:</h2>
 <ul>
 <li>
 <p>state can have monopoly on legitimate use of force</p>
@@ -128,6 +318,26 @@
 </ul>
 </li>
 </ul>
+<h2 id="data-notes">Data Notes:</h2>
+<ul>
+<li>
+<p>exploit the murder of George Floyd to understand their reaction by evaluating their pre-behaviors</p>
+<h2 id="section-notes">Section Notes:</h2>
+</li>
+<li>
+<p>Reny and Newman (2021) argue that instances of social protest against the police such as the 2020 Floyd protests, should exert widespread effects on the police</p>
+</li>
+<li>
+<p>social protest following recent police killings may have little effect</p>
+</li>
+<li>
+<p>comment on the RDD thresholds and differences between baseline for different racial groups</p>
+</li>
+<li>
+<p>symbolic politics means that shocking events would only effect people with less chrystalized</p>
+</li>
+<li></li>
+</ul>
 
 
 		
@@ -144,7 +354,7 @@
         		<footer>
 			
 			<span>
-			&copy; <time datetime="2023-11-01 01:24:52.302494 -0400 EDT m=&#43;0.085997834">2023</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			&copy; <time datetime="2023-11-05 14:36:40.653455 -0500 EST m=&#43;0.148418043">2023</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
 			</span>
 		</footer>
 
