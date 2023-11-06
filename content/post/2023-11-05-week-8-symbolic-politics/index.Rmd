@@ -18,9 +18,13 @@ library(gridExtra)
 
 ## Introduction:
 
+This week's blog post evaluates the presence of symbolic attitudes in the political sphere. Symbolic attitudes can be described as stable, constrained, and influential toward other people and objects (have power). One application of symbolic attitudes can be seen by Reny and Newman (2021), in which they evaluate how symbolic predispositions impact people's reactions to the George Floyd protests. Specifically, the authors consider police favorability and people's perception toward Black Americans.
+
+In this blog, I replicate some of the findings by Reny and Newman (2021), specifically how perceptions toward police and Black Americans before and after the killing of George Floyd change based on different racial groups. Further, I consider the predictive power of political ideology and the date for various model types.
+
 ## Data:
 
-The data utilized in this blog is from Reny and Newman (2021). They "exploit" a survey already "in the field", including when the murder of George Floyd occurred. The survey was a weekly survey assessing individuals ideologies and beliefs toward certain topics, including police favorability and one's perception of the level of discrimination in U.S faced by Black Amercians. The data spans 419 days, from July 18th, 2019 to September 9th, 2020. The data includes 377,507 entries.
+The data utilized in this blog is from Reny and Newman (2021). They "exploit" a survey already "in the field", including when the murder of George Floyd occurred. The survey was a weekly survey assessing individuals ideologies and beliefs toward certain topics, including police favorability and one's perception of the level of discrimination in U.S faced by Black Americans. The data spans 419 days, from July 18th, 2019 to September 9th, 2020. The data includes 378,507 entries.
 
 A list of key variables utilized in this blog can be found below:
 
@@ -32,13 +36,11 @@ A list of key variables utilized in this blog can be found below:
 | `pid7`                            | Party identification on a seven point scale with strong, weak, lean: 1-Strong Democrat to 7-Strong Republican with 4-Independent.                                                              |
 | `group_favorability_the_police`   | Favorability towards the police: 1-Very favorable, 2-Somewhat favorable, 3-Somewhat unfavorable, 4-Very unfavorable                                                                            |
 | `discrimination_blacks`           | Perceptions of the level of discrimination in US faced by Blacks: 1-None at all, 2-A little, 3-A moderate amount, 4-A lot, 5-A great deal                                                      |
-| `day`                             | The date the respondent took the survey                                                                                                                                                        |
-| `group_favorability_jews`         | Favorability towards Jews: 1-Very favorable, 2-Somewhat favorable, 3-Somewhat unfavorable, 4-Very unfavorable                                                                                  |
-| `group_favorability_whites`       | Favorability towards whites: 1-Very favorable, 2-Somewhat favorable, 3-Somewhat unfavorable, 4-Very unfavorable                                                                                |
-| `group_favorability_evangelicals` | Favorability towards evangelicals: 1-Very favorable, 2-Somewhat favorable, 3-Somewhat unfavorable, 4-Very unfavorable                                                                          |
-| `group_favorability_socialists`   | Favorability towards socialists: 1-Very favorable, 2-Somewhat favorable, 3-Somewhat unfavorable, 4-Very unfavorable                                                                            |
+| `day`                             | The date the respondent took the survey                                                                                                                                                        
 
 ## Comparison in Averages:
+
+First, I consider how police favorability and perception of Black Americans changes, an average, before and after the killing of George Floyd. I perform a t-test to assess this difference. For each of the variables, I consider the average favorability for the variable, conditioned on before or after the killing.
 
 ### Police:
 
@@ -76,7 +78,15 @@ t_test_discrimination <- t.test(x=protest_df_bydate$discrimination_blacks[protes
 ## t-values are big and p-values are very small, unlikely to happen by chance
 ```
 
+![](images/Screen%20Shot%202023-11-05%20at%205.32.46%20PM.png)
+
 ## Replication of Reny and Newman (2021):
+
+After considering how these perceptions changed on average, I next consider these trends based on racial groups. The graphs below replicate the regression discontinuity design visualization created by Reny and Newman (2021).
+
+For each racial group indentified in the survey (Non-Hispanic White, Asian Americans, Black Americans, Lationos, and other races), I have plotted the average rating (perception or favorability) for each day and shown the overall trend line. I create a separate trend line for before the killing and after, denoted by the dashed line at day 0 (killing of George Floyd).
+
+**insert page number**
 
 ```{r, include = FALSE}
 race_df <- protest_df_bydate %>% 
@@ -89,10 +99,139 @@ race_df <- protest_df_bydate %>%
          day_diff = as.integer(day - day_0))
 
 average_date <- race_df %>% 
-  select(day_diff, group_favorability_the_police, discrimination_blacks, before, race) %>% 
+  dplyr::select(day_diff, group_favorability_the_police, discrimination_blacks, before, race) %>% 
   drop_na() %>% 
   group_by(day_diff, before, race) %>% 
-  summarize(avg_police = mean(group_favorability_the_police),
+  summarize(avg_police = mean(group_favorability_the_police), 
             avg_discrimination = mean(discrimination_blacks))
+```
+
+```{r, fig.width = 8, fig.height=6, include = FALSE}
+before_data <- average_date %>% 
+  filter(before == 1)
+after_data <- average_date %>% 
+  filter(before == 0)
+
+discrimination_plot <- ggplot() +
+  geom_smooth(data=before_data, aes(x=day_diff, y=avg_discrimination), method = "lm", se = FALSE) +
+  geom_smooth(data=after_data, aes(x=day_diff, y=avg_discrimination),method = "lm", se = FALSE) +
+  geom_vline(xintercept = 0, linetype="dotted", 
+                color = "red", size=1.5) +
+  xlab("") +
+  ylab("") +
+  ggtitle("")+
+  facet_wrap(~race, nrow=5)
+
+police_plot <- ggplot() +
+  geom_smooth(data=before_data, aes(x=day_diff, y=avg_police), method = "lm", se = FALSE) +
+  geom_smooth(data=after_data, aes(x=day_diff, y=avg_police),method = "lm", se = FALSE) +
+  geom_vline(xintercept = 0, linetype="dotted", 
+                color = "red", size=1.5) +
+  xlab("") +
+  ylab("") +
+  ggtitle("")+
+  facet_wrap(~race, nrow=5)
+  
+```
+
+```{r}
+grid.arrange(discrimination_plot, police_plot, ncol = 2, 
+             left = "Average Perception of Discrimination", 
+             bottom = "Days", 
+             right = "Average Police Favorability", 
+             top = "Perception of Discrimination for Black Americans and Favorability Toward Police")
+```
+
+### Perception of Discrimination Faced by Black Americans
+
+In the the left column, we see the perception of discrimination faced by Black Americans. For all groups, there is a significant jump at the threshold (day 0), indicating a higher level of perception of discrimination. However, we can see that this is more significant for certain groups. Specifically, this appears the least apparent for Black Americans. Black Americans already had the highest level of perception before the killing than any other racial group. From these graphs we also see that after the killing, there is a spike, but by 100 days after, the levels appear to return to baseline. This means that the killing created immediate change, but not necessarily lasting change in perceptions.
+
+### Favorability Toward the Police
+
+In the right column, favorability of the police is graphed for each racial group. Similar to the left column, for all racial groups there is a significant jump at the threshold, indicating a decrease in favorability of police. Like the left column, Black Americans started out with the highest level of unfavorability, but they also appear to have one of the higher spikes at the threshold. Prior to the threshold, each racial groups appears to have relatively stable attitudes toward police and like the left column, the spike at the threshold soon returns back to the baseline.
+
+## Modeling Favorability:
+
+### Police favorability:
+
+#### Linear Regression
+
+```{r, results = 'asis'}
+fit1 <- lm(data= protest_df_bydate, group_favorability_the_police ~ pid7 + before)
+
+stargazer(fit1, title="Regression Results", type='html',
+          dep.var.labels = "Politically Motivated",
+          covariate.labels=c("Police Favorability", "Political Ideology", "Indicator for Date"),
+          omit.stat = c("f", "ser"),
+          out="output.tex")
 
 ```
+
+#### Logit
+```{r, results = 'asis'}
+library(MASS)
+select <- dplyr::select
+
+fit2 <- polr(data = protest_df_bydate |> filter(before==0), formula = as.factor(group_favorability_the_police) ~ pid7 + day_running, method = "probit")
+```
+
+
+
+## Class Notes:
+
+-   state can have monopoly on legitimate use of force
+
+-   why do people riot/violence?
+
+    -   critque on violence: Sears and McConahay 1973 "The riot is assigned about as much symbolic political meaning as a drunken brawl in a tavern"
+
+    -   when evaluating a complex political object, people rely on symbolic predispositions that were socialized early in life
+
+-   what are symbolic attitudes/positions:
+
+    -   most stable attitudes (stability)
+
+    -   consistent responses over similar attitude objects (constraint)
+
+    -   most influential toward other objects (power)
+
+-   Busing:
+
+    -   attitudes on busing was entirely based on early attitudes
+
+    -   regression shows intolerance has highest coefficient
+
+-   Objects in American Politics that are associated with stable, consistent, and powerful:
+
+    -   constitution
+
+-   longitudinal study demonstrates that group attitudes are powerful and stable and can predict political orientation
+
+-   Sam Huntington: Political Order in Changing Societies:
+
+    -   Mau Mau Uprising (1952-1960), claimed education in the colonies contributed to rioting
+
+-   symbolic and modern racism is based on the racial resentment scale
+
+    -   how can it measure both? attitudes that are socially early and stable and looks at race through both modern (1950s) and old perspectives
+
+-   racial resentment scales:
+
+    -   critique is measures conservatism not racism
+
+## Data Notes:
+
+-   exploit the murder of George Floyd to understand their reaction by evaluating their pre-behaviors
+
+    ## Section Notes:
+
+-   Reny and Newman (2021) argue that instances of social protest against the police such as the 2020 Floyd protests, should exert widespread effects on the police
+
+-   social protest following recent police killings may have little effect
+
+-   comment on the RDD thresholds and differences between baseline for different racial groups
+
+-   symbolic politics means that shocking events would only effect people with less chrystalized
+
+-   
+
