@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Political Psychology Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 31 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Week 8: Symbolic Politics</title>
+      <link>http://example.org/post/2023-11-05-week-8-symbolic-politics/</link>
+      <pubDate>Sun, 05 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/2023-11-05-week-8-symbolic-politics/</guid>
+      <description>Introduction: This week&amp;rsquo;s blog post evaluates the presence of symbolic attitudes in the political sphere. Symbolic attitudes can be described as stable, constrained, and influential toward other people and objects (have power). One application of symbolic attitudes can be seen by Reny and Newman (2021), in which they evaluate how symbolic predispositions impact people&amp;rsquo;s reactions to the George Floyd protests. Specifically, the authors consider police favorability and people&amp;rsquo;s perception toward Black Americans.</description>
+    </item>
+    
     <item>
       <title>Week 7: Gender and the World View</title>
       <link>http://example.org/post/2023-10-31-week-7-gender-and-the-world-view/</link>
@@ -70,15 +79,6 @@ The main question that drives this blog post is to what degree can vote choice b
       
       <guid>http://example.org/post/2023-09-19-week-1-making-decisions/</guid>
       <description>Introduction For this week’s post, I am looking at the relationship of perceived candidate competence and electoral success. The subjectivity of measuring competence illustrates how other variables may persist in an individual’s decision making process to ultimately determine competence. This idea can be defined as attribute substitution, in which a difficult question (such as defining competence) is substituted for an easier one. A method of substitution is evaluating a candidate’s competence based on their facial quality.</description>
-    </item>
-    
-    <item>
-      <title>Week 8: Symbolic Politics</title>
-      <link>http://example.org/post/2023-10-30-week-8-symbolic-politics/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://example.org/post/2023-10-30-week-8-symbolic-politics/</guid>
-      <description>Introduction: Data: The data utilized in this blog is from Reny and Newman (2021). They &amp;ldquo;exploit&amp;rdquo; a survey already &amp;ldquo;in the field&amp;rdquo;, including when the murder of George Floyd occurred. The survey was a weekly survey assessing individuals ideologies and beliefs toward certain topics, including police favorability and one&amp;rsquo;s perception of the level of discrimination in U.S faced by Black Amercians. The data spans 419 days, from July 18th, 2019 to September 9th, 2020.</description>
     </item>
     
   </channel>

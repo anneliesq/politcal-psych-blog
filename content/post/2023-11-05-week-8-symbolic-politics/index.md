@@ -93,27 +93,24 @@ Theregression output belowdisplays the regression results for favorability of th
 **Indicator Variable:** for dates before the killing, police favorability was 0.157 lower (become more favorable) than after the killing, holding political ideology constant.
 
 
-Regression Results
-==============================================
-                       Dependent variable:    
-                   ---------------------------
-                       Police Favorability    
-----------------------------------------------
-Political Ideology          -0.127***         
-                             (0.001)          
-                                              
-Indicator for Date          -0.169***         
-                             (0.004)          
-                                              
-Constant                    2.646***          
-                             (0.004)          
-                                              
-----------------------------------------------
-Observations                 326,797          
-R2                            0.088           
-Adjusted R2                   0.088           
-==============================================
-Note:              *p<0.1; **p<0.05; ***p<0.01
+<table style="text-align:center"><caption><strong>Regression Results</strong></caption>
+<tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"></td><td><em>Dependent variable:</em></td></tr>
+<tr><td></td><td colspan="1" style="border-bottom: 1px solid black"></td></tr>
+<tr><td style="text-align:left"></td><td>Police Favorability</td></tr>
+<tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Political Ideology</td><td>-0.127<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(0.001)</td></tr>
+<tr><td style="text-align:left"></td><td></td></tr>
+<tr><td style="text-align:left">Indicator for Date</td><td>-0.169<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(0.004)</td></tr>
+<tr><td style="text-align:left"></td><td></td></tr>
+<tr><td style="text-align:left">Constant</td><td>2.646<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(0.004)</td></tr>
+<tr><td style="text-align:left"></td><td></td></tr>
+<tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Observations</td><td>326,797</td></tr>
+<tr><td style="text-align:left">R<sup>2</sup></td><td>0.088</td></tr>
+<tr><td style="text-align:left">Adjusted R<sup>2</sup></td><td>0.088</td></tr>
+<tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"><em>Note:</em></td><td style="text-align:right"><sup>*</sup>p<0.1; <sup>**</sup>p<0.05; <sup>***</sup>p<0.01</td></tr>
+</table>
 
 #### Probit
 
@@ -127,7 +124,7 @@ Interpreting the intercepts, we see that when all variables as zero, the very fa
 
 
 
-![](images/Screen Shot 2023-11-07 at 12.54.39 PM.png)
+![](images/Screen%20Shot%202023-11-07%20at%2012.54.39%20PM.png){width="457"}
 
 ## Interpretation:
 

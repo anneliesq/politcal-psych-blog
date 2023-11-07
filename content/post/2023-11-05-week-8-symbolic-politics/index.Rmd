@@ -196,7 +196,7 @@ fit2 <- polr(data = protest_df_bydate |> filter(before==0), formula = as.factor(
 #summary(fit2)
 ```
 
-![](images/Screen Shot 2023-11-07 at 12.54.39 PM.png)
+![](images/Screen%20Shot%202023-11-07%20at%2012.54.39%20PM.png){width="457"}
 
 ## Interpretation:
 
