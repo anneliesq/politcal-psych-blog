@@ -21,15 +21,16 @@ The data utilized in this blog is from Reny and Newman (2021). They "exploit" a 
 
 A list of key variables utilized in this blog can be found below:
 
-| Variable Name                     | Variable Description                                                                                                                                                                           |
+| Variable Name                   | Variable Description                                                                                                                                                                           |
 |--------------------------|----------------------------------------------|
-| `race_ethnicity`                  | Race or ethnicity. Levels labelled in data: 1-White, 2-Black or AfAm, 3-American Indian or Alaskan Native, 4 through 14- Asian or Pacific Islander (details in labels), and 15-Some other race |
-| `hispanic`                        | Of Hispanic, Latino, or Spanish origin. Levels labelled in data: 1-Not Hispanic, 2-15 Hispanic of various origins                                                                              |
-| `day_running`                     | Day relative to onset of George Floyd protests (day 0)                                                                                                                                         |
-| `pid7`                            | Party identification on a seven point scale with strong, weak, lean: 1-Strong Democrat to 7-Strong Republican with 4-Independent.                                                              |
-| `group_favorability_the_police`   | Favorability towards the police: 1-Very favorable, 2-Somewhat favorable, 3-Somewhat unfavorable, 4-Very unfavorable                                                                            |
-| `discrimination_blacks`           | Perceptions of the level of discrimination in US faced by Blacks: 1-None at all, 2-A little, 3-A moderate amount, 4-A lot, 5-A great deal                                                      |
-| `day`                             | The date the respondent took the survey                                                                                                                                                        
+| `race_ethnicity`                | Race or ethnicity. Levels labelled in data: 1-White, 2-Black or AfAm, 3-American Indian or Alaskan Native, 4 through 14- Asian or Pacific Islander (details in labels), and 15-Some other race |
+| `hispanic`                      | Of Hispanic, Latino, or Spanish origin. Levels labelled in data: 1-Not Hispanic, 2-15 Hispanic of various origins                                                                              |
+| `day_running`                   | Day relative to onset of George Floyd protests (day 0)                                                                                                                                         |
+| `pid7`                          | Party identification on a seven point scale with strong, weak, lean: 1-Strong Democrat to 7-Strong Republican with 4-Independent.                                                              |
+| `group_favorability_the_police` | Favorability towards the police: 1-Very favorable, 2-Somewhat favorable, 3-Somewhat unfavorable, 4-Very unfavorable                                                                            |
+| `discrimination_blacks`         | Perceptions of the level of discrimination in US faced by Blacks: 1-None at all, 2-A little, 3-A moderate amount, 4-A lot, 5-A great deal                                                      |
+| `day`                           | The date the respondent took the survey                                                                                                                                                        |
+| `before`                        | indicator variable for the date relative to the killing of George Floyd (1= before, 0 = after)                                                                                                 |
 
 ## Comparison in Averages:
 
@@ -77,34 +78,62 @@ In the right column, favorability of the police is graphed for each racial group
 
 ## Modeling Favorability:
 
+In this section of the blog, I attempt to model the two outcome variables (`group_favorability_the_police` and `discrimination_blacks` from two predictor variables: political ideology and an indicator variable for the day (before =1, after = 0).
+
+For each outcome variable, I consider two model types: linear and logit models.
+
 ### Police favorability:
 
 #### Linear Regression
 
+Theregression output belowdisplays the regression results for favorability of the police. Both variables are significant at the 95% confidence level. Further, both variables are negative. This that for a one unit increase in each variable, police favorability will decrease on the scale, but increase overall because lower values are associated with higher levels of favorability.
 
-<table style="text-align:center"><caption><strong>Regression Results</strong></caption>
-<tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"></td><td><em>Dependent variable:</em></td></tr>
-<tr><td></td><td colspan="1" style="border-bottom: 1px solid black"></td></tr>
-<tr><td style="text-align:left"></td><td>Politically Motivated</td></tr>
-<tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Police Favorability</td><td>-0.127<sup>***</sup></td></tr>
-<tr><td style="text-align:left"></td><td>(0.001)</td></tr>
-<tr><td style="text-align:left"></td><td></td></tr>
-<tr><td style="text-align:left">Political Ideology</td><td>-0.169<sup>***</sup></td></tr>
-<tr><td style="text-align:left"></td><td>(0.004)</td></tr>
-<tr><td style="text-align:left"></td><td></td></tr>
-<tr><td style="text-align:left">Indicator for Date</td><td>2.646<sup>***</sup></td></tr>
-<tr><td style="text-align:left"></td><td>(0.004)</td></tr>
-<tr><td style="text-align:left"></td><td></td></tr>
-<tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Observations</td><td>326,797</td></tr>
-<tr><td style="text-align:left">R<sup>2</sup></td><td>0.088</td></tr>
-<tr><td style="text-align:left">Adjusted R<sup>2</sup></td><td>0.088</td></tr>
-<tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"><em>Note:</em></td><td style="text-align:right"><sup>*</sup>p<0.1; <sup>**</sup>p<0.05; <sup>***</sup>p<0.01</td></tr>
-</table>
+**Political Ideology:** as political ideology increases by 1 unit (become more republican), holding data constant, police favorability decreases by 0.214 units (become more favorable).
 
-#### Logit
+**Indicator Variable:** for dates before the killing, police favorability was 0.157 lower (become more favorable) than after the killing, holding political ideology constant.
 
 
+Regression Results
+==============================================
+                       Dependent variable:    
+                   ---------------------------
+                       Police Favorability    
+----------------------------------------------
+Political Ideology          -0.127***         
+                             (0.001)          
+                                              
+Indicator for Date          -0.169***         
+                             (0.004)          
+                                              
+Constant                    2.646***          
+                             (0.004)          
+                                              
+----------------------------------------------
+Observations                 326,797          
+R2                            0.088           
+Adjusted R2                   0.088           
+==============================================
+Note:              *p<0.1; **p<0.05; ***p<0.01
 
+#### Probit
+
+Probit models are helpful when there is an ordinal bounded response variable (such as with police favorability)
+
+**Political Ideology**: As political ideology increases by 1 unit (become more republican), holding date constant, police favorability decreases in log odds by 0.179 units (become more favorable). This is slightly lower than what the linear
+
+**Date**: For dates after the killing, police favorability was log odds 0.002 lower (become more favorable) for each unit increase in days, holding ideology constant. That means that as days progressed, police became more favorable.
+
+Interpreting the intercepts, we see that when all variables as zero, the very favorable \| somewhat favorable towards the police intercept has an odds of very favorable towards the police of -1.234.
+
+
+
+![](images/Screen Shot 2023-11-07 at 12.54.39 PM.png)
+
+## Interpretation:
+
+## References:
+
+Reny, T. T. and Newman, B. J. (2021). The Opinion-Mobilizing Effect of Social Protest against Police Violence: Evidence from the 2020 George Floyd Protests. American Political Science Review, pages 1--9.
 
 ## Class Notes:
 
@@ -163,4 +192,3 @@ In the right column, favorability of the police is graphed for each racial group
 -   symbolic politics means that shocking events would only effect people with less chrystalized
 
 -   
-
