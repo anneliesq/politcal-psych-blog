@@ -29,7 +29,7 @@ The data utilized in this blog is from Reny and Newman (2021). They "exploit" a 
 A list of key variables utilized in this blog can be found below:
 
 | Variable Name                   | Variable Description                                                                                                                                                                           |
-|--------------------------|----------------------------------------------|
+|--------------------------|---------------------------------------------|
 | `race_ethnicity`                | Race or ethnicity. Levels labelled in data: 1-White, 2-Black or AfAm, 3-American Indian or Alaskan Native, 4 through 14- Asian or Pacific Islander (details in labels), and 15-Some other race |
 | `hispanic`                      | Of Hispanic, Latino, or Spanish origin. Levels labelled in data: 1-Not Hispanic, 2-15 Hispanic of various origins                                                                              |
 | `day_running`                   | Day relative to onset of George Floyd protests (day 0)                                                                                                                                         |
@@ -209,9 +209,7 @@ This blog utilized the data in Reny and Newman (2021) to evaluate perceptions to
 
 An alternative way to measure symbolic politics with this data would be to consider high and low prejudice respondents and strong democrats and republicans. Among these groups, Reny and Newman found that for high predjudice and strong republicans, symbolic politics was present. The graphs below, taken from Reny and Newman (2021), illustrate that there is little change before and after the killing for these two groups. To assess prejudice, Reny and Newman consider two indicators: "a Black--White favorability differential, which subtracts Black from white favorability Likert scales, and the 'generations' item from the well-known racial resentment scale." These results make sense intuitively because those who hold strong opinions are less likely to be swayed by an event or protest. The difference between strong republicans and strong democrats is interesting to me, but I think SDO has relevance to this difference. In past weeks, we found that republicans exhibit higher levels of SDO and are less open to new experiences than democrats. I think this degree of openness is reflected as strong democrats are being swayed by the event but not strong republicans.
 
-
-![](images/Screen Shot 2023-11-07 at 9.08.24 PM.png){width="339"}
-
+![](images/Screen%20Shot%202023-11-07%20at%209.08.24%20PM.png){width="203"}
 
 ## Implications
 
@@ -220,4 +218,3 @@ These results illustrate how instigating change is extremely difficult, especial
 ## References:
 
 Reny, T. T. and Newman, B. J. (2021). The Opinion-Mobilizing Effect of Social Protest against Police Violence: Evidence from the 2020 George Floyd Protests. American Political Science Review, pages 1--9.
-
