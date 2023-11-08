@@ -59,20 +59,20 @@ To understand the relationship between incumbent seat safety and face rating, I 
 
 The table below displays the means for the four groups:
 
-<div id="rroywugtfl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#rroywugtfl table {
+<div id="qjvsyxzomc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#qjvsyxzomc table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-&#10;#rroywugtfl thead, #rroywugtfl tbody, #rroywugtfl tfoot, #rroywugtfl tr, #rroywugtfl td, #rroywugtfl th {
+&#10;#qjvsyxzomc thead, #qjvsyxzomc tbody, #qjvsyxzomc tfoot, #qjvsyxzomc tr, #qjvsyxzomc td, #qjvsyxzomc th {
   border-style: none;
 }
-&#10;#rroywugtfl p {
+&#10;#qjvsyxzomc p {
   margin: 0;
   padding: 0;
 }
-&#10;#rroywugtfl .gt_table {
+&#10;#qjvsyxzomc .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -97,11 +97,11 @@ The table below displays the means for the four groups:
   border-left-width: 2px;
   border-left-color: #D3D3D3;
 }
-&#10;#rroywugtfl .gt_caption {
+&#10;#qjvsyxzomc .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
-&#10;#rroywugtfl .gt_title {
+&#10;#qjvsyxzomc .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -112,7 +112,7 @@ The table below displays the means for the four groups:
   border-bottom-color: #FFFFFF;
   border-bottom-width: 0;
 }
-&#10;#rroywugtfl .gt_subtitle {
+&#10;#qjvsyxzomc .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -123,7 +123,7 @@ The table below displays the means for the four groups:
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
-&#10;#rroywugtfl .gt_heading {
+&#10;#qjvsyxzomc .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -134,12 +134,12 @@ The table below displays the means for the four groups:
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-&#10;#rroywugtfl .gt_bottom_border {
+&#10;#qjvsyxzomc .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#rroywugtfl .gt_col_headings {
+&#10;#qjvsyxzomc .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -153,7 +153,7 @@ The table below displays the means for the four groups:
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-&#10;#rroywugtfl .gt_col_heading {
+&#10;#qjvsyxzomc .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -172,7 +172,7 @@ The table below displays the means for the four groups:
   padding-right: 5px;
   overflow-x: hidden;
 }
-&#10;#rroywugtfl .gt_column_spanner_outer {
+&#10;#qjvsyxzomc .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -183,13 +183,13 @@ The table below displays the means for the four groups:
   padding-left: 4px;
   padding-right: 4px;
 }
-&#10;#rroywugtfl .gt_column_spanner_outer:first-child {
+&#10;#qjvsyxzomc .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
-&#10;#rroywugtfl .gt_column_spanner_outer:last-child {
+&#10;#qjvsyxzomc .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
-&#10;#rroywugtfl .gt_column_spanner {
+&#10;#qjvsyxzomc .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -200,10 +200,10 @@ The table below displays the means for the four groups:
   display: inline-block;
   width: 100%;
 }
-&#10;#rroywugtfl .gt_spanner_row {
+&#10;#qjvsyxzomc .gt_spanner_row {
   border-bottom-style: hidden;
 }
-&#10;#rroywugtfl .gt_group_heading {
+&#10;#qjvsyxzomc .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -228,7 +228,7 @@ The table below displays the means for the four groups:
   vertical-align: middle;
   text-align: left;
 }
-&#10;#rroywugtfl .gt_empty_group_heading {
+&#10;#qjvsyxzomc .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -242,13 +242,13 @@ The table below displays the means for the four groups:
   border-bottom-color: #D3D3D3;
   vertical-align: middle;
 }
-&#10;#rroywugtfl .gt_from_md > :first-child {
+&#10;#qjvsyxzomc .gt_from_md > :first-child {
   margin-top: 0;
 }
-&#10;#rroywugtfl .gt_from_md > :last-child {
+&#10;#qjvsyxzomc .gt_from_md > :last-child {
   margin-bottom: 0;
 }
-&#10;#rroywugtfl .gt_row {
+&#10;#qjvsyxzomc .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -266,7 +266,7 @@ The table below displays the means for the four groups:
   vertical-align: middle;
   overflow-x: hidden;
 }
-&#10;#rroywugtfl .gt_stub {
+&#10;#qjvsyxzomc .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -278,7 +278,7 @@ The table below displays the means for the four groups:
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#rroywugtfl .gt_stub_row_group {
+&#10;#qjvsyxzomc .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -291,13 +291,13 @@ The table below displays the means for the four groups:
   padding-right: 5px;
   vertical-align: top;
 }
-&#10;#rroywugtfl .gt_row_group_first td {
+&#10;#qjvsyxzomc .gt_row_group_first td {
   border-top-width: 2px;
 }
-&#10;#rroywugtfl .gt_row_group_first th {
+&#10;#qjvsyxzomc .gt_row_group_first th {
   border-top-width: 2px;
 }
-&#10;#rroywugtfl .gt_summary_row {
+&#10;#qjvsyxzomc .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -306,14 +306,14 @@ The table below displays the means for the four groups:
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#rroywugtfl .gt_first_summary_row {
+&#10;#qjvsyxzomc .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
-&#10;#rroywugtfl .gt_first_summary_row.thick {
+&#10;#qjvsyxzomc .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
-&#10;#rroywugtfl .gt_last_summary_row {
+&#10;#qjvsyxzomc .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -322,7 +322,7 @@ The table below displays the means for the four groups:
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#rroywugtfl .gt_grand_summary_row {
+&#10;#qjvsyxzomc .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -331,7 +331,7 @@ The table below displays the means for the four groups:
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#rroywugtfl .gt_first_grand_summary_row {
+&#10;#qjvsyxzomc .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -340,7 +340,7 @@ The table below displays the means for the four groups:
   border-top-width: 6px;
   border-top-color: #D3D3D3;
 }
-&#10;#rroywugtfl .gt_last_grand_summary_row_top {
+&#10;#qjvsyxzomc .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -349,10 +349,10 @@ The table below displays the means for the four groups:
   border-bottom-width: 6px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#rroywugtfl .gt_striped {
+&#10;#qjvsyxzomc .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
-&#10;#rroywugtfl .gt_table_body {
+&#10;#qjvsyxzomc .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -360,7 +360,7 @@ The table below displays the means for the four groups:
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#rroywugtfl .gt_footnotes {
+&#10;#qjvsyxzomc .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -373,7 +373,7 @@ The table below displays the means for the four groups:
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-&#10;#rroywugtfl .gt_footnote {
+&#10;#qjvsyxzomc .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -381,7 +381,7 @@ The table below displays the means for the four groups:
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#rroywugtfl .gt_sourcenotes {
+&#10;#qjvsyxzomc .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -394,57 +394,57 @@ The table below displays the means for the four groups:
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-&#10;#rroywugtfl .gt_sourcenote {
+&#10;#qjvsyxzomc .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#rroywugtfl .gt_left {
+&#10;#qjvsyxzomc .gt_left {
   text-align: left;
 }
-&#10;#rroywugtfl .gt_center {
+&#10;#qjvsyxzomc .gt_center {
   text-align: center;
 }
-&#10;#rroywugtfl .gt_right {
+&#10;#qjvsyxzomc .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
-&#10;#rroywugtfl .gt_font_normal {
+&#10;#qjvsyxzomc .gt_font_normal {
   font-weight: normal;
 }
-&#10;#rroywugtfl .gt_font_bold {
+&#10;#qjvsyxzomc .gt_font_bold {
   font-weight: bold;
 }
-&#10;#rroywugtfl .gt_font_italic {
+&#10;#qjvsyxzomc .gt_font_italic {
   font-style: italic;
 }
-&#10;#rroywugtfl .gt_super {
+&#10;#qjvsyxzomc .gt_super {
   font-size: 65%;
 }
-&#10;#rroywugtfl .gt_footnote_marks {
+&#10;#qjvsyxzomc .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
-&#10;#rroywugtfl .gt_asterisk {
+&#10;#qjvsyxzomc .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
-&#10;#rroywugtfl .gt_indent_1 {
+&#10;#qjvsyxzomc .gt_indent_1 {
   text-indent: 5px;
 }
-&#10;#rroywugtfl .gt_indent_2 {
+&#10;#qjvsyxzomc .gt_indent_2 {
   text-indent: 10px;
 }
-&#10;#rroywugtfl .gt_indent_3 {
+&#10;#qjvsyxzomc .gt_indent_3 {
   text-indent: 15px;
 }
-&#10;#rroywugtfl .gt_indent_4 {
+&#10;#qjvsyxzomc .gt_indent_4 {
   text-indent: 20px;
 }
-&#10;#rroywugtfl .gt_indent_5 {
+&#10;#qjvsyxzomc .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -489,20 +489,20 @@ Rows 1 and 2 show face ratings for incumbents in either a toss-up or safe seat. 
 
 These results can be further broken down by party:
 
-<div id="npopkcjtyp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#npopkcjtyp table {
+<div id="ijwjfbmzjy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ijwjfbmzjy table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-&#10;#npopkcjtyp thead, #npopkcjtyp tbody, #npopkcjtyp tfoot, #npopkcjtyp tr, #npopkcjtyp td, #npopkcjtyp th {
+&#10;#ijwjfbmzjy thead, #ijwjfbmzjy tbody, #ijwjfbmzjy tfoot, #ijwjfbmzjy tr, #ijwjfbmzjy td, #ijwjfbmzjy th {
   border-style: none;
 }
-&#10;#npopkcjtyp p {
+&#10;#ijwjfbmzjy p {
   margin: 0;
   padding: 0;
 }
-&#10;#npopkcjtyp .gt_table {
+&#10;#ijwjfbmzjy .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -527,11 +527,11 @@ These results can be further broken down by party:
   border-left-width: 2px;
   border-left-color: #D3D3D3;
 }
-&#10;#npopkcjtyp .gt_caption {
+&#10;#ijwjfbmzjy .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
-&#10;#npopkcjtyp .gt_title {
+&#10;#ijwjfbmzjy .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -542,7 +542,7 @@ These results can be further broken down by party:
   border-bottom-color: #FFFFFF;
   border-bottom-width: 0;
 }
-&#10;#npopkcjtyp .gt_subtitle {
+&#10;#ijwjfbmzjy .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -553,7 +553,7 @@ These results can be further broken down by party:
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
-&#10;#npopkcjtyp .gt_heading {
+&#10;#ijwjfbmzjy .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -564,12 +564,12 @@ These results can be further broken down by party:
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-&#10;#npopkcjtyp .gt_bottom_border {
+&#10;#ijwjfbmzjy .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#npopkcjtyp .gt_col_headings {
+&#10;#ijwjfbmzjy .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -583,7 +583,7 @@ These results can be further broken down by party:
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-&#10;#npopkcjtyp .gt_col_heading {
+&#10;#ijwjfbmzjy .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -602,7 +602,7 @@ These results can be further broken down by party:
   padding-right: 5px;
   overflow-x: hidden;
 }
-&#10;#npopkcjtyp .gt_column_spanner_outer {
+&#10;#ijwjfbmzjy .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -613,13 +613,13 @@ These results can be further broken down by party:
   padding-left: 4px;
   padding-right: 4px;
 }
-&#10;#npopkcjtyp .gt_column_spanner_outer:first-child {
+&#10;#ijwjfbmzjy .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
-&#10;#npopkcjtyp .gt_column_spanner_outer:last-child {
+&#10;#ijwjfbmzjy .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
-&#10;#npopkcjtyp .gt_column_spanner {
+&#10;#ijwjfbmzjy .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -630,10 +630,10 @@ These results can be further broken down by party:
   display: inline-block;
   width: 100%;
 }
-&#10;#npopkcjtyp .gt_spanner_row {
+&#10;#ijwjfbmzjy .gt_spanner_row {
   border-bottom-style: hidden;
 }
-&#10;#npopkcjtyp .gt_group_heading {
+&#10;#ijwjfbmzjy .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -658,7 +658,7 @@ These results can be further broken down by party:
   vertical-align: middle;
   text-align: left;
 }
-&#10;#npopkcjtyp .gt_empty_group_heading {
+&#10;#ijwjfbmzjy .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -672,13 +672,13 @@ These results can be further broken down by party:
   border-bottom-color: #D3D3D3;
   vertical-align: middle;
 }
-&#10;#npopkcjtyp .gt_from_md > :first-child {
+&#10;#ijwjfbmzjy .gt_from_md > :first-child {
   margin-top: 0;
 }
-&#10;#npopkcjtyp .gt_from_md > :last-child {
+&#10;#ijwjfbmzjy .gt_from_md > :last-child {
   margin-bottom: 0;
 }
-&#10;#npopkcjtyp .gt_row {
+&#10;#ijwjfbmzjy .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -696,7 +696,7 @@ These results can be further broken down by party:
   vertical-align: middle;
   overflow-x: hidden;
 }
-&#10;#npopkcjtyp .gt_stub {
+&#10;#ijwjfbmzjy .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -708,7 +708,7 @@ These results can be further broken down by party:
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#npopkcjtyp .gt_stub_row_group {
+&#10;#ijwjfbmzjy .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -721,13 +721,13 @@ These results can be further broken down by party:
   padding-right: 5px;
   vertical-align: top;
 }
-&#10;#npopkcjtyp .gt_row_group_first td {
+&#10;#ijwjfbmzjy .gt_row_group_first td {
   border-top-width: 2px;
 }
-&#10;#npopkcjtyp .gt_row_group_first th {
+&#10;#ijwjfbmzjy .gt_row_group_first th {
   border-top-width: 2px;
 }
-&#10;#npopkcjtyp .gt_summary_row {
+&#10;#ijwjfbmzjy .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -736,14 +736,14 @@ These results can be further broken down by party:
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#npopkcjtyp .gt_first_summary_row {
+&#10;#ijwjfbmzjy .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
-&#10;#npopkcjtyp .gt_first_summary_row.thick {
+&#10;#ijwjfbmzjy .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
-&#10;#npopkcjtyp .gt_last_summary_row {
+&#10;#ijwjfbmzjy .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -752,7 +752,7 @@ These results can be further broken down by party:
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#npopkcjtyp .gt_grand_summary_row {
+&#10;#ijwjfbmzjy .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -761,7 +761,7 @@ These results can be further broken down by party:
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#npopkcjtyp .gt_first_grand_summary_row {
+&#10;#ijwjfbmzjy .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -770,7 +770,7 @@ These results can be further broken down by party:
   border-top-width: 6px;
   border-top-color: #D3D3D3;
 }
-&#10;#npopkcjtyp .gt_last_grand_summary_row_top {
+&#10;#ijwjfbmzjy .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -779,10 +779,10 @@ These results can be further broken down by party:
   border-bottom-width: 6px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#npopkcjtyp .gt_striped {
+&#10;#ijwjfbmzjy .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
-&#10;#npopkcjtyp .gt_table_body {
+&#10;#ijwjfbmzjy .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -790,7 +790,7 @@ These results can be further broken down by party:
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#npopkcjtyp .gt_footnotes {
+&#10;#ijwjfbmzjy .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -803,7 +803,7 @@ These results can be further broken down by party:
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-&#10;#npopkcjtyp .gt_footnote {
+&#10;#ijwjfbmzjy .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -811,7 +811,7 @@ These results can be further broken down by party:
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#npopkcjtyp .gt_sourcenotes {
+&#10;#ijwjfbmzjy .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -824,57 +824,57 @@ These results can be further broken down by party:
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-&#10;#npopkcjtyp .gt_sourcenote {
+&#10;#ijwjfbmzjy .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#npopkcjtyp .gt_left {
+&#10;#ijwjfbmzjy .gt_left {
   text-align: left;
 }
-&#10;#npopkcjtyp .gt_center {
+&#10;#ijwjfbmzjy .gt_center {
   text-align: center;
 }
-&#10;#npopkcjtyp .gt_right {
+&#10;#ijwjfbmzjy .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
-&#10;#npopkcjtyp .gt_font_normal {
+&#10;#ijwjfbmzjy .gt_font_normal {
   font-weight: normal;
 }
-&#10;#npopkcjtyp .gt_font_bold {
+&#10;#ijwjfbmzjy .gt_font_bold {
   font-weight: bold;
 }
-&#10;#npopkcjtyp .gt_font_italic {
+&#10;#ijwjfbmzjy .gt_font_italic {
   font-style: italic;
 }
-&#10;#npopkcjtyp .gt_super {
+&#10;#ijwjfbmzjy .gt_super {
   font-size: 65%;
 }
-&#10;#npopkcjtyp .gt_footnote_marks {
+&#10;#ijwjfbmzjy .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
-&#10;#npopkcjtyp .gt_asterisk {
+&#10;#ijwjfbmzjy .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
-&#10;#npopkcjtyp .gt_indent_1 {
+&#10;#ijwjfbmzjy .gt_indent_1 {
   text-indent: 5px;
 }
-&#10;#npopkcjtyp .gt_indent_2 {
+&#10;#ijwjfbmzjy .gt_indent_2 {
   text-indent: 10px;
 }
-&#10;#npopkcjtyp .gt_indent_3 {
+&#10;#ijwjfbmzjy .gt_indent_3 {
   text-indent: 15px;
 }
-&#10;#npopkcjtyp .gt_indent_4 {
+&#10;#ijwjfbmzjy .gt_indent_4 {
   text-indent: 20px;
 }
-&#10;#npopkcjtyp .gt_indent_5 {
+&#10;#ijwjfbmzjy .gt_indent_5 {
   text-indent: 25px;
 }
 </style>

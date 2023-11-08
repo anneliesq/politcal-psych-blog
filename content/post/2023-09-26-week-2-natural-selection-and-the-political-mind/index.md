@@ -65,20 +65,20 @@ From the heatmap and the barplot, we see that most games (11/21) resulted in a `
 
 From these charts, it is obvious that all strategies score the most points when they play themselves. To assess which strategy received the most scores on average, I averaged the scores, not including the games the strategy played itself.
 
-<div id="musrqeisfp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#musrqeisfp table {
+<div id="vqthhidblm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#vqthhidblm table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-&#10;#musrqeisfp thead, #musrqeisfp tbody, #musrqeisfp tfoot, #musrqeisfp tr, #musrqeisfp td, #musrqeisfp th {
+&#10;#vqthhidblm thead, #vqthhidblm tbody, #vqthhidblm tfoot, #vqthhidblm tr, #vqthhidblm td, #vqthhidblm th {
   border-style: none;
 }
-&#10;#musrqeisfp p {
+&#10;#vqthhidblm p {
   margin: 0;
   padding: 0;
 }
-&#10;#musrqeisfp .gt_table {
+&#10;#vqthhidblm .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -103,11 +103,11 @@ From these charts, it is obvious that all strategies score the most points when 
   border-left-width: 2px;
   border-left-color: #D3D3D3;
 }
-&#10;#musrqeisfp .gt_caption {
+&#10;#vqthhidblm .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
-&#10;#musrqeisfp .gt_title {
+&#10;#vqthhidblm .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -118,7 +118,7 @@ From these charts, it is obvious that all strategies score the most points when 
   border-bottom-color: #FFFFFF;
   border-bottom-width: 0;
 }
-&#10;#musrqeisfp .gt_subtitle {
+&#10;#vqthhidblm .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -129,7 +129,7 @@ From these charts, it is obvious that all strategies score the most points when 
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
-&#10;#musrqeisfp .gt_heading {
+&#10;#vqthhidblm .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -140,12 +140,12 @@ From these charts, it is obvious that all strategies score the most points when 
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-&#10;#musrqeisfp .gt_bottom_border {
+&#10;#vqthhidblm .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#musrqeisfp .gt_col_headings {
+&#10;#vqthhidblm .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -159,7 +159,7 @@ From these charts, it is obvious that all strategies score the most points when 
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-&#10;#musrqeisfp .gt_col_heading {
+&#10;#vqthhidblm .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -178,7 +178,7 @@ From these charts, it is obvious that all strategies score the most points when 
   padding-right: 5px;
   overflow-x: hidden;
 }
-&#10;#musrqeisfp .gt_column_spanner_outer {
+&#10;#vqthhidblm .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -189,13 +189,13 @@ From these charts, it is obvious that all strategies score the most points when 
   padding-left: 4px;
   padding-right: 4px;
 }
-&#10;#musrqeisfp .gt_column_spanner_outer:first-child {
+&#10;#vqthhidblm .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
-&#10;#musrqeisfp .gt_column_spanner_outer:last-child {
+&#10;#vqthhidblm .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
-&#10;#musrqeisfp .gt_column_spanner {
+&#10;#vqthhidblm .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -206,10 +206,10 @@ From these charts, it is obvious that all strategies score the most points when 
   display: inline-block;
   width: 100%;
 }
-&#10;#musrqeisfp .gt_spanner_row {
+&#10;#vqthhidblm .gt_spanner_row {
   border-bottom-style: hidden;
 }
-&#10;#musrqeisfp .gt_group_heading {
+&#10;#vqthhidblm .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -234,7 +234,7 @@ From these charts, it is obvious that all strategies score the most points when 
   vertical-align: middle;
   text-align: left;
 }
-&#10;#musrqeisfp .gt_empty_group_heading {
+&#10;#vqthhidblm .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -248,13 +248,13 @@ From these charts, it is obvious that all strategies score the most points when 
   border-bottom-color: #D3D3D3;
   vertical-align: middle;
 }
-&#10;#musrqeisfp .gt_from_md > :first-child {
+&#10;#vqthhidblm .gt_from_md > :first-child {
   margin-top: 0;
 }
-&#10;#musrqeisfp .gt_from_md > :last-child {
+&#10;#vqthhidblm .gt_from_md > :last-child {
   margin-bottom: 0;
 }
-&#10;#musrqeisfp .gt_row {
+&#10;#vqthhidblm .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -272,7 +272,7 @@ From these charts, it is obvious that all strategies score the most points when 
   vertical-align: middle;
   overflow-x: hidden;
 }
-&#10;#musrqeisfp .gt_stub {
+&#10;#vqthhidblm .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -284,7 +284,7 @@ From these charts, it is obvious that all strategies score the most points when 
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#musrqeisfp .gt_stub_row_group {
+&#10;#vqthhidblm .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -297,13 +297,13 @@ From these charts, it is obvious that all strategies score the most points when 
   padding-right: 5px;
   vertical-align: top;
 }
-&#10;#musrqeisfp .gt_row_group_first td {
+&#10;#vqthhidblm .gt_row_group_first td {
   border-top-width: 2px;
 }
-&#10;#musrqeisfp .gt_row_group_first th {
+&#10;#vqthhidblm .gt_row_group_first th {
   border-top-width: 2px;
 }
-&#10;#musrqeisfp .gt_summary_row {
+&#10;#vqthhidblm .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -312,14 +312,14 @@ From these charts, it is obvious that all strategies score the most points when 
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#musrqeisfp .gt_first_summary_row {
+&#10;#vqthhidblm .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
-&#10;#musrqeisfp .gt_first_summary_row.thick {
+&#10;#vqthhidblm .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
-&#10;#musrqeisfp .gt_last_summary_row {
+&#10;#vqthhidblm .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -328,7 +328,7 @@ From these charts, it is obvious that all strategies score the most points when 
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#musrqeisfp .gt_grand_summary_row {
+&#10;#vqthhidblm .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -337,7 +337,7 @@ From these charts, it is obvious that all strategies score the most points when 
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#musrqeisfp .gt_first_grand_summary_row {
+&#10;#vqthhidblm .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -346,7 +346,7 @@ From these charts, it is obvious that all strategies score the most points when 
   border-top-width: 6px;
   border-top-color: #D3D3D3;
 }
-&#10;#musrqeisfp .gt_last_grand_summary_row_top {
+&#10;#vqthhidblm .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -355,10 +355,10 @@ From these charts, it is obvious that all strategies score the most points when 
   border-bottom-width: 6px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#musrqeisfp .gt_striped {
+&#10;#vqthhidblm .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
-&#10;#musrqeisfp .gt_table_body {
+&#10;#vqthhidblm .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -366,7 +366,7 @@ From these charts, it is obvious that all strategies score the most points when 
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#musrqeisfp .gt_footnotes {
+&#10;#vqthhidblm .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -379,7 +379,7 @@ From these charts, it is obvious that all strategies score the most points when 
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-&#10;#musrqeisfp .gt_footnote {
+&#10;#vqthhidblm .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -387,7 +387,7 @@ From these charts, it is obvious that all strategies score the most points when 
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#musrqeisfp .gt_sourcenotes {
+&#10;#vqthhidblm .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -400,57 +400,57 @@ From these charts, it is obvious that all strategies score the most points when 
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-&#10;#musrqeisfp .gt_sourcenote {
+&#10;#vqthhidblm .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#musrqeisfp .gt_left {
+&#10;#vqthhidblm .gt_left {
   text-align: left;
 }
-&#10;#musrqeisfp .gt_center {
+&#10;#vqthhidblm .gt_center {
   text-align: center;
 }
-&#10;#musrqeisfp .gt_right {
+&#10;#vqthhidblm .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
-&#10;#musrqeisfp .gt_font_normal {
+&#10;#vqthhidblm .gt_font_normal {
   font-weight: normal;
 }
-&#10;#musrqeisfp .gt_font_bold {
+&#10;#vqthhidblm .gt_font_bold {
   font-weight: bold;
 }
-&#10;#musrqeisfp .gt_font_italic {
+&#10;#vqthhidblm .gt_font_italic {
   font-style: italic;
 }
-&#10;#musrqeisfp .gt_super {
+&#10;#vqthhidblm .gt_super {
   font-size: 65%;
 }
-&#10;#musrqeisfp .gt_footnote_marks {
+&#10;#vqthhidblm .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
-&#10;#musrqeisfp .gt_asterisk {
+&#10;#vqthhidblm .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
-&#10;#musrqeisfp .gt_indent_1 {
+&#10;#vqthhidblm .gt_indent_1 {
   text-indent: 5px;
 }
-&#10;#musrqeisfp .gt_indent_2 {
+&#10;#vqthhidblm .gt_indent_2 {
   text-indent: 10px;
 }
-&#10;#musrqeisfp .gt_indent_3 {
+&#10;#vqthhidblm .gt_indent_3 {
   text-indent: 15px;
 }
-&#10;#musrqeisfp .gt_indent_4 {
+&#10;#vqthhidblm .gt_indent_4 {
   text-indent: 20px;
 }
-&#10;#musrqeisfp .gt_indent_5 {
+&#10;#vqthhidblm .gt_indent_5 {
   text-indent: 25px;
 }
 </style>

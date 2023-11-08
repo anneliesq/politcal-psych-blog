@@ -115,12 +115,11 @@
 <p>The results below show the difference in average favorability toward police before the killing of George Floyd and after. From these results we see there is a significant decline in favorability after the killing. This is due to the small p-value and the confidence interval not including zero, allowing us to reject the null hypothesis that there was no relationship between the murder and change in favorability. Looking directly at the means, the mean of x (before the killing) is smaller than the mean of y (after the killing). Favorability of police is coded on a 1-4 scale in which 1 is very favorable and 4 is very unfavorable. Therefore, a postive difference in ~0.15 means that on average, police favoriability decreased by ~0.15.</p>
 <p><img src="images/Screen%20Shot%202023-11-05%20at%205.31.13%20PM.png" alt=""></p>
 <h3 id="perception-of-discrimination-faced-by-black-americans">Perception of Discrimination Faced By Black Americans</h3>
-<p>Similar to police favorability, we can assess the average perception of discrimination faced by Black Americans. The results show there was a significant increase in perception of discrimination due to the confidence interval not including zero and a small p-value (reject null hypothesis). The means show that, on average, perception of discrimination increased by ~0.14 before and after the killing of George Floyd. This is because discriminatio is coded on a 1-5 scale, in which higher numbers are associated with higher levels of discrimination.</p>
+<p>Similar to police favorability, we can assess the average perception of discrimination faced by Black Americans. The results show there was a significant increase in perception of discrimination due to the confidence interval not including zero and a small p-value (reject null hypothesis). The means show that, on average, perception of discrimination increased by ~0.14 before and after the killing of George Floyd. This is because discrimination is coded on a 1-5 scale, in which higher numbers are associated with higher levels of discrimination.</p>
 <p><img src="images/Screen%20Shot%202023-11-05%20at%205.32.46%20PM.png" alt=""></p>
 <h2 id="replication-of-reny-and-newman-2021">Replication of Reny and Newman (2021):</h2>
 <p>After considering how these perceptions changed on average, I next consider these trends based on racial groups. The graphs below replicate the regression discontinuity design visualization created by Reny and Newman (2021).</p>
 <p>For each racial group indentified in the survey (Non-Hispanic White, Asian Americans, Black Americans, Lationos, and other races), I have plotted the average rating (perception or favorability) for each day and shown the overall trend line. I create a separate trend line for before the killing and after, denoted by the dashed line at day 0 (killing of George Floyd).</p>
-<p><strong>insert page number</strong></p>
 <img src="http://example.org/post/2023-11-05-week-8-symbolic-politics/index_files/figure-html/unnamed-chunk-5-1.png" width="672" />
 <h3 id="perception-of-discrimination-faced-by-black-americans-1">Perception of Discrimination Faced by Black Americans</h3>
 <p>In the the left column, we see the perception of discrimination faced by Black Americans. For all groups, there is a significant jump at the threshold (day 0), indicating a higher level of perception of discrimination. However, we can see that this is more significant for certain groups. Specifically, this appears the least apparent for Black Americans. Black Americans already had the highest level of perception before the killing than any other racial group. From these graphs we also see that after the killing, there is a spike, but by 100 days after, the levels appear to return to baseline. This means that the killing created immediate change, but not necessarily lasting change in perceptions.</p>
@@ -129,6 +128,9 @@
 <h2 id="modeling-favorability">Modeling Favorability:</h2>
 <p>In this section of the blog, I attempt to model the two outcome variables (<code>group_favorability_the_police</code> and <code>discrimination_blacks</code> from two predictor variables: political ideology and an indicator variable for the day (before =1, after = 0).</p>
 <p>For each outcome variable, I consider two model types: linear and logit models.</p>
+<h2 id="probit-vs-regression">Probit Vs. Regression:</h2>
+<p>OLS models work best for continuous outcome variables, whereas probit models are effective when the outcome variable is categorical. Unlike using least squared in OLS regression, a probit model uses Maximum Likelihood Estimation to predict the parameters. An ordered probit model is effective when the response variable is categorical and ordered. This means the values have an obvious order.</p>
+<p>For this blog, I use the response variable of <code>group_favorability_the_police</code>. As shown above, this variable takes values between 1-4, where 1 is very favorable and 4 is very unfavorable. Further, although this variable is ordinal, the difference between each level is not the same. Very favorable to somewhat favorable is less than somewhat favorable to somewhat unfavorable. For these reasons, an ordered probit model appears more appropriate for the given response variable.</p>
 <h3 id="police-favorability">Police favorability:</h3>
 <h4 id="linear-regression">Linear Regression</h4>
 <p>Theregression output belowdisplays the regression results for favorability of the police. Both variables are significant at the 95% confidence level. Further, both variables are negative. This that for a one unit increase in each variable, police favorability will decrease on the scale, but increase overall because lower values are associated with higher levels of favorability.</p>
@@ -156,100 +158,17 @@
 <p>Probit models are helpful when there is an ordinal bounded response variable (such as with police favorability)</p>
 <p><strong>Political Ideology</strong>: As political ideology increases by 1 unit (become more republican), holding date constant, police favorability decreases in log odds by 0.179 units (become more favorable). This is slightly lower than what the linear</p>
 <p><strong>Date</strong>: For dates after the killing, police favorability was log odds 0.002 lower (become more favorable) for each unit increase in days, holding ideology constant. That means that as days progressed, police became more favorable.</p>
-<p>Interpreting the intercepts, we see that when all variables as zero, the very favorable | somewhat favorable towards the police intercept has an odds of very favorable towards the police of -1.234.</p>
-<p>![](images/Screen Shot 2023-11-07 at 12.54.39 PM.png)</p>
+<p>The intercepts are the expected odds when other variables are zero. For example, the very favorable |<br>
+somewhat favorable intercept (1|2) is -1.234. This is the expected log-odds of having a &ldquo;very favorable&rdquo; attitude towards the police, when other variables are zero.</p>
+<p><img src="images/Screen%20Shot%202023-11-07%20at%2012.54.39%20PM.png" alt="">{width=&ldquo;457&rdquo;}</p>
 <h2 id="interpretation">Interpretation:</h2>
+<p>This blog utilized the data in Reny and Newman (2021) to evaluate perceptions toward Black Americans and favorability toward the police after the killing of George Floyd. In the section section (&ldquo;Replicaiton of Reny and Newman (2021)&rdquo;), I recreate the regression discontinuity in time figures. Similar to Reny and Newman who find a &ldquo;ubiquitous shift in public attitudes&rdquo; after the killing of George Floyd, the data shows for all races, this event caused police favorability to decrease and perception of Black Discrimination to increase. With regard to symbolic politics, we would expect little change before and after the killing of George Floyd, indicating these beliefs are constant and powerful, regardless of the environment. However, my data and Reny and Newman show, that when looking at race, this theory does not hold.</p>
+<p>An alternative way to measure symbolic politics with this data would be to consider high and low prejudice respondents and strong democrats and republicans. Among these groups, Reny and Newman found that for high predjudice and strong republicans, symbolic politics was present. The graphs below, taken from Reny and Newman (2021), illustrate that there is little change before and after the killing for these two groups. To assess prejudice, Reny and Newman consider two indicators: &ldquo;a Black&ndash;White favorability differential, which subtracts Black from white favorability Likert scales, and the &lsquo;generations&rsquo; item from the well-known racial resentment scale.&rdquo; These results make sense intuitively because those who hold strong opinions are less likely to be swayed by an event or protest. The difference between strong republicans and strong democrats is interesting to me, but I think SDO has relevance to this difference. In past weeks, we found that republicans exhibit higher levels of SDO and are less open to new experiences than democrats. I think this degree of openness is reflected as strong democrats are being swayed by the event but not strong republicans.</p>
+<p>![](images/Screen Shot 2023-11-07 at 9.08.24 PM.png){width=&ldquo;339&rdquo;}</p>
+<h2 id="implications">Implications</h2>
+<p>These results illustrate how instigating change is extremely difficult, especially when the target audience is highly prejudiced and holding symbolic attitudes. These protests lasted months, involved thousands of individuals, and garnered world-wide attention and, yet, little difference in opinion is reflected. These findings show that high levels of conservatism and high prejudiced individuals exhibit high degrees of symbolic attitudes. In class we discussed how symbolic attitudes are introduced at young ages and reinforced thorughout life. If we consider symbolic politics to be harmful because of their inability to adapt to the world, reducing this crystallization of beliefs at a young age could reduce this tendency. Areas such as lessons in early in education that reduce racial biases is one place to start.</p>
 <h2 id="references">References:</h2>
 <p>Reny, T. T. and Newman, B. J. (2021). The Opinion-Mobilizing Effect of Social Protest against Police Violence: Evidence from the 2020 George Floyd Protests. American Political Science Review, pages 1&ndash;9.</p>
-<h2 id="class-notes">Class Notes:</h2>
-<ul>
-<li>
-<p>state can have monopoly on legitimate use of force</p>
-</li>
-<li>
-<p>why do people riot/violence?</p>
-<ul>
-<li>
-<p>critque on violence: Sears and McConahay 1973 &ldquo;The riot is assigned about as much symbolic political meaning as a drunken brawl in a tavern&rdquo;</p>
-</li>
-<li>
-<p>when evaluating a complex political object, people rely on symbolic predispositions that were socialized early in life</p>
-</li>
-</ul>
-</li>
-<li>
-<p>what are symbolic attitudes/positions:</p>
-<ul>
-<li>
-<p>most stable attitudes (stability)</p>
-</li>
-<li>
-<p>consistent responses over similar attitude objects (constraint)</p>
-</li>
-<li>
-<p>most influential toward other objects (power)</p>
-</li>
-</ul>
-</li>
-<li>
-<p>Busing:</p>
-<ul>
-<li>
-<p>attitudes on busing was entirely based on early attitudes</p>
-</li>
-<li>
-<p>regression shows intolerance has highest coefficient</p>
-</li>
-</ul>
-</li>
-<li>
-<p>Objects in American Politics that are associated with stable, consistent, and powerful:</p>
-<ul>
-<li>constitution</li>
-</ul>
-</li>
-<li>
-<p>longitudinal study demonstrates that group attitudes are powerful and stable and can predict political orientation</p>
-</li>
-<li>
-<p>Sam Huntington: Political Order in Changing Societies:</p>
-<ul>
-<li>Mau Mau Uprising (1952-1960), claimed education in the colonies contributed to rioting</li>
-</ul>
-</li>
-<li>
-<p>symbolic and modern racism is based on the racial resentment scale</p>
-<ul>
-<li>how can it measure both? attitudes that are socially early and stable and looks at race through both modern (1950s) and old perspectives</li>
-</ul>
-</li>
-<li>
-<p>racial resentment scales:</p>
-<ul>
-<li>critique is measures conservatism not racism</li>
-</ul>
-</li>
-</ul>
-<h2 id="data-notes">Data Notes:</h2>
-<ul>
-<li>
-<p>exploit the murder of George Floyd to understand their reaction by evaluating their pre-behaviors</p>
-<h2 id="section-notes">Section Notes:</h2>
-</li>
-<li>
-<p>Reny and Newman (2021) argue that instances of social protest against the police such as the 2020 Floyd protests, should exert widespread effects on the police</p>
-</li>
-<li>
-<p>social protest following recent police killings may have little effect</p>
-</li>
-<li>
-<p>comment on the RDD thresholds and differences between baseline for different racial groups</p>
-</li>
-<li>
-<p>symbolic politics means that shocking events would only effect people with less chrystalized</p>
-</li>
-<li></li>
-</ul>
 
 
 		
@@ -266,7 +185,7 @@
         		<footer>
 			
 			<span>
-			&copy; <time datetime="2023-11-07 13:24:08.554223 -0500 EST m=&#43;0.093284459">2023</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			&copy; <time datetime="2023-11-07 22:05:49.210249 -0500 EST m=&#43;0.107353585">2023</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
 			</span>
 		</footer>
 
