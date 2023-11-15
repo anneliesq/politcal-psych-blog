@@ -22,7 +22,7 @@ The data utilized in this blog is from Reny and Newman (2021). They "exploit" a 
 A list of key variables utilized in this blog can be found below:
 
 | Variable Name                   | Variable Description                                                                                                                                                                           |
-|--------------------------|---------------------------------------------|
+|---------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `race_ethnicity`                | Race or ethnicity. Levels labelled in data: 1-White, 2-Black or AfAm, 3-American Indian or Alaskan Native, 4 through 14- Asian or Pacific Islander (details in labels), and 15-Some other race |
 | `hispanic`                      | Of Hispanic, Latino, or Spanish origin. Levels labelled in data: 1-Not Hispanic, 2-15 Hispanic of various origins                                                                              |
 | `day_running`                   | Day relative to onset of George Floyd protests (day 0)                                                                                                                                         |
