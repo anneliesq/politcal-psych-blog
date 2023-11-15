@@ -88,7 +88,7 @@ The t-test shows that the mean rating for Chinese among the treated is lower tha
 
 The t-test shows that the mean rating for Japanese among the treated is higher than that of the control. Further, these results are statistically significant, demonstrating the treatment was effective in improving the positivity rating of Japanese people among Chinese students in this study.
 
-#### Average Affection Difference Comparison
+### Average Affection Difference Comparison
 
 
 
@@ -96,7 +96,7 @@ The t-test shows that the mean rating for Japanese among the treated is higher t
 
 This t-test considers the difference in average affect scores between Chinese and Japanese people for the treatment and control grups. The output is the mean difference between ratings. A lower value demonstrates there is less animosity toward Japanese people. The results are statistically significant and show that the treated had a smaller difference than the control, indicating the treatment was effective.
 
-## Modeling Affect:
+### Modeling Affect:
 
 -   Dependent Variable : `AffectDiff_avg`
 
@@ -113,30 +113,27 @@ This t-test considers the difference in average affect scores between Chinese an
     -   In this age demographic, I would expect older people to be less critical because they have spent more time away from home, where traditional beliefs, such as cemented symbolic attitudes like disapproval toward Japanese people, would likely exist.
 
 
-```
-## 
-## <table style="text-align:center"><caption><strong>Regression Results</strong></caption>
-## <tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"></td><td><em>Dependent variable:</em></td></tr>
-## <tr><td></td><td colspan="1" style="border-bottom: 1px solid black"></td></tr>
-## <tr><td style="text-align:left"></td><td>Difference in Affection For Chinese and Japanese</td></tr>
-## <tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Treatment</td><td>-0.647<sup>**</sup></td></tr>
-## <tr><td style="text-align:left"></td><td>(0.287)</td></tr>
-## <tr><td style="text-align:left"></td><td></td></tr>
-## <tr><td style="text-align:left">Has Japanese Friend</td><td>0.180</td></tr>
-## <tr><td style="text-align:left"></td><td>(0.297)</td></tr>
-## <tr><td style="text-align:left"></td><td></td></tr>
-## <tr><td style="text-align:left">Age</td><td>-0.041</td></tr>
-## <tr><td style="text-align:left"></td><td>(0.046)</td></tr>
-## <tr><td style="text-align:left"></td><td></td></tr>
-## <tr><td style="text-align:left">Constant</td><td>2.114<sup>**</sup></td></tr>
-## <tr><td style="text-align:left"></td><td>(1.044)</td></tr>
-## <tr><td style="text-align:left"></td><td></td></tr>
-## <tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Observations</td><td>120</td></tr>
-## <tr><td style="text-align:left">R<sup>2</sup></td><td>0.051</td></tr>
-## <tr><td style="text-align:left">Adjusted R<sup>2</sup></td><td>0.026</td></tr>
-## <tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"><em>Note:</em></td><td style="text-align:right"><sup>*</sup>p<0.1; <sup>**</sup>p<0.05; <sup>***</sup>p<0.01</td></tr>
-## </table>
-```
+<table style="text-align:center"><caption><strong>Regression Results</strong></caption>
+<tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"></td><td><em>Dependent variable:</em></td></tr>
+<tr><td></td><td colspan="1" style="border-bottom: 1px solid black"></td></tr>
+<tr><td style="text-align:left"></td><td>Difference in Affection For Chinese and Japanese</td></tr>
+<tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Treatment</td><td>-0.647<sup>**</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(0.287)</td></tr>
+<tr><td style="text-align:left"></td><td></td></tr>
+<tr><td style="text-align:left">Has Japanese Friend</td><td>0.180</td></tr>
+<tr><td style="text-align:left"></td><td>(0.297)</td></tr>
+<tr><td style="text-align:left"></td><td></td></tr>
+<tr><td style="text-align:left">Age</td><td>-0.041</td></tr>
+<tr><td style="text-align:left"></td><td>(0.046)</td></tr>
+<tr><td style="text-align:left"></td><td></td></tr>
+<tr><td style="text-align:left">Constant</td><td>2.114<sup>**</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(1.044)</td></tr>
+<tr><td style="text-align:left"></td><td></td></tr>
+<tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Observations</td><td>120</td></tr>
+<tr><td style="text-align:left">R<sup>2</sup></td><td>0.051</td></tr>
+<tr><td style="text-align:left">Adjusted R<sup>2</sup></td><td>0.026</td></tr>
+<tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"><em>Note:</em></td><td style="text-align:right"><sup>*</sup>p<0.1; <sup>**</sup>p<0.05; <sup>***</sup>p<0.01</td></tr>
+</table>
 
 #### Interpretation
 
@@ -186,10 +183,24 @@ The t-test displays the difference between positivity scores for treatment and c
 
 The t-test displays the difference between positivity scores for treatment and control for the out-party. The results are statistically insignificant.
 
-#### Average Affection Difference Comparison
+### Average Affection Difference Comparison
 
 
 
 ![](images/Screen%20Shot%202023-11-14%20at%209.33.05%20PM.png)
 
 The t-test displays the difference between average affect scores between in-party and out-party, from the treatment and control. The results are statistically insignificant.
+
+## Discussion
+
+In Wang et al. (2021) they found it "clear that imagined social contact does lead to a narrowing in the perceived difference in overall feelings toward Chinese and Japanese people" (pg. 233), similar to the results I presented in part 1 of this blog. However, in the second part of the blog I replicate the analyses with the class data. Unlike with Wang et al. (2021), there is a not a statistically significant difference between the treatment and control groups.
+
+This lack of statistical significance could be due to numerous factors. First, the class sample size is significantly smaller than the sample size in the original study. Further, as seen in earlier weeks, the political leanings of the class is homogeneous and favors the Democratic Party. For this reason, the results could actually be showing the impact of the treatment for democrats, not all people, regardless of political party affiliation. Additionally, the pool of subjects in the the class sample are students, similar to Wang et al. (2021). However, we are all fairly involved in government related topics. This bias towards politics could mean we are stronger partisans than the average student. A possible way to better replicate this study would be to get a more representative sample of students from different majors. Finally, despite these possible considerations for the difference, in the end, it could just be partisan and national identities are fundamentally different and the treatment is only effective for national identities. This could be because partisan identities are incredibly stationary in the United States, whereas relationship with other nations are more fluid and personal.
+
+Overall, the Wang et al. (2021) study demonstrates hope that with increased interaction, negativity toward out-group members can be lessened. This idea is consistent with other scholars, such as Mousa (2020). The author finds that when Christians and Muslims are on the same team post-ISIS Iraq, there are more intergroup relations, such as voting for a teammate of the other religion to receive a sportsmanship award. Although, these results are only applicable to the soccer setting, reducing the study's external validity. However, the study still shows that intergroup relations can be improved at an environmental level. This has large implications for policy development. Policies with specific interventions toward faciliating intergroup contact, may produce similarly positive results. An example of this could be seen through schools. Schools with higher levels of diversity could receive more funding, making it appealing to be in a diverse setting.
+
+## References
+
+Mousa, S. (2020). Building social cohesion between Christians and Muslims through soccer in post-ISIS Iraq. Science, 369(6505):866--870.
+
+Wang, D., Johnston, A. I., & Wang, B. (2021). The Effect of Imagined Social Contact on Chinese Students' Perceptions of Japanese People. Journal of Conflict Resolution, 65(1), 223-251.
