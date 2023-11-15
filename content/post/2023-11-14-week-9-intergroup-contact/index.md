@@ -141,7 +141,7 @@ This t-test considers the difference in average affect scores between Chinese an
 
 -   **(Null) Hypothesis 1a**: There is no statistically significant difference between ratings for those with and without a Japanese friends due to the treatment. Therefore, **we fail to reject the null hypothesis** that there is no difference between people with and without a Japanese friend's ratings of Chinese versus Japanese people after receiving the treatment about imagining positive contact with a Japanese person.
 
--   **(Null) Hypothesis 1a:** There is no statistically significant difference between ratings for older and youger respondents due to the treatment. Therefore, **we fail to reject the null hypothesis** that there is no difference between younger and older people's ratings of Chinese versus Japanese people after receiving the treatment about imagining positive contact with a Japanese person.
+-   **(Null) Hypothesis 1b:** There is no statistically significant difference between ratings for older and youger respondents due to the treatment. Therefore, **we fail to reject the null hypothesis** that there is no difference between younger and older people's ratings of Chinese versus Japanese people after receiving the treatment about imagining positive contact with a Japanese person.
 
 The graph below visualizes these confidence intervals, demonstrating that none of the control variables, only treatment, are statistically significant because zero is included in the confidence interval.
 
