@@ -71,20 +71,20 @@ This means treatment groups 3 and 4 should have the highest levels of disgust an
 
 The table below shows that this true. The difference appears to be especially clear for disgust. The highest anxiety level is for group 2 (high anxiety and low disgust). The highest disgust level is for group 4 (high anxiety and high disgust). These results are consistent with the findings from Clifford and Jerit (2018).
 
-<div id="hlwoldluxv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#hlwoldluxv table {
+<div id="fznxztnwti" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#fznxztnwti table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-&#10;#hlwoldluxv thead, #hlwoldluxv tbody, #hlwoldluxv tfoot, #hlwoldluxv tr, #hlwoldluxv td, #hlwoldluxv th {
+&#10;#fznxztnwti thead, #fznxztnwti tbody, #fznxztnwti tfoot, #fznxztnwti tr, #fznxztnwti td, #fznxztnwti th {
   border-style: none;
 }
-&#10;#hlwoldluxv p {
+&#10;#fznxztnwti p {
   margin: 0;
   padding: 0;
 }
-&#10;#hlwoldluxv .gt_table {
+&#10;#fznxztnwti .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -109,11 +109,11 @@ The table below shows that this true. The difference appears to be especially cl
   border-left-width: 2px;
   border-left-color: #D3D3D3;
 }
-&#10;#hlwoldluxv .gt_caption {
+&#10;#fznxztnwti .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
-&#10;#hlwoldluxv .gt_title {
+&#10;#fznxztnwti .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -124,7 +124,7 @@ The table below shows that this true. The difference appears to be especially cl
   border-bottom-color: #FFFFFF;
   border-bottom-width: 0;
 }
-&#10;#hlwoldluxv .gt_subtitle {
+&#10;#fznxztnwti .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -135,7 +135,7 @@ The table below shows that this true. The difference appears to be especially cl
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
-&#10;#hlwoldluxv .gt_heading {
+&#10;#fznxztnwti .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -146,12 +146,12 @@ The table below shows that this true. The difference appears to be especially cl
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-&#10;#hlwoldluxv .gt_bottom_border {
+&#10;#fznxztnwti .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#hlwoldluxv .gt_col_headings {
+&#10;#fznxztnwti .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -165,7 +165,7 @@ The table below shows that this true. The difference appears to be especially cl
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-&#10;#hlwoldluxv .gt_col_heading {
+&#10;#fznxztnwti .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -184,7 +184,7 @@ The table below shows that this true. The difference appears to be especially cl
   padding-right: 5px;
   overflow-x: hidden;
 }
-&#10;#hlwoldluxv .gt_column_spanner_outer {
+&#10;#fznxztnwti .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -195,13 +195,13 @@ The table below shows that this true. The difference appears to be especially cl
   padding-left: 4px;
   padding-right: 4px;
 }
-&#10;#hlwoldluxv .gt_column_spanner_outer:first-child {
+&#10;#fznxztnwti .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
-&#10;#hlwoldluxv .gt_column_spanner_outer:last-child {
+&#10;#fznxztnwti .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
-&#10;#hlwoldluxv .gt_column_spanner {
+&#10;#fznxztnwti .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -212,10 +212,10 @@ The table below shows that this true. The difference appears to be especially cl
   display: inline-block;
   width: 100%;
 }
-&#10;#hlwoldluxv .gt_spanner_row {
+&#10;#fznxztnwti .gt_spanner_row {
   border-bottom-style: hidden;
 }
-&#10;#hlwoldluxv .gt_group_heading {
+&#10;#fznxztnwti .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -240,7 +240,7 @@ The table below shows that this true. The difference appears to be especially cl
   vertical-align: middle;
   text-align: left;
 }
-&#10;#hlwoldluxv .gt_empty_group_heading {
+&#10;#fznxztnwti .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -254,13 +254,13 @@ The table below shows that this true. The difference appears to be especially cl
   border-bottom-color: #D3D3D3;
   vertical-align: middle;
 }
-&#10;#hlwoldluxv .gt_from_md > :first-child {
+&#10;#fznxztnwti .gt_from_md > :first-child {
   margin-top: 0;
 }
-&#10;#hlwoldluxv .gt_from_md > :last-child {
+&#10;#fznxztnwti .gt_from_md > :last-child {
   margin-bottom: 0;
 }
-&#10;#hlwoldluxv .gt_row {
+&#10;#fznxztnwti .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -278,7 +278,7 @@ The table below shows that this true. The difference appears to be especially cl
   vertical-align: middle;
   overflow-x: hidden;
 }
-&#10;#hlwoldluxv .gt_stub {
+&#10;#fznxztnwti .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -290,7 +290,7 @@ The table below shows that this true. The difference appears to be especially cl
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#hlwoldluxv .gt_stub_row_group {
+&#10;#fznxztnwti .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -303,13 +303,13 @@ The table below shows that this true. The difference appears to be especially cl
   padding-right: 5px;
   vertical-align: top;
 }
-&#10;#hlwoldluxv .gt_row_group_first td {
+&#10;#fznxztnwti .gt_row_group_first td {
   border-top-width: 2px;
 }
-&#10;#hlwoldluxv .gt_row_group_first th {
+&#10;#fznxztnwti .gt_row_group_first th {
   border-top-width: 2px;
 }
-&#10;#hlwoldluxv .gt_summary_row {
+&#10;#fznxztnwti .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -318,14 +318,14 @@ The table below shows that this true. The difference appears to be especially cl
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#hlwoldluxv .gt_first_summary_row {
+&#10;#fznxztnwti .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
-&#10;#hlwoldluxv .gt_first_summary_row.thick {
+&#10;#fznxztnwti .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
-&#10;#hlwoldluxv .gt_last_summary_row {
+&#10;#fznxztnwti .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -334,7 +334,7 @@ The table below shows that this true. The difference appears to be especially cl
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#hlwoldluxv .gt_grand_summary_row {
+&#10;#fznxztnwti .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -343,7 +343,7 @@ The table below shows that this true. The difference appears to be especially cl
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#hlwoldluxv .gt_first_grand_summary_row {
+&#10;#fznxztnwti .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -352,7 +352,7 @@ The table below shows that this true. The difference appears to be especially cl
   border-top-width: 6px;
   border-top-color: #D3D3D3;
 }
-&#10;#hlwoldluxv .gt_last_grand_summary_row_top {
+&#10;#fznxztnwti .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -361,10 +361,10 @@ The table below shows that this true. The difference appears to be especially cl
   border-bottom-width: 6px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#hlwoldluxv .gt_striped {
+&#10;#fznxztnwti .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
-&#10;#hlwoldluxv .gt_table_body {
+&#10;#fznxztnwti .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -372,7 +372,7 @@ The table below shows that this true. The difference appears to be especially cl
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#hlwoldluxv .gt_footnotes {
+&#10;#fznxztnwti .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -385,7 +385,7 @@ The table below shows that this true. The difference appears to be especially cl
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-&#10;#hlwoldluxv .gt_footnote {
+&#10;#fznxztnwti .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -393,7 +393,7 @@ The table below shows that this true. The difference appears to be especially cl
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#hlwoldluxv .gt_sourcenotes {
+&#10;#fznxztnwti .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -406,57 +406,57 @@ The table below shows that this true. The difference appears to be especially cl
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-&#10;#hlwoldluxv .gt_sourcenote {
+&#10;#fznxztnwti .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#hlwoldluxv .gt_left {
+&#10;#fznxztnwti .gt_left {
   text-align: left;
 }
-&#10;#hlwoldluxv .gt_center {
+&#10;#fznxztnwti .gt_center {
   text-align: center;
 }
-&#10;#hlwoldluxv .gt_right {
+&#10;#fznxztnwti .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
-&#10;#hlwoldluxv .gt_font_normal {
+&#10;#fznxztnwti .gt_font_normal {
   font-weight: normal;
 }
-&#10;#hlwoldluxv .gt_font_bold {
+&#10;#fznxztnwti .gt_font_bold {
   font-weight: bold;
 }
-&#10;#hlwoldluxv .gt_font_italic {
+&#10;#fznxztnwti .gt_font_italic {
   font-style: italic;
 }
-&#10;#hlwoldluxv .gt_super {
+&#10;#fznxztnwti .gt_super {
   font-size: 65%;
 }
-&#10;#hlwoldluxv .gt_footnote_marks {
+&#10;#fznxztnwti .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
-&#10;#hlwoldluxv .gt_asterisk {
+&#10;#fznxztnwti .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
-&#10;#hlwoldluxv .gt_indent_1 {
+&#10;#fznxztnwti .gt_indent_1 {
   text-indent: 5px;
 }
-&#10;#hlwoldluxv .gt_indent_2 {
+&#10;#fznxztnwti .gt_indent_2 {
   text-indent: 10px;
 }
-&#10;#hlwoldluxv .gt_indent_3 {
+&#10;#fznxztnwti .gt_indent_3 {
   text-indent: 15px;
 }
-&#10;#hlwoldluxv .gt_indent_4 {
+&#10;#fznxztnwti .gt_indent_4 {
   text-indent: 20px;
 }
-&#10;#hlwoldluxv .gt_indent_5 {
+&#10;#fznxztnwti .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -687,7 +687,7 @@ Hypothesis 1 states that “an object that induces disgust should increase reten
 
 The t-test below shows that there is ~ 0.04 average increase in correct symptom recollection, but the results are statistically insignificant. This is different from Clifford and Jerit (2018) because they control for anxiety. Their results find that in people in the high disgust condition were more “likely to remember both symptoms than respondents in the low disgust condition (70% vs. 61%, ~ 10 percentage points)” (pg. 270). There results are significant at the 90% confidence level. Their results confirm hypothesis 1.
 
-<img src="images/Screen%20Shot%202023-11-21%20at%207.14.26%20PM.png" width="466" />
+<img src="images/Screen%20Shot%202023-11-21%20at%207.14.26%20PM.png" width="1000" />
 
 ### Hypothesis 2
 
@@ -695,16 +695,26 @@ Hypothesis 2 states that “while disgust may improve memory of the source of em
 
 The t-test below shows that in high disgust situations, people are 10 percentage points less likely to identify fatigue as a symptom. In low digust conditions, 78% correcelty identify fatigue as a symptom, but in high disgust conditions, this drops to 69%. This results are statistically significant and consistent with the findings in Clifford and Jerit (2018).
 
-<img src="images/Screen%20Shot%202023-11-21%20at%207.20.42%20PM.png" width="445" />
+<img src="images/Screen%20Shot%202023-11-21%20at%208.05.52%20PM.png" width="1000" />
 
 ### Hypothesis 3
 
 The third hypothesis states that “a person who feels disgusted about a threat will avoid the source of disgust and new information about the topic” (pg. 268). To test this hypothesis, I consider the variable `additional_info`, which indicates whether a participant sought out additional information. My analysis shows the results are statistically insignificant, however, Clifford and Jerit (2018) perform a more robust analysis for hypothesis 3. They consider 4 different variables assessing information search. They found that “disgust generated a qualitatively different reaction than did anxiety—one of avoidance rather than engagement.” Specifically, “anxiety increased informationsearch only in the absence of disgust” (pg. 272). This means that among the emotions, anxiety is the best predictor for understanding if a person will seek additional information.
 
-<img src="images/Screen%20Shot%202023-11-21%20at%207.30.37%20PM.png" width="451" />
+<img src="images/Screen%20Shot%202023-11-21%20at%208.07.22%20PM.png" width="1000" />
 
 ## Discussion
 
+The results in this blog have shown that emotions can play a significant role in decision making and political behavior. Clifford and Jerit conclude that “that when threatening events also induce feelings of disgust—as they might in the case of an infectious disease—citizens disengage from the topic and become unwilling to learn more about it” (pg. 276). These results indicate that media headlines and political communication can have profound impacts on behavioral responses. In times of crisis, these results demonstrate that less appeal toward disgust can reduce the possibility of public disengagement.
+
+Another way emotion plays into the political space is through protective policies. Albertson and Gadarian find that “anxious citizens are motivated to support protective policies regardless of partisanship” (pg. 136). This means that inducing anxiety can be a tactic for garnering more support for one’s platform. Emotional responses illustrate how impactful political communication can be in manipulating support. This can also be a reason why many issues are often presented in a stress-inducing manner.
+
+Finally, these studies bring to question whether emotional responses are appropriate in the political space. For example, Dietrich, Enos, and Sen (2015) illustrate that voice pitch of Supreme Court Justices is a strong predictor of Court Rulings. Whether politicians or judges should use emotion for decision making is situation in my opinion, I do believe that adding additional checks could be helpful. One idea is limiting the opportunity for rash decisions through a mandatory minimal time before a bill can be passed. This would still allow for emotions, but not let emotions be the driver in political decisions.
+
 ## References
 
+Albertson, B. and Gadarian, S. K. (2015). Anxious politics: Democratic citizenship in a threatening world. Cambridge University Press. (Chapters 3–5 only).
+
 Clifford, & Jerit, J. (2018). Disgust, Anxiety, and Political Learning in the Face of Threat. American Journal of Political Science, 62(2), 266–279. <https://doi.org/10.1111/ajps.12350>
+
+Dietrich, B. J., Enos, R. D., and Sen, M. (2019). Emotional arousal predicts voting on the US Supreme Court. Political Analysis, 27(2):237–243.

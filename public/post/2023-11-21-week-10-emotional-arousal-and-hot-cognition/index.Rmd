@@ -142,7 +142,7 @@ Cronbach's alpha is a measure of how internally consistent the answers to multip
 
 The formula is shown below:
 
-![](images/Screen Shot 2023-11-21 at 7.47.35 PM.png)
+![](images/Screen%20Shot%202023-11-21%20at%207.47.35%20PM.png)
 
 ### Anxiety
 
@@ -244,7 +244,7 @@ h1 <- Study1_processing7 %>%
 
 ```
 
-![](images/Screen%20Shot%202023-11-21%20at%207.14.26%20PM.png){width="466"}
+![](images/Screen%20Shot%202023-11-21%20at%207.14.26%20PM.png){width="700"}
 
 ### Hypothesis 2
 
@@ -260,7 +260,7 @@ h2 <- Study1_processing7 %>%
 #        y=h2$fatigue[h2$high_disgust == 0])
 ```
 
-![](images/Screen%20Shot%202023-11-21%20at%207.20.42%20PM.png){width="445"}
+![](images/Screen Shot 2023-11-21 at 8.05.52 PM.png){width="700"}
 
 ### Hypothesis 3
 
@@ -273,9 +273,11 @@ The third hypothesis states that "a person who feels disgusted about a threat wi
 
 ```
 
-![](images/Screen%20Shot%202023-11-21%20at%207.30.37%20PM.png){width="451"}
+![](images/Screen Shot 2023-11-21 at 8.07.22 PM.png){width="700"}
 
 ## Discussion
+
+The results in this blog have shown that
 
 ## References
 

@@ -1,7 +1,7 @@
 ---
 title: 'Week 11: Contextual and Situational Influences on Behavior'
 author: Annelies Quinton
-date: '2023-11-20'
+date: '2023-11-21'
 slug: []
 categories: []
 tags: []
