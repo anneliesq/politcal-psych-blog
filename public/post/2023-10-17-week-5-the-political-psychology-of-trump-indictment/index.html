@@ -61,213 +61,613 @@
 
 		
 
-		<h2 id="introduction">Introduction:</h2>
-<p>This week&rsquo;s blog post considers the public opinion around the Trump indictments. Former President Trump was charged with 91 crimes, two being federal indictments, one in New York, and one in Georgia. These indictments have significance in two ways: he is the first former President to be charged with state or federal crimes, and these trials will be ongoing during the presidential campaign (Lecture (10/11), slide 5).</p>
+		
+
+
+<div id="introduction" class="section level2">
+<h2>Introduction:</h2>
+<p>This week’s blog post considers the public opinion around the Trump indictments. Former President Trump was charged with 91 crimes, two being federal indictments, one in New York, and one in Georgia. These indictments have significance in two ways: he is the first former President to be charged with state or federal crimes, and these trials will be ongoing during the presidential campaign (Lecture (10/11), slide 5).</p>
 <p>In this blog, I consider two behaviors voters can express.</p>
 <ul>
-<li>
-<p><strong>Constraint</strong>: the extent to which peoples&rsquo; opinions are correlated with each other</p>
-</li>
-<li>
-<p><strong>Consistency</strong>: the extent to which peoples&rsquo; opinions on the same issues vary</p>
-</li>
+<li><p><strong>Constraint</strong>: the extent to which peoples’ opinions are correlated with each other</p></li>
+<li><p><strong>Consistency</strong>: the extent to which peoples’ opinions on the same issues vary</p></li>
 </ul>
 <p>The question driving this blog is whether people have constrained opinion about Trump and his indictment across survey measures? I will also consider how demographics play into whether constraint is present.</p>
-<h2 id="data">Data:</h2>
+</div>
+<div id="data" class="section level2">
+<h2>Data:</h2>
 <p>The data used in this blog is a cleaned version of the raw survey data stored in Roper Center iPoll Archive. The full data and documentation for the last wave are available <a href="https://ropercenter.cornell.edu/ipoll/study/31120497">here</a>.</p>
 <p>The data spans three waves: June 9-10, Aug 2-3, Aug 15-16.</p>
-<p>The data includes categorical variables on various politically charged questions, relating to the topic of the indictment. The variables attempt to assess the individual&rsquo;s opinion toward the indictment and the strength of their opinion.</p>
+<p>The data includes categorical variables on various politically charged questions, relating to the topic of the indictment. The variables attempt to assess the individual’s opinion toward the indictment and the strength of their opinion.</p>
 <p>The survey also includes demographic data, such as race, gender, income, and education.</p>
 <p>A full list of the variables and their descriptions can be found below:</p>
 <table>
+<colgroup>
+<col width="8%" />
+<col width="91%" />
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>Variable Name</th>
 <th>Variable Description</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td><code>id</code></td>
 <td>Unique respondent ID</td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>wave</code></td>
 <td>Survey wave (1 ~ 3)</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><code>date</code></td>
 <td>Survey date (June 9-10, Aug 2-3, Aug 15-16)</td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>fav_trump</code></td>
-<td>&ldquo;Overall, do you have a favorable or unfavorable impression of Trump?&rdquo; (Favorable, Unfavorable, No opinion, Don&rsquo;t know, Skipped)</td>
+<td>“Overall, do you have a favorable or unfavorable impression of Trump?” (Favorable, Unfavorable, No opinion, Don’t know, Skipped)</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><code>fav_biden</code></td>
-<td>&ldquo;Overall, do you have a favorable or unfavorable impression of Biden?&rdquo; (Favorable, Unfavorable, No opinion, Don&rsquo;t know, Skipped)</td>
+<td>“Overall, do you have a favorable or unfavorable impression of Biden?” (Favorable, Unfavorable, No opinion, Don’t know, Skipped)</td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>indictment</code></td>
-<td>Each wave of surveys asked respondents&rsquo; opinion about a different Trump indictment. The <code>indictment</code> variable shows the sentence that the wave used to describe the indictment.</td>
+<td>Each wave of surveys asked respondents’ opinion about a different Trump indictment. The <code>indictment</code> variable shows the sentence that the wave used to describe the indictment.</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><code>charge_serious</code></td>
-<td>&ldquo;Do you think the charges against Donald Trump in this case are&rdquo; (Very serious, Somewhat serious, Not too serious, Not serious at all, Don&rsquo;t know, Skipped)</td>
+<td>“Do you think the charges against Donald Trump in this case are” (Very serious, Somewhat serious, Not too serious, Not serious at all, Don’t know, Skipped)</td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>should_be_charged</code></td>
-<td>&ldquo;Do you think Donald Trump should or should not have been charged with a crime in this case?&rdquo; (Should, Should not, Don&rsquo;t know, Skipped)</td>
+<td>“Do you think Donald Trump should or should not have been charged with a crime in this case?” (Should, Should not, Don’t know, Skipped)</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><code>politically_motivated</code></td>
-<td>&ldquo;Do you think the charges against Donald Trump in this case are politically motivated, or not?&rdquo; (Yes, No, Don&rsquo;t know, Skipped)</td>
+<td>“Do you think the charges against Donald Trump in this case are politically motivated, or not?” (Yes, No, Don’t know, Skipped)</td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>suspend_campaign</code></td>
-<td>&ldquo;Do you think Donald Trump should or should not suspend his presidential campaign because of this indictment?&rdquo; (Should, Should not, Don&rsquo;t know, Skipped)</td>
+<td>“Do you think Donald Trump should or should not suspend his presidential campaign because of this indictment?” (Should, Should not, Don’t know, Skipped)</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><code>doj_hunter_nonpartisan</code></td>
-<td>&ldquo;On another subject, how confident are you that the U.S. Justice Department is handling its investigation of Hunter Biden in a fair and nonpartisan manner?&rdquo; (Very confident, Somewhat confident, Not so confident, Not confident at all, Don&rsquo;t know, Skipped) (asked only in the wave 2 and 3)</td>
+<td>“On another subject, how confident are you that the U.S. Justice Department is handling its investigation of Hunter Biden in a fair and nonpartisan manner?” (Very confident, Somewhat confident, Not so confident, Not confident at all, Don’t know, Skipped) (asked only in the wave 2 and 3)</td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>impeach_biden_hunter</code></td>
-<td>&ldquo;Do you think the U.S. House of Representatives should or should not start an impeachment inquiry into Joe Biden related to business deals his son Hunter Biden had in China and Ukraine?&rdquo; (Should, Should not, Don&rsquo;t know, Skipped) (asked only in the wave 2)</td>
+<td>“Do you think the U.S. House of Representatives should or should not start an impeachment inquiry into Joe Biden related to business deals his son Hunter Biden had in China and Ukraine?” (Should, Should not, Don’t know, Skipped) (asked only in the wave 2)</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><code>PID</code></td>
 <td>Self-reported party identification (A Democrat, A Republican, An Independent, Something else, Skipped)</td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>age4</code></td>
 <td>Categorical variable indicating age (4 Categories)</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><code>educ5</code></td>
 <td>Categorical variable indicating educational attainment</td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>gender</code></td>
 <td>Binary variable for gender</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><code>inc7</code></td>
 <td>Categorical variable indicating income level (7 Categories)</td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>race</code></td>
-<td>Respondent&rsquo;s self-identified race (available only in the wave</td>
+<td>Respondent’s self-identified race (available only in the wave</td>
 </tr>
 </tbody>
 </table>
-<h2 id="defining-constraint">Defining Constraint</h2>
-<p>In order to empirically assess constraint, it is necessary to define constraint in theoretical terms, relating to one&rsquo;s opinion about Trump and his indictment.</p>
+</div>
+<div id="defining-constraint" class="section level2">
+<h2>Defining Constraint</h2>
+<p>In order to empirically assess constraint, it is necessary to define constraint in theoretical terms, relating to one’s opinion about Trump and his indictment.</p>
 <p>The theoretical definition is whether an individual holds the same opinion on whether the charges are serious and if he should be charged. These questions correspond to each other, so similarity means constraint.</p>
-<p>The method I chose to calculate constraint is through creating two binary variables (<code>charge_serious_binary</code> and <code>should_be_charged_binary</code>) and taking the average of these scores for each entry. <code>charge_serious_binary</code> is <code>1</code> if the existing charge_serious variable is either &ldquo;Not too serious&rdquo; or &ldquo;Not serious at all&rdquo; and <code>0</code> for &ldquo;Somewhat serious&rdquo; and &ldquo;Very serious&rdquo;). <code>should_be_charged_binary</code> is <code>1</code> for when the existing variable <code>should_be_charged</code> is &ldquo;Should not&rdquo; and <code>0</code> for &ldquo;Should&rdquo;. By taking the mean of these values, an individual will either score a 0, 0.5, or 1.</p>
-<h3 id="what-do-these-scores-mean">What do these scores mean:</h3>
+<p>The method I chose to calculate constraint is through creating two binary variables (<code>charge_serious_binary</code> and <code>should_be_charged_binary</code>) and taking the average of these scores for each entry. <code>charge_serious_binary</code> is <code>1</code> if the existing charge_serious variable is either “Not too serious” or “Not serious at all” and <code>0</code> for “Somewhat serious” and “Very serious”). <code>should_be_charged_binary</code> is <code>1</code> for when the existing variable <code>should_be_charged</code> is “Should not” and <code>0</code> for “Should”. By taking the mean of these values, an individual will either score a 0, 0.5, or 1.</p>
+<div id="what-do-these-scores-mean" class="section level3">
+<h3>What do these scores mean:</h3>
 <ul>
-<li>
-<p>Constraint of <code>0</code> or <code>1</code>: person exhibited constraint by scoring the same on both categories.</p>
-</li>
-<li>
-<p>Constrain of <code>0.5</code>: person did not exhibit constraint by scoring differently on both categories.</p>
-</li>
+<li><p>Constraint of <code>0</code> or <code>1</code>: person exhibited constraint by scoring the same on both categories.</p></li>
+<li><p>Constrain of <code>0.5</code>: person did not exhibit constraint by scoring differently on both categories.</p></li>
 </ul>
-<img src="http://example.org/post/2023-10-17-week-5-the-political-psychology-of-trump-indictment/index_files/figure-html/unnamed-chunk-3-1.png" width="672" />
-<h2 id="constraint-by-demographics">Constraint By Demographics</h2>
-<h3 id="constraint-by-education">Constraint By Education</h3>
+<p><img src="http://example.org/post/2023-10-17-week-5-the-political-psychology-of-trump-indictment/index_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
+</div>
+<div id="constraint-by-demographics" class="section level2">
+<h2>Constraint By Demographics</h2>
+<div id="constraint-by-education" class="section level3">
+<h3>Constraint By Education</h3>
 <p>The graph below demonstrates how constraint varies across education level. It is evident that for higher educated people, those with bachelors degree or higher, they is a significantly higher number of constrained people. Further, across all education levels, the number of constrained people (either <code>0</code> or <code>1</code>) is higher than the number of <code>0.5</code> people.</p>
-<img src="http://example.org/post/2023-10-17-week-5-the-political-psychology-of-trump-indictment/index_files/figure-html/unnamed-chunk-4-1.png" width="672" />
-<h3 id="cosntrained-by-income">Cosntrained By Income:</h3>
+<p><img src="http://example.org/post/2023-10-17-week-5-the-political-psychology-of-trump-indictment/index_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+</div>
+<div id="cosntrained-by-income" class="section level3">
+<h3>Cosntrained By Income:</h3>
 <p>The graphs below show how average constraint varies across income. Similar to the education graph, people with the highest level of income appear to also have the most significant difference levels of constraint, favoring <code>0</code> and <code>1</code>.</p>
-<img src="http://example.org/post/2023-10-17-week-5-the-political-psychology-of-trump-indictment/index_files/figure-html/unnamed-chunk-5-1.png" width="672" />
-<h3 id="trade-offs-with-this-approach">Trade offs With This Approach:</h3>
+<p><img src="http://example.org/post/2023-10-17-week-5-the-political-psychology-of-trump-indictment/index_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+</div>
+<div id="trade-offs-with-this-approach" class="section level3">
+<h3>Trade offs With This Approach:</h3>
 <p>By only looking at two variables, it is difficult to get a robust definition of constraint. Another method would be to consider all of the political questions and take the averages of those. However, this would make it difficult to understand what the non <code>0</code> or <code>1</code> values mean. It would require identifying a scale of constraint. What does it mean if a person scores a 25%.</p>
-<h2 id="constraint-2nd-calculation">Constraint (2nd Calculation):</h2>
+</div>
+</div>
+<div id="constraint-2nd-calculation" class="section level2">
+<h2>Constraint (2nd Calculation):</h2>
 <p>To test if considering more variables changes these outcomes, I have similarly created binary variables for <code>politically_motivated</code>, <code>suspend_campaign</code>, and <code>fav_trump</code>.</p>
-<h3 id="constraint-by-education-1">Constraint By Education</h3>
+<div id="constraint-by-education-1" class="section level3">
+<h3>Constraint By Education</h3>
 <p>The graphs below similarly show constrain by education level. The histograms all appear fairly symmetric. This makes sense given that both <code>0</code> and <code>1</code> can be seen as contrained. Further, a similar trend appears in which higher education is associated with higher levels of constraint.</p>
-<img src="http://example.org/post/2023-10-17-week-5-the-political-psychology-of-trump-indictment/index_files/figure-html/unnamed-chunk-7-1.png" width="672" />
-<h2 id="beyond-the-binary-dont-know-entries">Beyond the Binary: Don&rsquo;t Know Entries</h2>
-<p>Having dealt primarily with binary variables, it is also important to consider when entries like &ldquo;Don&rsquo;t Know&rdquo; appear. To assess the prevalence of &ldquo;Don&rsquo;t Know&rdquo;, I created a binary variable for <code>should_be_charged</code> and <code>charge_serious</code> indicating whether the respondent entered &ldquo;Don&rsquo;t Know&rdquo;. A <code>1</code> means the respondent responsed &ldquo;Don&rsquo;t Know&rdquo; on both of the questions, whereas a <code>0</code> means they responded &ldquo;Don&rsquo;t Know&rdquo; on neither of the questions. The following section looks at different demographic breakdowns for &ldquo;Don&rsquo;t Know&rdquo; entries</p>
-<h3 id="education">Education:</h3>
-<img src="http://example.org/post/2023-10-17-week-5-the-political-psychology-of-trump-indictment/index_files/figure-html/unnamed-chunk-9-1.png" width="672" />
-<h3 id="income">Income:</h3>
-<img src="http://example.org/post/2023-10-17-week-5-the-political-psychology-of-trump-indictment/index_files/figure-html/unnamed-chunk-10-1.png" width="672" />
+<p><img src="http://example.org/post/2023-10-17-week-5-the-political-psychology-of-trump-indictment/index_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+</div>
+</div>
+<div id="beyond-the-binary-dont-know-entries" class="section level2">
+<h2>Beyond the Binary: Don’t Know Entries</h2>
+<p>Having dealt primarily with binary variables, it is also important to consider when entries like “Don’t Know” appear. To assess the prevalence of “Don’t Know”, I created a binary variable for <code>should_be_charged</code> and <code>charge_serious</code> indicating whether the respondent entered “Don’t Know”. A <code>1</code> means the respondent responsed “Don’t Know” on both of the questions, whereas a <code>0</code> means they responded “Don’t Know” on neither of the questions. The following section looks at different demographic breakdowns for “Don’t Know” entries</p>
+<div id="education" class="section level3">
+<h3>Education:</h3>
+<p><img src="http://example.org/post/2023-10-17-week-5-the-political-psychology-of-trump-indictment/index_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+</div>
+<div id="income" class="section level3">
+<h3>Income:</h3>
+<p><img src="http://example.org/post/2023-10-17-week-5-the-political-psychology-of-trump-indictment/index_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <p>From the two graph displays above, it is evident that the highest number of <code>0</code>s from those who are educated and high income. This indicates a possible association between these demographics and the likelihood to have strong political opinions.</p>
-<h2 id="modeling-demographics-and-trump-indictment">Modeling: Demographics and Trump Indictment</h2>
+</div>
+</div>
+<div id="modeling-demographics-and-trump-indictment" class="section level2">
+<h2>Modeling: Demographics and Trump Indictment</h2>
 <p>To evaluate the relationship between opinions toward the Trump Indictment and demographics, I have fitted four models with demographics as the predictors and <code>politically_motivated</code> as the outcome variable.</p>
 <p>The regression table below shows the variables in each model and the outcome statistics.</p>
-<h1 id="regression-results">Regression Results</h1>
+</div>
+<div id="regression-results" class="section level1">
+<h1>Regression Results</h1>
 <pre><code>                       Dependent variable:          
               --------------------------------------
                       Politically Motivated         
-                (1)       (2)       (3)       (4)   
-</code></pre>
-<hr>
-<p>Party [PID]       0.738*** 0.724***  0.727***        <br>
-(0.019)   (0.023)   (0.023)</p>
-<p>Education [educ5]          -0.040*** -0.040*** -0.075***
-(0.010)   (0.009)   (0.010)</p>
-<p>Age [age4]                 -0.018**  -0.018**        <br>
-(0.009)   (0.009)</p>
-<p>Income [inc7]               -0.002              -0.004<br>
-(0.007)             (0.006)</p>
-<p>Gender                       0.022                   <br>
-(0.022)</p>
-<p>Constant          0.155*** 0.337***  0.337***  0.890***
-(0.016)   (0.051)   (0.043)   (0.036)</p>
-<hr>
-<h1 id="adjusted-r2--------0518-----0532-----0532-----0034">Observations       1,337      937       937      2,178<br>
-R2                 0.519     0.534     0.534     0.035<br>
-Adjusted R2        0.518     0.532     0.532     0.034</h1>
-<p>Note:                        *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</p>
-<table style="text-align:center"><caption><strong>Regression Results</strong></caption>
-<tr><td colspan="5" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"></td><td colspan="4"><em>Dependent variable:</em></td></tr>
-<tr><td></td><td colspan="4" style="border-bottom: 1px solid black"></td></tr>
-<tr><td style="text-align:left"></td><td colspan="4">Politically Motivated</td></tr>
-<tr><td style="text-align:left"></td><td>(1)</td><td>(2)</td><td>(3)</td><td>(4)</td></tr>
-<tr><td colspan="5" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Party [PID]</td><td>0.738<sup>***</sup></td><td>0.724<sup>***</sup></td><td>0.727<sup>***</sup></td><td></td></tr>
-<tr><td style="text-align:left"></td><td>(0.019)</td><td>(0.023)</td><td>(0.023)</td><td></td></tr>
-<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td></tr>
-<tr><td style="text-align:left">Education [educ5]</td><td></td><td>-0.040<sup>***</sup></td><td>-0.040<sup>***</sup></td><td>-0.075<sup>***</sup></td></tr>
-<tr><td style="text-align:left"></td><td></td><td>(0.010)</td><td>(0.009)</td><td>(0.010)</td></tr>
-<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td></tr>
-<tr><td style="text-align:left">Age [age4]</td><td></td><td>-0.018<sup>**</sup></td><td>-0.018<sup>**</sup></td><td></td></tr>
-<tr><td style="text-align:left"></td><td></td><td>(0.009)</td><td>(0.009)</td><td></td></tr>
-<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td></tr>
-<tr><td style="text-align:left">Income [inc7]</td><td></td><td>-0.002</td><td></td><td>-0.004</td></tr>
-<tr><td style="text-align:left"></td><td></td><td>(0.007)</td><td></td><td>(0.006)</td></tr>
-<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td></tr>
-<tr><td style="text-align:left">Gender</td><td></td><td>0.022</td><td></td><td></td></tr>
-<tr><td style="text-align:left"></td><td></td><td>(0.022)</td><td></td><td></td></tr>
-<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td></tr>
-<tr><td style="text-align:left">Constant</td><td>0.155<sup>***</sup></td><td>0.337<sup>***</sup></td><td>0.337<sup>***</sup></td><td>0.890<sup>***</sup></td></tr>
-<tr><td style="text-align:left"></td><td>(0.016)</td><td>(0.051)</td><td>(0.043)</td><td>(0.036)</td></tr>
-<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td></tr>
-<tr><td colspan="5" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Observations</td><td>1,337</td><td>937</td><td>937</td><td>2,178</td></tr>
-<tr><td style="text-align:left">R<sup>2</sup></td><td>0.519</td><td>0.534</td><td>0.534</td><td>0.035</td></tr>
-<tr><td style="text-align:left">Adjusted R<sup>2</sup></td><td>0.518</td><td>0.532</td><td>0.532</td><td>0.034</td></tr>
-<tr><td colspan="5" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"><em>Note:</em></td><td colspan="4" style="text-align:right"><sup>*</sup>p<0.1; <sup>**</sup>p<0.05; <sup>***</sup>p<0.01</td></tr>
+                (1)       (2)       (3)       (4)   </code></pre>
+<table style="width:79%;">
+<colgroup>
+<col width="79%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left">Party [PID] 0.738*** 0.724*** 0.727***
+(0.019) (0.023) (0.023)</td>
+</tr>
+<tr class="even">
+<td align="left">Education [educ5] -0.040*** -0.040*** -0.075***
+(0.010) (0.009) (0.010)</td>
+</tr>
+<tr class="odd">
+<td align="left">Age [age4] -0.018** -0.018**
+(0.009) (0.009)</td>
+</tr>
+<tr class="even">
+<td align="left">Income [inc7] -0.002 -0.004
+(0.007) (0.006)</td>
+</tr>
+<tr class="odd">
+<td align="left">Gender 0.022
+(0.022)</td>
+</tr>
+<tr class="even">
+<td align="left">Constant 0.155*** 0.337*** 0.337*** 0.890***
+(0.016) (0.051) (0.043) (0.036)</td>
+</tr>
+</tbody>
 </table>
-<h3 id="model-1-party">Model 1: Party</h3>
+<p>Observations 1,337 937 937 2,178<br />
+R2 0.519 0.534 0.534 0.035<br />
+Adjusted R2 0.518 0.532 0.532 0.034<br />
+========================================================
+Note: <em>p&lt;0.1; <strong>p&lt;0.05; </strong></em>p&lt;0.01</p>
+<table style="text-align:center">
+<caption>
+<strong>Regression Results</strong>
+</caption>
+<tr>
+<td colspan="5" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="4">
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="4" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="4">
+Politically Motivated
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(1)
+</td>
+<td>
+(2)
+</td>
+<td>
+(3)
+</td>
+<td>
+(4)
+</td>
+</tr>
+<tr>
+<td colspan="5" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Party [PID]
+</td>
+<td>
+0.738<sup>***</sup>
+</td>
+<td>
+0.724<sup>***</sup>
+</td>
+<td>
+0.727<sup>***</sup>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(0.019)
+</td>
+<td>
+(0.023)
+</td>
+<td>
+(0.023)
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Education [educ5]
+</td>
+<td>
+</td>
+<td>
+-0.040<sup>***</sup>
+</td>
+<td>
+-0.040<sup>***</sup>
+</td>
+<td>
+-0.075<sup>***</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+(0.010)
+</td>
+<td>
+(0.009)
+</td>
+<td>
+(0.010)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Age [age4]
+</td>
+<td>
+</td>
+<td>
+-0.018<sup>**</sup>
+</td>
+<td>
+-0.018<sup>**</sup>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+(0.009)
+</td>
+<td>
+(0.009)
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Income [inc7]
+</td>
+<td>
+</td>
+<td>
+-0.002
+</td>
+<td>
+</td>
+<td>
+-0.004
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+(0.007)
+</td>
+<td>
+</td>
+<td>
+(0.006)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Gender
+</td>
+<td>
+</td>
+<td>
+0.022
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+(0.022)
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+0.155<sup>***</sup>
+</td>
+<td>
+0.337<sup>***</sup>
+</td>
+<td>
+0.337<sup>***</sup>
+</td>
+<td>
+0.890<sup>***</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(0.016)
+</td>
+<td>
+(0.051)
+</td>
+<td>
+(0.043)
+</td>
+<td>
+(0.036)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td colspan="5" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+1,337
+</td>
+<td>
+937
+</td>
+<td>
+937
+</td>
+<td>
+2,178
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.519
+</td>
+<td>
+0.534
+</td>
+<td>
+0.534
+</td>
+<td>
+0.035
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+0.518
+</td>
+<td>
+0.532
+</td>
+<td>
+0.532
+</td>
+<td>
+0.034
+</td>
+</tr>
+<tr>
+<td colspan="5" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td colspan="4" style="text-align:right">
+<sup><em></sup>p&lt;0.1; <sup><strong></sup>p&lt;0.05; <sup></strong></em></sup>p&lt;0.01
+</td>
+</tr>
+</table>
+<div id="model-1-party" class="section level3">
+<h3>Model 1: Party</h3>
 <p>Model 1 utilizes only one predictor, party. The predictor is statistically significant and the adusted R^2 is 0.518, barely above 0.5</p>
-<h3 id="model-2-all-demographics">Model 2: All Demographics</h3>
+</div>
+<div id="model-2-all-demographics" class="section level3">
+<h3>Model 2: All Demographics</h3>
 <p>Model 2 is a multivariate regression with 5 predictors. Only party education, and age are statistically significant at the 95% confidence level. The adjusted R^2 is slightly higher at 0.532</p>
-<h3 id="model-3-only-statistically-significant-predictors">Model 3: Only Statistically Significant Predictors</h3>
+</div>
+<div id="model-3-only-statistically-significant-predictors" class="section level3">
+<h3>Model 3: Only Statistically Significant Predictors</h3>
 <p>Model 3 kept only the statistically significant predictors from model 2 (party, education, and age). The adjusted R^2 stayed the same at 0.532</p>
-<h3 id="model-4-education-and-income">Model 4: Education and Income</h3>
+</div>
+<div id="model-4-education-and-income" class="section level3">
+<h3>Model 4: Education and Income</h3>
 <p>Model 4 evaluates the variables assessed earlier in this blog: education and income. Only education is statistically significant and the adjusted R^2 is extremely low at 0.032</p>
-<h3 id="comparison-of-models">Comparison of Models:</h3>
+</div>
+<div id="comparison-of-models" class="section level3">
+<h3>Comparison of Models:</h3>
 <p>Model 2 and 3 had the highest adjusted R^2 values, although they are still relatively very small. This indicates that political motivation is difficult to model from these variables. Across the coefficient values, party had the highest value at 0.724. This can be interpreted as, holding all other variables constant, political motivation is expected to increase by 0.724 units when going from a Democrat (0) to a Republican (1). This makes sense given the question is pertaining to whether the indictment is politically motivated. Republicans would likely support Trump and consider external factors, such as political motivation, for the reason behind the indictments. Conversely, among the significant variables, age and education had the lowest values, both with a negative impact. Therefore, holding the other variables constant, increasing these variables, respectively, will have a negative impact on political motivation.</p>
-<h2 id="discussion">Discussion:</h2>
-<p>The analyses presented in this blog seek to identify the behaviors driving opinions in the Trump indictment. In the first part of the blog, I looked at the relationship between constraint and education. The graphs show that as education increases, people are more likely to have political constraint. This corresponds to what the authors in <em>Voice and Equality</em> argue: &ldquo;political engagement is a function of resources&rdquo; (Verba, Schlozman, and Brady 1995). People with higher levels of education are more likely to follow the news and have the time and money to focus on political engagement. The second part of this claim, money, can be seen by the income distribution for constraint. Similar to education, higher levels of income correspond to higher levels of constraint.</p>
-<p>The implications of these findings are relevant when considering the findings from <a href="https://anneliesq.github.io/politcal-psych-blog/post/2023-10-02-week-3-groups-and-identities/">Week 3: Groups and Identities</a>. In this blog, I found that for &ldquo;strong partisans, political identities are more significant than for weak partisans&rdquo; and this corresponding to what Iyengar, Sood, and Lelkes (2012) find when surveying reactions of parents to the idea of their child marrying a person of the opposite party. I think there is a connection between strong partisans and those are who politically constrained. High constraintment indicates and individual does not vary across their opinions, similar to someone with high partisanship. Therfore, people with higher levels of education and income are more likely to be strong partisans and likely politically engaged. This connection is significant because it demonstrates that those with money and education are the most politically engaged, and therefore more likely to have their beliefs represented in government.</p>
+</div>
+<div id="discussion" class="section level2">
+<h2>Discussion:</h2>
+<p>The analyses presented in this blog seek to identify the behaviors driving opinions in the Trump indictment. In the first part of the blog, I looked at the relationship between constraint and education. The graphs show that as education increases, people are more likely to have political constraint. This corresponds to what the authors in <em>Voice and Equality</em> argue: “political engagement is a function of resources” (Verba, Schlozman, and Brady 1995). People with higher levels of education are more likely to follow the news and have the time and money to focus on political engagement. The second part of this claim, money, can be seen by the income distribution for constraint. Similar to education, higher levels of income correspond to higher levels of constraint.</p>
+<p>The implications of these findings are relevant when considering the findings from <a href="https://anneliesq.github.io/politcal-psych-blog/post/2023-10-02-week-3-groups-and-identities/">Week 3: Groups and Identities</a>. In this blog, I found that for “strong partisans, political identities are more significant than for weak partisans” and this corresponding to what Iyengar, Sood, and Lelkes (2012) find when surveying reactions of parents to the idea of their child marrying a person of the opposite party. I think there is a connection between strong partisans and those are who politically constrained. High constraintment indicates and individual does not vary across their opinions, similar to someone with high partisanship. Therfore, people with higher levels of education and income are more likely to be strong partisans and likely politically engaged. This connection is significant because it demonstrates that those with money and education are the most politically engaged, and therefore more likely to have their beliefs represented in government.</p>
 <p>Overall, political constraint among individuals is a desired outcome. We see that time and money are the main drivers of those who have higher levels of constraint. To increase political engagement, barriers at all levels of civic engagement is one way to reduce this divide. Considering just voting, increasing voting accessibility through mail-in ballots, national voting day, and increased polls and hours, are some ways to reduce the burden of voting, likely causing those without time and money to feel like voting is accessible and important.</p>
-<h2 id="references">References:</h2>
-<p>Iyengar, Shanto, Gaurav Sood, and Yphtach Lelkes. 2012. &ldquo;Affect, Not Ideology: A Social Identity Perspective on Polarization.&rdquo; Public Opinion Quarterly 76(3): 405&ndash;31.</p>
+</div>
+<div id="references" class="section level2">
+<h2>References:</h2>
+<p>Iyengar, Shanto, Gaurav Sood, and Yphtach Lelkes. 2012. “Affect, Not Ideology: A Social Identity Perspective on Polarization.” Public Opinion Quarterly 76(3): 405–31.</p>
 <p>Verba, Schlozman, and Brady 1995</p>
+</div>
+</div>
 
 
 		
@@ -285,7 +685,7 @@ Adjusted R2        0.518     0.532     0.532     0.034</h1>
         		<footer>
 			
 			<span>
-			&copy; <time datetime="2023-11-14 23:49:59.796945 -0500 EST m=&#43;0.135164834">2023</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			&copy; <time datetime="2023-11-21 20:01:48.943281 -0500 EST m=&#43;0.110094251">2023</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
 			</span>
 		</footer>
 

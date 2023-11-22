@@ -37,7 +37,7 @@ The data from the Wang et al.(2021) study includes 120 responses with 24 variabl
 A list of the important variables to this blog are shown below:
 
 | Variable Name                                           | Variable Description                                                                                                                                                                                    |
-|------------------------|-----------------------------------------------|
+|---------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `treated`                                               | Binary variable equal to `TRUE` if the subject was told to imagine a bus ride with a Japanese person (the treatment) and `FALSE` if the subject was told to imagine the scenery on a bus ride (control) |
 | `JapanWarm`, `JapanAdmire`, `JapanRespect`, `JapanPos`  | Affective feeling about Japanese people ranging from 1 (cool) to 7 (warm/admiration/respect/positive)                                                                                                   |
 | `ChinaWarm`, `ChinaAdmire`, `ChinaRespect`, `ChinaPos`, | Affective feeling about Chinese people ranging from 1 (loathing) to 7 (warm/admiration/respect/positive)                                                                                                |
@@ -51,7 +51,7 @@ The data from the class survey inlcudes 55 rows and 59 columns.
 A list of the important variables is shown below:
 
 | Variable Name          | Variable Description                                                                                                                                                                                                           |
-|-----------------------|------------------------------------------------|
+|------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `Treated`              | Binary variable equal to `TRUE` if the subject was told to imagine a bus ride with a member of the opposing political party (the treatment) and `FALSE` if the subject was told to imagine the scenery on a bus ride (control) |
 | `InPartyAffect_(1-4)`  | Affective feelings about the in-party using the same numbering scheme as above                                                                                                                                                 |
 | `InPartyAffect_avg`    | Average affective feelings about the in-party                                                                                                                                                                                  |
