@@ -260,11 +260,11 @@ h2 <- Study1_processing7 %>%
 #        y=h2$fatigue[h2$high_disgust == 0])
 ```
 
-![](images/Screen Shot 2023-11-21 at 8.05.52 PM.png){width="1000"}
+![](images/Screen%20Shot%202023-11-21%20at%208.05.52%20PM.png){width="1000"}
 
 ### Hypothesis 3
 
-The third hypothesis states that "a person who feels disgusted about a threat will avoid the source of disgust and new information about the topic" (pg. 268). To test this hypothesis, I consider the variable `additional_info`, which indicates whether a participant sought out additional information. My analysis shows the results are statistically insignificant, however, Clifford and Jerit (2018) perform a more robust analysis for hypothesis 3. They consider 4 different variables assessing information search. They found that "disgust generated a qualitatively different reaction than did anxiety---one of avoidance rather than engagement." Specifically, "anxiety increased informationsearch only in the absence of disgust" (pg. 272). This means that among the emotions, anxiety is the best predictor for understanding if a person will seek additional information.
+The third hypothesis states that "a person who feels disgusted about a threat will avoid the source of disgust and new information about the topic" (pg. 268). To test this hypothesis, I consider the variable `additional_info`, which indicates whether a participant sought out additional information. My analysis shows the results are statistically insignificant, however, Clifford and Jerit (2018) perform a more robust analysis for hypothesis 3. They consider 4 different variables assessing information search. They found that "disgust generated a qualitatively different reaction than did anxiety---one of avoidance rather than engagement." Specifically, "anxiety increased information search only in the absence of disgust" (pg. 272). This means that among the emotions, anxiety is the best predictor for understanding if a person will seek additional information.
 
 ```{r, include = FALSE}
 # t.test(x=h2$additional_info[h2$high_disgust == 1],
@@ -273,20 +273,20 @@ The third hypothesis states that "a person who feels disgusted about a threat wi
 
 ```
 
-![](images/Screen Shot 2023-11-21 at 8.07.22 PM.png){width="1000"}
+![](images/Screen%20Shot%202023-11-21%20at%208.07.22%20PM.png){width="1000"}
 
 ## Discussion
 
-The results in this blog have shown that emotions can play a significant role in decision making and political behavior. Clifford and Jerit conclude that "that when threatening events also induce feelings of disgust—as they might in the case of an infectious disease—citizens disengage from the topic and become unwilling to learn more about it" (pg. 276). These results indicate that media headlines and political communication can have profound impacts on behavioral responses. In times of crisis, these results demonstrate that less appeal toward disgust can reduce the possibility of public disengagement. 
+The results in this blog have shown that emotions can play a significant role in decision making and political behavior. Clifford and Jerit conclude that "that when threatening events also induce feelings of disgust---as they might in the case of an infectious disease---citizens disengage from the topic and become unwilling to learn more about it" (pg. 276). These results indicate that media headlines and political communication can have profound impacts on behavioral responses. In times of crisis, these results demonstrate that less appeal toward disgust can reduce the possibility of public disengagement.
 
-Another way emotion plays into the political space is through protective policies. Albertson and Gadarian find that "anxious citizens are motivated to support protective policies regardless of partisanship" (pg. 136). This means that inducing anxiety can be a tactic for garnering more support for one's platform. Emotional responses illustrate how impactful political communication can be in manipulating support. This can also be a reason why many issues are often presented in a stress-inducing manner. 
+Another way emotion plays into the political space is through protective policies. Albertson and Gadarian find that "anxious citizens are motivated to support protective policies regardless of partisanship" (pg. 136). This means that inducing anxiety can be a tactic for garnering more support for one's platform. Emotional responses illustrate how impactful political communication can be in manipulating support. This can also be a reason why many issues are often presented in a stress-inducing manner.
 
-Finally, these studies bring to question whether emotional responses are appropriate in the political space. For example, Dietrich, Enos, and Sen (2015) illustrate that voice pitch of Supreme Court Justices is a strong predictor of Court Rulings. Whether politicians or judges should use emotion for decision making is situation in my opinion, I do believe that adding additional checks could be helpful. One idea is limiting the opportunity for rash decisions through a mandatory minimal time before a bill can be passed. This would still allow for emotions, but not let emotions be the driver in political decisions. 
+Finally, these studies bring to question whether emotional responses are appropriate in the political space. For example, Dietrich, Enos, and Sen (2015) illustrate that voice pitch of Supreme Court Justices is a strong predictor of Court Rulings. Whether politicians or judges should use emotion for decision making is situation in my opinion, I do believe that adding additional checks could be helpful. One idea is limiting the opportunity for rash decisions through a mandatory minimal time before a bill can be passed. This would still allow for emotions, but not let emotions be the driver in political decisions.
 
 ## References
-Albertson, B. and Gadarian, S. K. (2015). Anxious politics: Democratic citizenship in a threatening world. Cambridge University Press. (Chapters 3–5 only).
+
+Albertson, B. and Gadarian, S. K. (2015). Anxious politics: Democratic citizenship in a threatening world. Cambridge University Press. (Chapters 3--5 only).
 
 Clifford, & Jerit, J. (2018). Disgust, Anxiety, and Political Learning in the Face of Threat. American Journal of Political Science, 62(2), 266--279. <https://doi.org/10.1111/ajps.12350>
 
-Dietrich, B. J., Enos, R. D., and Sen, M. (2019). Emotional arousal predicts voting on the US Supreme Court. Political Analysis, 27(2):237–243.
-
+Dietrich, B. J., Enos, R. D., and Sen, M. (2019). Emotional arousal predicts voting on the US Supreme Court. Political Analysis, 27(2):237--243.

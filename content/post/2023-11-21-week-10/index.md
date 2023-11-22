@@ -71,20 +71,20 @@ This means treatment groups 3 and 4 should have the highest levels of disgust an
 
 The table below shows that this true. The difference appears to be especially clear for disgust. The highest anxiety level is for group 2 (high anxiety and low disgust). The highest disgust level is for group 4 (high anxiety and high disgust). These results are consistent with the findings from Clifford and Jerit (2018).
 
-<div id="nttwuqxpbu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#nttwuqxpbu table {
+<div id="kzybkfmxmc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#kzybkfmxmc table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-&#10;#nttwuqxpbu thead, #nttwuqxpbu tbody, #nttwuqxpbu tfoot, #nttwuqxpbu tr, #nttwuqxpbu td, #nttwuqxpbu th {
+&#10;#kzybkfmxmc thead, #kzybkfmxmc tbody, #kzybkfmxmc tfoot, #kzybkfmxmc tr, #kzybkfmxmc td, #kzybkfmxmc th {
   border-style: none;
 }
-&#10;#nttwuqxpbu p {
+&#10;#kzybkfmxmc p {
   margin: 0;
   padding: 0;
 }
-&#10;#nttwuqxpbu .gt_table {
+&#10;#kzybkfmxmc .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -109,11 +109,11 @@ The table below shows that this true. The difference appears to be especially cl
   border-left-width: 2px;
   border-left-color: #D3D3D3;
 }
-&#10;#nttwuqxpbu .gt_caption {
+&#10;#kzybkfmxmc .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
-&#10;#nttwuqxpbu .gt_title {
+&#10;#kzybkfmxmc .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -124,7 +124,7 @@ The table below shows that this true. The difference appears to be especially cl
   border-bottom-color: #FFFFFF;
   border-bottom-width: 0;
 }
-&#10;#nttwuqxpbu .gt_subtitle {
+&#10;#kzybkfmxmc .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -135,7 +135,7 @@ The table below shows that this true. The difference appears to be especially cl
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
-&#10;#nttwuqxpbu .gt_heading {
+&#10;#kzybkfmxmc .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -146,12 +146,12 @@ The table below shows that this true. The difference appears to be especially cl
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-&#10;#nttwuqxpbu .gt_bottom_border {
+&#10;#kzybkfmxmc .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#nttwuqxpbu .gt_col_headings {
+&#10;#kzybkfmxmc .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -165,7 +165,7 @@ The table below shows that this true. The difference appears to be especially cl
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-&#10;#nttwuqxpbu .gt_col_heading {
+&#10;#kzybkfmxmc .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -184,7 +184,7 @@ The table below shows that this true. The difference appears to be especially cl
   padding-right: 5px;
   overflow-x: hidden;
 }
-&#10;#nttwuqxpbu .gt_column_spanner_outer {
+&#10;#kzybkfmxmc .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -195,13 +195,13 @@ The table below shows that this true. The difference appears to be especially cl
   padding-left: 4px;
   padding-right: 4px;
 }
-&#10;#nttwuqxpbu .gt_column_spanner_outer:first-child {
+&#10;#kzybkfmxmc .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
-&#10;#nttwuqxpbu .gt_column_spanner_outer:last-child {
+&#10;#kzybkfmxmc .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
-&#10;#nttwuqxpbu .gt_column_spanner {
+&#10;#kzybkfmxmc .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -212,10 +212,10 @@ The table below shows that this true. The difference appears to be especially cl
   display: inline-block;
   width: 100%;
 }
-&#10;#nttwuqxpbu .gt_spanner_row {
+&#10;#kzybkfmxmc .gt_spanner_row {
   border-bottom-style: hidden;
 }
-&#10;#nttwuqxpbu .gt_group_heading {
+&#10;#kzybkfmxmc .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -240,7 +240,7 @@ The table below shows that this true. The difference appears to be especially cl
   vertical-align: middle;
   text-align: left;
 }
-&#10;#nttwuqxpbu .gt_empty_group_heading {
+&#10;#kzybkfmxmc .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -254,13 +254,13 @@ The table below shows that this true. The difference appears to be especially cl
   border-bottom-color: #D3D3D3;
   vertical-align: middle;
 }
-&#10;#nttwuqxpbu .gt_from_md > :first-child {
+&#10;#kzybkfmxmc .gt_from_md > :first-child {
   margin-top: 0;
 }
-&#10;#nttwuqxpbu .gt_from_md > :last-child {
+&#10;#kzybkfmxmc .gt_from_md > :last-child {
   margin-bottom: 0;
 }
-&#10;#nttwuqxpbu .gt_row {
+&#10;#kzybkfmxmc .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -278,7 +278,7 @@ The table below shows that this true. The difference appears to be especially cl
   vertical-align: middle;
   overflow-x: hidden;
 }
-&#10;#nttwuqxpbu .gt_stub {
+&#10;#kzybkfmxmc .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -290,7 +290,7 @@ The table below shows that this true. The difference appears to be especially cl
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#nttwuqxpbu .gt_stub_row_group {
+&#10;#kzybkfmxmc .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -303,13 +303,13 @@ The table below shows that this true. The difference appears to be especially cl
   padding-right: 5px;
   vertical-align: top;
 }
-&#10;#nttwuqxpbu .gt_row_group_first td {
+&#10;#kzybkfmxmc .gt_row_group_first td {
   border-top-width: 2px;
 }
-&#10;#nttwuqxpbu .gt_row_group_first th {
+&#10;#kzybkfmxmc .gt_row_group_first th {
   border-top-width: 2px;
 }
-&#10;#nttwuqxpbu .gt_summary_row {
+&#10;#kzybkfmxmc .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -318,14 +318,14 @@ The table below shows that this true. The difference appears to be especially cl
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#nttwuqxpbu .gt_first_summary_row {
+&#10;#kzybkfmxmc .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
-&#10;#nttwuqxpbu .gt_first_summary_row.thick {
+&#10;#kzybkfmxmc .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
-&#10;#nttwuqxpbu .gt_last_summary_row {
+&#10;#kzybkfmxmc .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -334,7 +334,7 @@ The table below shows that this true. The difference appears to be especially cl
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#nttwuqxpbu .gt_grand_summary_row {
+&#10;#kzybkfmxmc .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -343,7 +343,7 @@ The table below shows that this true. The difference appears to be especially cl
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#nttwuqxpbu .gt_first_grand_summary_row {
+&#10;#kzybkfmxmc .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -352,7 +352,7 @@ The table below shows that this true. The difference appears to be especially cl
   border-top-width: 6px;
   border-top-color: #D3D3D3;
 }
-&#10;#nttwuqxpbu .gt_last_grand_summary_row_top {
+&#10;#kzybkfmxmc .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -361,10 +361,10 @@ The table below shows that this true. The difference appears to be especially cl
   border-bottom-width: 6px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#nttwuqxpbu .gt_striped {
+&#10;#kzybkfmxmc .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
-&#10;#nttwuqxpbu .gt_table_body {
+&#10;#kzybkfmxmc .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -372,7 +372,7 @@ The table below shows that this true. The difference appears to be especially cl
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#nttwuqxpbu .gt_footnotes {
+&#10;#kzybkfmxmc .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -385,7 +385,7 @@ The table below shows that this true. The difference appears to be especially cl
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-&#10;#nttwuqxpbu .gt_footnote {
+&#10;#kzybkfmxmc .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -393,7 +393,7 @@ The table below shows that this true. The difference appears to be especially cl
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#nttwuqxpbu .gt_sourcenotes {
+&#10;#kzybkfmxmc .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -406,57 +406,57 @@ The table below shows that this true. The difference appears to be especially cl
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-&#10;#nttwuqxpbu .gt_sourcenote {
+&#10;#kzybkfmxmc .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#nttwuqxpbu .gt_left {
+&#10;#kzybkfmxmc .gt_left {
   text-align: left;
 }
-&#10;#nttwuqxpbu .gt_center {
+&#10;#kzybkfmxmc .gt_center {
   text-align: center;
 }
-&#10;#nttwuqxpbu .gt_right {
+&#10;#kzybkfmxmc .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
-&#10;#nttwuqxpbu .gt_font_normal {
+&#10;#kzybkfmxmc .gt_font_normal {
   font-weight: normal;
 }
-&#10;#nttwuqxpbu .gt_font_bold {
+&#10;#kzybkfmxmc .gt_font_bold {
   font-weight: bold;
 }
-&#10;#nttwuqxpbu .gt_font_italic {
+&#10;#kzybkfmxmc .gt_font_italic {
   font-style: italic;
 }
-&#10;#nttwuqxpbu .gt_super {
+&#10;#kzybkfmxmc .gt_super {
   font-size: 65%;
 }
-&#10;#nttwuqxpbu .gt_footnote_marks {
+&#10;#kzybkfmxmc .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
-&#10;#nttwuqxpbu .gt_asterisk {
+&#10;#kzybkfmxmc .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
-&#10;#nttwuqxpbu .gt_indent_1 {
+&#10;#kzybkfmxmc .gt_indent_1 {
   text-indent: 5px;
 }
-&#10;#nttwuqxpbu .gt_indent_2 {
+&#10;#kzybkfmxmc .gt_indent_2 {
   text-indent: 10px;
 }
-&#10;#nttwuqxpbu .gt_indent_3 {
+&#10;#kzybkfmxmc .gt_indent_3 {
   text-indent: 15px;
 }
-&#10;#nttwuqxpbu .gt_indent_4 {
+&#10;#kzybkfmxmc .gt_indent_4 {
   text-indent: 20px;
 }
-&#10;#nttwuqxpbu .gt_indent_5 {
+&#10;#kzybkfmxmc .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -699,7 +699,7 @@ The t-test below shows that in high disgust situations, people are 10 percentage
 
 ### Hypothesis 3
 
-The third hypothesis states that “a person who feels disgusted about a threat will avoid the source of disgust and new information about the topic” (pg. 268). To test this hypothesis, I consider the variable `additional_info`, which indicates whether a participant sought out additional information. My analysis shows the results are statistically insignificant, however, Clifford and Jerit (2018) perform a more robust analysis for hypothesis 3. They consider 4 different variables assessing information search. They found that “disgust generated a qualitatively different reaction than did anxiety—one of avoidance rather than engagement.” Specifically, “anxiety increased informationsearch only in the absence of disgust” (pg. 272). This means that among the emotions, anxiety is the best predictor for understanding if a person will seek additional information.
+The third hypothesis states that “a person who feels disgusted about a threat will avoid the source of disgust and new information about the topic” (pg. 268). To test this hypothesis, I consider the variable `additional_info`, which indicates whether a participant sought out additional information. My analysis shows the results are statistically insignificant, however, Clifford and Jerit (2018) perform a more robust analysis for hypothesis 3. They consider 4 different variables assessing information search. They found that “disgust generated a qualitatively different reaction than did anxiety—one of avoidance rather than engagement.” Specifically, “anxiety increased information search only in the absence of disgust” (pg. 272). This means that among the emotions, anxiety is the best predictor for understanding if a person will seek additional information.
 
 <img src="images/Screen%20Shot%202023-11-21%20at%208.07.22%20PM.png" width="1000" />
 
